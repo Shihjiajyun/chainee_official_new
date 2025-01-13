@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-outline {
+  border: 1px solid #0066ff;
+  color: #0066ff;
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Main Content */
+.main {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.card-link {
+  text-decoration: none; /* 去掉下劃線 */
+  color: inherit; /* 保持文字顏色 */
+  display: block; /* 確保整個卡片範圍可點擊 */
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  background: #f5f5f5;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease; /* 添加平滑過渡效果 */
+}
+
+.card-image:hover img {
+  transform: scale(1.1); /* 放大圖片 */
+  filter: brightness(1.1); /* 增加亮度，可選 */
+}
+
+.card-image .btn-primary {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: #0066ff;
+  color: white;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-author {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-price {
+  color: #0066ff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+.about-us {
+    background-color: #ffffff;
+}
+
+.about-us p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-us .features p {
+    margin-bottom: 0.5rem;
+}
+
