@@ -15,7 +15,7 @@
   z-index: 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.8px) {
   #price {
     order: -1; /* 設置順序為第一 */
   }
@@ -164,7 +164,7 @@
   background-color: #f0f0f0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.8px) {
   /* 小螢幕時取消沾黏效果 */
   #price {
     position: static; /* 恢復正常布局 */
