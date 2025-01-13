@@ -9,6 +9,8 @@
         /* 去掉多餘的 padding */
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        font-weight: 900;
     }
 
     .navbar-nav {
@@ -141,10 +143,6 @@
         /* 滑鼠懸停文字顏色 */
     }
 
-    #navbarNav {
-        font-weight: 700;
-    }
-
     @media screen and (max-width: 991.8px) {
         #desktop-search-btn {
             display: none;
@@ -181,7 +179,7 @@
                     <a class="nav-link" href="./course_classification.php">線上課程</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">訂閱制分類頁</a>
+                    <a class="nav-link" href="./subscription_classification.php">訂閱專欄</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
