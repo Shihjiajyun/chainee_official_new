@@ -37,8 +37,8 @@
                         </div>
                         <div class="card-content">
                             <a href="#" class="btn btn-primary mt-1">立即上課</a>
-                            <h3 class="card-title">掌握口語表達與舞台魅力｜葉丙成的簡報必修課</h3>
-                            <p class="card-author">by 葉丙成 Benson</p>
+                            <h3 class="card-title">鏈習生</h3>
+                            <p class="card-author">by 鏈習生 Benson</p>
                             <p class="card-price">NT$ 12,000</p>
                             <div class="card-meta">
                                 <span>11小時14分</span>
@@ -56,8 +56,8 @@
                         </div>
                         <div class="card-content">
                             <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">超級數字力｜一生受用的財務思維課</h3>
-                            <p class="card-author">by MJ 林明樺</p>
+                            <h3 class="card-title">鏈習生</h3>
+                            <p class="card-author">by MJ 鏈習生</p>
                             <p class="card-price">NT$ 15,800</p>
                             <div class="card-meta">
                                 <span>10小時35分</span>
@@ -76,8 +76,8 @@
                         </div>
                         <div class="card-content">
                             <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">峰值體驗2｜關鍵時刻的洞察與落地</h3>
-                            <p class="card-author">by 汪志華</p>
+                            <h3 class="card-title">鏈習生</h3>
+                            <p class="card-author">by 鏈習生</p>
                             <p class="card-price">NT$ 17,900</p>
                             <div class="card-meta">
                                 <span>10小時7分</span>
@@ -95,8 +95,8 @@
                         </div>
                         <div class="card-content">
                             <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">風林火山｜劉必榮的致勝談判思維課</h3>
-                            <p class="card-author">by 劉必榮</p>
+                            <h3 class="card-title">鏈習生</h3>
+                            <p class="card-author">by 鏈習生</p>
                             <p class="card-price">NT$ 19,960</p>
                             <div class="card-meta">
                                 <span>22小時50分</span>
@@ -119,23 +119,23 @@
                 $recommendedArticles = [
                     [
                         'image' => './img/lesson1.jpg',
-                        'title' => '為何企業學習課程的方案要選擇知識衛星呢？',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ],
                     [
                         'image' => './img/lesson1.jpg',
-                        'title' => 'RE:LAB 圖像資訊表達',
+                        'title' => '鏈習生',
                         'author' => 'RE:LAB'
                     ],
                     [
                         'image' => './img/lesson1.jpg',
-                        'title' => '劉博仁醫師營養功能醫學',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ],
                     [
                         'image' => './img/lesson1.jpg',
-                        'title' => '知識衛星 SAT. KNOWLEDGE',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ]
                 ];
                 ?>
@@ -164,26 +164,26 @@
                     [
                         'date' => '2023/05/17',
                         'category' => '文章',
-                        'title' => '資費會 X 葉丙成的簡報必修課！線上學習打造成功簡報的三大核心',
-                        'author' => '為何企業學習課程的方案要選擇知識衛星呢？'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ],
                     [
                         'date' => '2022/05/18',
                         'category' => '文章',
-                        'title' => '【有感學習訪談】學習財務知識很難？MJ老師：每天花一小時升級你的大腦即可！',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ],
                     [
                         'date' => '2022/05/17',
                         'category' => '文章',
-                        'title' => '【有感學習訪談】課程被拿來當Netflix追劇看？葉丙成老師：我教的是溝通表達的心法',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ],
                     [
                         'date' => '2022/05/16',
                         'category' => '文章',
-                        'title' => '【有感學習訪談】如何看完高時數的課程？焦元溥老師：大家輕鬆以對就好啦！',
-                        'author' => '知識衛星 SAT. KNOWLEDGE'
+                        'title' => '鏈習生',
+                        'author' => '鏈習生'
                     ]
                 ];
                 ?>
@@ -215,16 +215,16 @@
                 <!-- 左邊文字區塊 -->
                 <div class="col-md-6">
                     <h2 class="mb-4 blue-underline">關於我們</h2>
-                    <p class="mb-3">SAT. 是英文「衛星」Satellite 的縮寫，知識衛星是 SAT. KNOWLEDGE，將知識傳播至世界每個角落，是你最聰明的學習選擇。</p>
+                    <p class="mb-3">鏈習生</p>
                     <ul class="list-unstyled">
                         <li>學習是一趟沒有終點的飛行</li>
-                        <li>建立知識衛星，跨越時空和地域的限制</li>
+                        <li>建立知鏈習生，跨越時空和地域的限制</li>
                         <li>直接向各領域的頂尖大師學習</li>
                         <li>探索知識並拓展更多的興趣</li>
                         <li>透過有感的學習，造就生活的改變</li>
                         <li>接近更理想的自己</li>
                     </ul>
-                    <p class="mt-4">知識衛星精品線上課｜各領域大師開課首選<br><strong>Your smart learning choice</strong></p>
+                    <p class="mt-4">鏈習生線上課｜各領域大師開課首選<br><strong>Your smart learning choice</strong></p>
                     <a href="#" class="btn btn-dark mt-3">了解更多</a>
                 </div>
 
@@ -236,6 +236,7 @@
         </div>
     </section>
 
+    <!-- 學員推薦 -->
     <?php include('./tools/students_back.php'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -13,6 +13,7 @@
         color: white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         cursor: pointer;
+        z-index: 999999;
     }
 </style>
 

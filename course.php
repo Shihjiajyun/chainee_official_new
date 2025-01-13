@@ -125,43 +125,16 @@
 
                 <!-- 課程說明 -->
                 <p class="mt-4">
-                    一堂在台大開了 13 年的熱門簡報課，百人校外講座也是場場秒殺，一票難求。無論是商業簡報、上台、報告、演講，都能幫助你掌握表達本質，克服緊張，盡情展現你的舞台魅力，就讓台大簡報名師 - 葉丙成 教授帶給你最精實的線上簡報課！※ 本公司與國立臺灣大學無授權或產學合作關係，本課程亦非國立臺灣大學授權或產學合作成果 ※
+                    在投資加密貨幣的世界裡，掌握操作實務是成功的關鍵！《操作實務篇 | 投資加密貨幣懂這些就夠了》將帶你快速了解最實用的加密貨幣交易技巧，從平台操作、現貨與衍生品交易到風險管理，幫助你用最少的時間獲得最大效益。不論你是剛入門的新手，還是希望進一步提升操作效率的投資者，這堂課都能讓你更自信地進行每一筆交易！
                 </p>
-            </div>
 
-            <!-- 價格卡片 -->
-            <div class="col-lg-4" id="price">
-                <div class="price-card">
-                    <div class="text-center mb-4">
-                        <img src="./img/lesson1.jpg" alt="課程封面" class="img-fluid rounded mb-3">
-                        <h3 class="mb-3">NT$ 12,000</h3>
-                    </div>
-                    <div class="mb-4">
-                        <p>✦ 無限次數觀看「掌握口語表達與舞台魅力｜葉丙成的簡報必修課」線上課程</p>
-                        <p>✦ 分期 (三期、六期) 零利率方案僅限：玉山、台新銀行信用卡</p>
-                    </div>
-                    <div class="d-flex gap-2">
-                        <button class="buy-button">立即購買</button>
-                        <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container py-4">
-        <div class="row">
-            <div class="col-lg-8">
                 <!-- 影片區塊 -->
                 <div class="video-container mb-4">
                     <img src="./img/lesson1.jpg" alt="課程影片封面" class="img-fluid w-100">
-                    <div class="play-button">
-                        <i class="fas fa-play fa-2x text-white"></i>
-                    </div>
                 </div>
 
                 <!-- 標籤導航 -->
-                <ul class="nav nav-tabs mb-4" id="navTabs">
+                <ul class="nav nav-tabs mb-4 justify-content-center" id="navTabs">
                     <li class="nav-item">
                         <a class="nav-link active" data-content="intro" href="#">簡介</a>
                     </li>
@@ -335,13 +308,14 @@
                                         <img src="./img/login_logo.jpg" alt="XXX" class="user-avatar">
                                         <div class="user-info">
                                             <span class="user-name">XXX</span>
-                                            <span class="comment-date">2024/12/27 18:20:47</span>
+                                            <span class="comment-date">2025/01/09 14:49:56</span>
                                         </div>
                                     </div>
                                     <div class="comment-body">
-                                        社會人士可以參加嗎？
+                                        你好，如果我購買了課程，請問是上知識衛星網站上登入觀看嗎？
                                     </div>
                                 </div>
+
 
                                 <!-- 留言 2 -->
                                 <div class="comment">
@@ -471,75 +445,89 @@
                                 </div>
                             </div>
                         </div>
-                        >
                     </div>
                 </div>
-
             </div>
 
-            <!-- 側邊欄 -->
-            <div class="col-lg-4">
-                <!-- 合購優惠區塊 -->
-                <div class="bundle-section mb-4">
-                    <div class="bundle-header">
-                        <h5 class="text-center mb-0">合購優惠</h5>
-                    </div>
-
-                    <h6 class="mb-3">投資加密或閉</h6>
-
-                    <div class="course-card">
-                        <img src="./img/lesson2.jpg" alt="課程縮圖">
-                        <div class="ms-3">
-                            <h6 class="mb-2">認知升級篇 | 投資加密貨幣懂這些就夠了</h6>
-                            <div class="original-price">NT$ 8,900</div>
+            <!-- 價格卡片 -->
+            <div class="col-lg-4" id="price">
+                <div class="price-content">
+                    <div class="price-card">
+                        <div class="text-center mb-4">
+                            <img src="./img/lesson1.jpg" alt="課程封面" class="img-fluid rounded mb-3">
+                            <h3 class="mb-3">NT$ 12,000</h3>
+                        </div>
+                        <div class="mb-4">
+                            <p>✦ 無限次數觀看鏈習生</p>
+                            <p>✦ 分期 (三期、六期) 零利率方案僅限：玉山、台新銀行信用卡</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="buy-button">立即購買</button>
+                            <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
 
-                    <div class="course-card">
-                        <img src="./img/lesson.jpg" alt="課程縮圖">
-                        <div class="ms-3">
-                            <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                            <div class="original-price">NT$ 12,000</div>
+                    <div class="bundle-section mb-4">
+                        <div class="bundle-header">
+                            <h5 class="text-center mb-0">合購優惠</h5>
+                        </div>
+
+                        <h6 class="mb-3">投資加密貨幣</h6>
+
+                        <div class="course-card">
+                            <img src="./img/lesson2.jpg" alt="課程縮圖">
+                            <div class="ms-3">
+                                <h6 class="mb-2">認知升級篇 | 投資加密貨幣懂這些就夠了</h6>
+                                <div class="original-price">NT$ 8,900</div>
+                            </div>
+                        </div>
+
+                        <div class="course-card">
+                            <img src="./img/lesson.jpg" alt="課程縮圖">
+                            <div class="ms-3">
+                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
+                                <div class="original-price">NT$ 12,000</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <div class="original-price">NT$ 20,900</div>
+                                <div class="price">NT$ 19,700</div>
+                            </div>
+                            <button class="add-to-cart">加入購物車</button>
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <div>
-                            <div class="original-price">NT$ 20,900</div>
-                            <div class="price">NT$ 19,700</div>
+                    <!-- 其他合購區塊 -->
+                    <div class="bundle-section mb-4">
+                        <div class="bundle-header">
+                            <h5 class="text-center mb-0">上班族想學習投資</h5>
                         </div>
-                        <button class="add-to-cart">加入購物車</button>
-                    </div>
-                </div>
 
-                <!-- 其他合購區塊 -->
-                <div class="bundle-section mb-4">
-                    <div class="bundle-header">
-                        <h5 class="text-center mb-0">上班族想學習投資</h5>
-                    </div>
-
-                    <div class="course-card">
-                        <img src="./img/lesson1.jpg" alt="課程縮圖">
-                        <div class="ms-3">
-                            <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                            <div class="original-price">NT$ 12,000</div>
+                        <div class="course-card">
+                            <img src="./img/lesson1.jpg" alt="課程縮圖">
+                            <div class="ms-3">
+                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
+                                <div class="original-price">NT$ 12,000</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="course-card">
-                        <img src="./img/lesson1.jpg" alt="課程縮圖">
-                        <div class="ms-3">
-                            <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                            <div class="original-price">NT$ 12,000</div>
+                        <div class="course-card">
+                            <img src="./img/lesson1.jpg" alt="課程縮圖">
+                            <div class="ms-3">
+                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
+                                <div class="original-price">NT$ 12,000</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <div>
-                            <div class="original-price">NT$ 24,000</div>
-                            <div class="price">NT$ 23,300</div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <div class="original-price">NT$ 24,000</div>
+                                <div class="price">NT$ 23,300</div>
+                            </div>
+                            <button class="add-to-cart">加入購物車</button>
                         </div>
-                        <button class="add-to-cart">加入購物車</button>
                     </div>
                 </div>
             </div>

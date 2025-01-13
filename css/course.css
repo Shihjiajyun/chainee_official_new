@@ -15,6 +15,16 @@
   z-index: 0;
 }
 
+@media (max-width: 992px) {
+  #price {
+    order: -1; /* 設置順序為第一 */
+  }
+  .row {
+    display: flex;
+    flex-direction: column; /* 小螢幕時垂直排列 */
+  }
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -121,6 +131,52 @@
   padding: 12px;
   border: none;
   border-radius: 4px;
+}
+
+#price {
+  position: sticky; /* 啟用沾黏效果 */
+  top: 20px; /* 距離頁面頂部 20px */
+  height: 80vh; /* 設置沾黏區塊的高度為視口的 80% */
+  overflow: hidden; /* 確保滾動只發生在內部 */
+  z-index: 10;
+  background-color: #f9f9f9; /* 背景色方便視覺化 */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.price-content {
+  height: 100%; /* 滿足父容器的高度 */
+  overflow-y: auto; /* 啟用垂直滾動 */
+  padding-right: 8px; /* 避免滾動條壓住內容 */
+}
+
+.price-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.price-content::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+.price-content::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 992px) {
+  /* 小螢幕時取消沾黏效果 */
+  #price {
+    position: static; /* 恢復正常布局 */
+  }
+  .price-content {
+    overflow-y: visible; /* 禁用垂直滾動 */
+    height: auto; /* 恢復自動高度 */
+    padding-right: 0; /* 移除額外內距 */
+  }
+  #price {
+    height: 100%; /* 確保內容自適應 */
+  }
 }
 
 .cart-button {
@@ -243,7 +299,6 @@
 .content img {
   max-width: 100%; /* 圖片寬度不超過容器寬度 */
   height: auto; /* 確保圖片比例不變 */
-  margin: 0 auto; /* 居中圖片 */
   display: block; /* 圖片在容器中獨立一行 */
 }
 
@@ -376,27 +431,23 @@
 }
 
 .comment {
-  background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
 }
 
 .comment-header {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #ddd;
+  margin-right: 10px;
 }
 
 .user-info {
@@ -405,19 +456,22 @@
 }
 
 .user-name {
+  font-size: 16px;
   font-weight: bold;
-  font-size: 0.95rem;
+  color: #333;
 }
 
 .comment-date {
-  font-size: 0.85rem;
+  font-size: 12px;
   color: #777;
+  margin-top: 2px;
 }
 
 .comment-body {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
 /* 評價區 */
