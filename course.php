@@ -13,6 +13,7 @@
 <body>
 
     <?php include 'navbar.php' ?>
+    
     <div class="hero-section">
         <iframe
             class="video-background"

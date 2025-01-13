@@ -178,7 +178,7 @@
                     <a class="nav-link active" target="_blank" href="https://chainee.io/courses/public-course">公開講座</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">線上課程</a>
+                    <a class="nav-link" href="./course_classification.php">線上課程</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">訂閱制分類頁</a>
