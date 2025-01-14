@@ -11,51 +11,7 @@
 </head>
 
 <body>
-
-    <?php include './navbar.php' ?>
-
-    <div class="hero-section">
-        <iframe
-            class="video-background"
-            src="https://www.youtube.com/embed/Me8naev7Edc?autoplay=1&mute=1&loop=1&playlist=Me8naev7Edc&controls=0&modestbranding=1&rel=0&showinfo=0"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-        </iframe>
-
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span class="badge-started">已開課</span>
-
-            <div class="action-icons">
-                <button class="btn text-white me-2">
-                    <i class="fas fa-share-alt fa-lg"></i>
-                </button>
-                <button class="btn text-white">
-                    <i class="far fa-bookmark fa-lg"></i>
-                </button>
-            </div>
-
-            <div class="mt-5">
-                <h6 class="mb-3">講師名稱：腦哥</h6>
-                <h1 class="display-4 mb-4">操作實務篇 | 投資加密貨幣懂這些就夠了</h1>
-
-                <div class="star-rating mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span class="ms-2 text-white">5</span>
-                </div>
-
-                <button class="btn btn-primary buy-button-video">
-                    立即購買 NT$12,000
-                </button>
-            </div>
-        </div>
-    </div>
+    <?php include 'navbar.php' ?>
 
     <div class="container py-4" id="introduce">
         <div class="row">
@@ -534,6 +490,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- 切換內容 -->

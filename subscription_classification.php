@@ -60,7 +60,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">精準定位幣圈趨勢</h5>
                         <p class="card-text">加密市場的邏輯與第一性原理 | 腦哥</p>
-                        <a href="#" class="btn btn-warning mt-3" style="font-weight: 700;">了解更多</a>
+                        <a href="subscription.php" class="btn btn-warning mt-3" style="font-weight: 700;">了解更多</a>
                     </div>
                 </div>
             </div>

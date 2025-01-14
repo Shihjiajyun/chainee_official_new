@@ -148,6 +148,34 @@
             display: none;
         }
     }
+
+    /* 下拉菜單初始隱藏 */
+    .nav-item.dropdown .dropdown-menu {
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 滑鼠懸停顯示下拉菜單 */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 下拉內容對齊 */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        margin: 0;
+        padding: 0.5rem 0;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -182,7 +210,7 @@
                     <a class="nav-link" href="./subscription_classification.php">訂閱專欄</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="knowledge.php" id="knowledgeDropdown" role="button">
                         幣圈知識庫
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">
@@ -252,6 +280,18 @@
         // 關閉搜尋框
         closeSearchBtn?.addEventListener("click", () => {
             searchOverlay.style.display = "none";
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownLink = document.getElementById('knowledgeDropdown');
+
+        // 監聽點擊事件
+        dropdownLink.addEventListener('click', function(e) {
+            // 確保點擊會跳轉到指定頁面
+            window.location.href = dropdownLink.getAttribute('href');
         });
     });
 </script>
