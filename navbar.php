@@ -214,11 +214,11 @@
                         幣圈知識庫
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">
-                        <li><a class="dropdown-item" href="#">學幣圈</a></li>
-                        <li><a class="dropdown-item" href="#">學投資</a></li>
-                        <li><a class="dropdown-item" href="#">學開戶</a></li>
-                        <li><a class="dropdown-item" href="#">撿好康</a></li>
-                        <li><a class="dropdown-item" href="#">專欄作家</a></li>
+                        <li><a class="dropdown-item" href="./learn_crypto.php">學幣圈</a></li>
+                        <li><a class="dropdown-item" href="./learn-investing.php">學投資</a></li>
+                        <li><a class="dropdown-item" href="./open-accounts.php">學開戶</a></li>
+                        <li><a class="dropdown-item" href="./find-deals.php">撿好康</a></li>
+                        <li><a class="dropdown-item" href="./columnists.php">專欄作家</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

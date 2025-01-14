@@ -1,0 +1,24 @@
+.card img {
+    max-height: 150px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+.btn-custom {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
