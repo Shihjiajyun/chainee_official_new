@@ -87,28 +87,31 @@ document.getElementById('emailInput').addEventListener('blur', async function ()
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const email = document.querySelector('#loginForm input[placeholder="電子信箱"]').value;
-    const password = document.querySelector('#loginForm input[placeholder="密碼"]').value;
+    // 獲取表單輸入值
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
 
     try {
         const response = await fetch('php/login.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: new URLSearchParams({
-                email,
-                password
-            }),
+            body: new URLSearchParams({ email, password }),
         });
 
         const result = await response.json();
-        alert(result.message);
+        if (result.status === 'success') {
+            alert(result.message);
+            window.location.href = 'index.php';
+        } else {
+            alert(result.message || '登入失敗，請稍後再試');
+        }
     } catch (error) {
-        console.error('Error:', error);
-        alert('登入失敗，請稍後再試');
+        console.error('發生錯誤:', error);
     }
 });
+
 
 // 寄送註冊驗證碼
 document.getElementById('sendCodeBtn').addEventListener('click', async function () {

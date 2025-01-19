@@ -2,6 +2,12 @@
 require 'db.php';
 require '../vendor/autoload.php'; // 使用 PHPMailer 或其他郵件庫
 
+use Dotenv\Dotenv;
+
+// 加載 .env 文件
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
 
@@ -38,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'chainee@chainee.io';
-        $mail->Password = 'fwsb bbhu vcai esuv';
+        $mail->Password = $_ENV['email_password'];
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->CharSet = 'UTF-8';

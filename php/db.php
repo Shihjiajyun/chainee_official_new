@@ -1,9 +1,17 @@
 <?php
-$host = 'hkg1.clusters.zeabur.com';
-$dbname = 'chainee';
-$username = 'root';
-$password = 'Q0Fo1y35IU7sbGKE426nHWPl9AY8DigM';
-$port = 32709; 
+require __DIR__ . '/../vendor/autoload.php'; // 自動加載 Composer 包
+
+use Dotenv\Dotenv;
+
+// 加載 .env 文件
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$port = $_ENV['DB_PORT'];
 
 try {
     // 加入 port 參數

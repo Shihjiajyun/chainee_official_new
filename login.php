@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -42,10 +46,12 @@
                         </div>
 
                         <div class="mb-4">
-                            <input type="email" class="form-control form-control-lg mb-3" placeholder="電子信箱">
+                            <!-- 電子信箱輸入框 -->
+                            <input type="email" name="email" class="form-control form-control-lg mb-3" placeholder="電子信箱" required>
 
+                            <!-- 密碼輸入框 -->
                             <div class="position-relative">
-                                <input type="password" class="form-control form-control-lg" placeholder="密碼">
+                                <input type="password" name="password" class="form-control form-control-lg" placeholder="密碼" required>
                                 <span class="password-toggle">
                                     <i class="bi bi-eye"></i>
                                 </span>

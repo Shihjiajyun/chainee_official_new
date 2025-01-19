@@ -233,8 +233,16 @@
 
             <!-- 登入與註冊 -->
             <div class="d-flex mb-2">
-                <a href="login.php" class="btn btn-outline-info me-2">登入</a>
-                <a href="login.php" class="btn btn-info">註冊</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- 已登入顯示歡迎語句與會員中心按鈕 -->
+                    <!-- <span class="navbar-text me-3">歡迎，<?php echo htmlspecialchars($_SESSION['user_name']); ?></span> -->
+                    <a href="user.php" class="btn btn-outline-info me-2">會員中心</a>
+                    <a href="php/logout.php" class="btn btn-danger">登出</a>
+                <?php else: ?>
+                    <!-- 未登入顯示登入與註冊按鈕 -->
+                    <a href="login.php" class="btn btn-outline-info me-2">登入</a>
+                    <a href="login.php" class="btn btn-info">註冊</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
