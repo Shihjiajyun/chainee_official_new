@@ -6,67 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入/註冊頁面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/login_logo.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            min-height: 100vh;
-        }
-
-        .auth-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background-color: white;
-        }
-
-        .social-login-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #dee2e6;
-            background: white;
-            margin: 0 8px;
-        }
-
-        .social-login-btn img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #0d6efd;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #6c757d;
-        }
-
-        #registerForm {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/loading.css">
 </head>
 
 <body>
     <?php include './navbar.php'; ?>
-    
+
+    <!-- Loading 遮罩和動畫 -->
+    <div id="loadingOverlay" style="display: none;">
+        <div class="loading-animation">
+            <div class="loading-circle"></div>
+            <p class="loading-text">正在處理，請稍候...</p>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <!-- 左側英雄區塊 -->
             <div class="col-lg-6 p-0">
-                <div class="hero-section p-5 d-flex flex-column justify-content-end">
+                <div class="hero-section p-5 d-flex flex-column justify-content-center">
                     <h1 class="display-4 fw-bold mb-3">精品大師線上課程平台</h1>
                     <p class="lead">專業講師 X 精實影音課程，你最聰明的學習選擇</p>
                 </div>
@@ -83,9 +42,6 @@
                         </div>
 
                         <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>電子信箱</span>
-                            </div>
                             <input type="email" class="form-control form-control-lg mb-3" placeholder="電子信箱">
 
                             <div class="position-relative">
@@ -115,29 +71,36 @@
                         </div>
 
                         <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>電子信箱</span>
-                                <span>手機號碼</span>
+                            <!-- 電子信箱輸入框 -->
+                            <div class="input-group mb-3">
+                                <input type="email" id="emailInput" class="form-control form-control-lg" placeholder="電子信箱" required>
+                                <button type="button" id="sendCodeBtn" class="btn btn-secondary">寄送驗證碼</button>
                             </div>
-                            <input type="email" class="form-control form-control-lg mb-3" placeholder="電子信箱">
 
+                            <!-- 驗證碼輸入框 -->
                             <div class="position-relative mb-3">
-                                <input type="password" class="form-control form-control-lg" placeholder="密碼">
-                                <span class="password-toggle">
-                                    <i class="bi bi-eye"></i>
-                                </span>
+                                <input type="text" id="verificationCodeInput" class="form-control form-control-lg" placeholder="輸入驗證碼" required>
                             </div>
 
+                            <!-- 密碼輸入框 -->
+                            <div class="position-relative mb-3">
+                                <input type="password" id="passwordInput" class="form-control form-control-lg" placeholder="密碼" required>
+                            </div>
+
+                            <!-- 再次輸入密碼 -->
+                            <div class="position-relative mb-3">
+                                <input type="password" id="confirmPasswordInput" class="form-control form-control-lg" placeholder="再次輸入密碼" required>
+                            </div>
+
+                            <!-- 推薦碼輸入框（選填） -->
                             <div class="position-relative">
-                                <input type="password" class="form-control form-control-lg" placeholder="再次輸入密碼">
-                                <span class="password-toggle">
-                                    <i class="bi bi-eye"></i>
-                                </span>
+                                <input type="text" id="referralCodeInput" class="form-control form-control-lg" placeholder="推薦碼">
                             </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 py-3 mb-4">立即註冊</button>
                     </form>
+
 
                     <!-- 社群登入區塊 -->
                     <div class="text-center">
@@ -163,24 +126,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function toggleForms(e) {
-            e.preventDefault();
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            const socialText = document.getElementById('socialText');
+    <script src="./js/login.js"></script>
 
-            if (loginForm.style.display === 'none') {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-                socialText.textContent = '或使用快速登入';
-            } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
-                socialText.textContent = '或使用快速註冊';
-            }
-        }
-    </script>
 </body>
 <footer>
     <?php include('./footer.php'); ?>
