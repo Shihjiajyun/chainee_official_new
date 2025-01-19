@@ -39,21 +39,45 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>編輯個人資料</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <?php include './navbar.php' ?>
 
-    <?php if (isset($_GET['success'])): ?>
+    <?php if (isset($_GET['success']) && $_GET['success'] === '1'): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             資料已成功更新！
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="removeSuccessParam()"></button>
         </div>
     <?php endif; ?>
 
+    <?php if (isset($_GET['error']) ):?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php
+            if ($_GET['error'] === 'incorrect_password') {
+                echo '當前密碼不正確，請再試一次。';
+            } elseif ($_GET['error'] === 'update_failed') {
+                echo '密碼更新失敗，請稍後再試。';
+            }
+            ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="removeSuccessParam()"></button>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($_GET['success']) && $_GET['success'] === 'password_updated'): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            密碼已成功更新！
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="removeSuccessParam()"></button>
+        </div>
+    <?php endif; ?>
+
+
+
     <div class="container my-5">
         <h1 class="mb-4 text-center">編輯個人資料</h1>
-        <form action="./php/update_profile.php" method="POST">
+        <form action="php/update_profile.php" method="POST">
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="username" class="form-label">使用者名稱</label>
@@ -73,10 +97,6 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
                     <label for="bio" class="form-label">個人簡介</label>
                     <textarea id="bio" name="bio" class="form-control" rows="3"><?php echo htmlspecialchars($user['bio']); ?></textarea>
                 </div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">新密碼</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="如需修改密碼，請輸入新密碼">
             </div>
 
             <!-- 是否綁定 Google -->
@@ -159,8 +179,49 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
             </div>
 
             <!-- 提交按鈕 -->
-            <button type="submit" class="btn btn-primary w-100">更新資料</button>
+            <button type="submit" class="btn btn-primary">更新資料</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                修改密碼
+            </button>
         </form>
+    </div>
+
+    <!-- 密碼修改的彈出視窗 -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">修改密碼</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="changePasswordForm" action="./php/change_password.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3 position-relative">
+                            <label for="currentPassword" class="form-label">當前密碼</label>
+                            <div class="input-group">
+                                <input type="password" id="currentPassword" name="current_password" class="form-control" required>
+                                <button type="button" class="btn btn-outline-secondary toggle-password" data-target="#currentPassword">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="newPassword" class="form-label">新密碼</label>
+                            <div class="input-group">
+                                <input type="password" id="newPassword" name="new_password" class="form-control" required>
+                                <button type="button" class="btn btn-outline-secondary toggle-password" data-target="#newPassword">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">確認修改</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -171,10 +232,30 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
 
             // 删除 success 参数
             url.searchParams.delete('success');
+            url.searchParams.delete('error');
 
             // 更新地址栏中的 URL (不会刷新页面)
             window.history.replaceState({}, document.title, url.toString());
         }
+    </script>
+
+    <!-- 顯示密碼 -->
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-target'));
+                const icon = this.querySelector('i');
+                if (target.type === 'password') {
+                    target.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    target.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
     </script>
 </body>
 
