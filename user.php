@@ -46,6 +46,8 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
 <body>
     <?php include './navbar.php' ?>
 
+    <?php include './tools/chat.php' ?>
+
     <?php if (isset($_GET['success']) && $_GET['success'] === '1'): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             資料已成功更新！
