@@ -20,9 +20,8 @@ try {
     if ($mysqli->connect_error) {
         throw new Exception('資料庫連線失敗，請與開發人員聯絡: ' . $mysqli->connect_error);
     }
-
+    mysqli_query($mysqli, "SET time_zone = '+08:00'");
     // 不要在這裡關閉連線，保持連線以供其他文件使用
 } catch (Exception $e) {
     die('連接錯誤: ' . $e->getMessage());
 }
-?>

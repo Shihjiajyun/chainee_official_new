@@ -48,6 +48,14 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
 
     <?php include './tools/chat.php' ?>
 
+    <!-- Loading 遮罩 -->
+    <div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1050; justify-content: center; align-items: center;">
+        <div class="loading-animation text-center">
+            <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;"></div>
+            <p class="loading-text text-light mt-3">正在處理，請稍候...</p>
+        </div>
+    </div>
+
     <?php if (isset($_GET['success']) && $_GET['success'] === '1'): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             資料已成功更新！
@@ -55,7 +63,7 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
         </div>
     <?php endif; ?>
 
-    <?php if (isset($_GET['error']) ):?>
+    <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <?php
             if ($_GET['error'] === 'incorrect_password') {
@@ -75,11 +83,9 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
         </div>
     <?php endif; ?>
 
-
-
     <div class="container my-5">
         <h1 class="mb-4 text-center">編輯個人資料</h1>
-        <form action="php/update_profile.php" method="POST">
+        <form action="php/update_profile.php" method="POST" id="updateProfileForm" enctype="multipart/form-data">
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="username" class="form-label">使用者名稱</label>
@@ -110,10 +116,11 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
             <!-- 上傳大頭照 -->
             <div class="mb-3">
                 <label for="avatar" class="form-label">上傳個人大頭照</label>
-                <input type="file" id="avatar" name="avatar" class="form-control">
-                <?php if (!empty($user['avatar'])): ?>
-                    <img src="<?php echo $user['avatar']; ?>" alt="頭像" class="img-thumbnail mt-3" style="max-height: 150px;">
-                <?php endif; ?>
+                <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+                <img id="avatarPreview" src="<?php echo !empty($user['avatar']) ? $user['avatar'] : ''; ?>"
+                    alt="頭像預覽"
+                    class="img-thumbnail mt-3 rounded-circle"
+                    style="max-height: 150px; width: 150px; object-fit: cover; <?php echo empty($user['avatar']) ? 'display:none;' : ''; ?>">
             </div>
 
             <!-- 職業 -->
@@ -227,6 +234,7 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/user.js"></script>
     <script>
         function removeSuccessParam() {
             // 获取当前的 URL
@@ -257,6 +265,22 @@ $user['google_account_bound'] = $user['google_account_bound'] ?? false; // 默�
                     icon.classList.add('fa-eye');
                 }
             });
+        });
+    </script>
+
+    <!-- loading動畫 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('updateProfileForm');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            if (form) { // 確保表單存在
+                form.addEventListener('submit', () => {
+                    loadingOverlay.style.display = 'flex'; // 顯示 Loading 動畫
+                });
+            } else {
+                console.error('Form with ID "updateProfileForm" not found.');
+            }
         });
     </script>
 </body>

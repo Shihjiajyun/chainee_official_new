@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $referralCode = $_POST['referralCode'] ?? null;
     $username = $email; // 預設使用者名稱為電子信箱
+    mysqli_query($mysqli, "SET time_zone = '+08:00'");
 
     // 插入資料到資料庫
     $stmt = $mysqli->prepare("INSERT INTO users (email, password, referral_code, username, created_at) VALUES (?, ?, ?, ?, NOW())");
