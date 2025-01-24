@@ -187,7 +187,6 @@
 
         <!-- 小螢幕時的漢堡選單與搜尋圖示 -->
         <div class="d-lg-none d-flex">
-            <!-- 大螢幕的搜尋按鈕 -->
             <button class="btn me-2" id="mobile-search-btn">
                 <i class="fas fa-search"></i>
             </button>
@@ -198,7 +197,6 @@
 
         <!-- 導覽列內容 -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- 導覽項目 -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" target="_blank" href="https://chainee.io/courses/public-course">公開講座</a>
@@ -224,6 +222,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">幣種分析</a>
                 </li>
+
+                <?php
+                // 從外部檔案讀取允許的 user_id
+                $allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+                // 檢查目前用戶是否在允許列表中
+                if (isset($_SESSION['user_id']) && in_array($_SESSION['user_id'], $allowed_users)): ?>
+                    <!-- 只有允許的用戶顯示後台按鈕 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button">
+                            後台管理
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                            <li><a class="dropdown-item" href="./admin_course.php">課程管理</a></li>
+                            <li><a class="dropdown-item" href="./manage_users.php">用戶管理(尚未開放)</a></li>
+                            <li><a class="dropdown-item" href="./manage_content.php">內容管理(尚未開放)</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
             </ul>
 
             <!-- 大螢幕的搜尋按鈕 -->
@@ -234,12 +251,9 @@
             <!-- 登入與註冊 -->
             <div class="d-flex mb-2">
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <!-- 已登入顯示歡迎語句與會員中心按鈕 -->
-                    <!-- <span class="navbar-text me-3">歡迎，<?php echo htmlspecialchars($_SESSION['user_name']); ?></span> -->
                     <a href="user.php" class="btn btn-outline-info me-2">會員中心</a>
                     <a href="php/logout.php" class="btn btn-danger">登出</a>
                 <?php else: ?>
-                    <!-- 未登入顯示登入與註冊按鈕 -->
                     <a href="login.php" class="btn btn-outline-info me-2">登入</a>
                     <a href="login.php" class="btn btn-info">註冊</a>
                 <?php endif; ?>
@@ -247,6 +261,7 @@
         </div>
     </div>
 </nav>
+
 
 <!-- 搜尋彈出框 -->
 <div class="search-overlay" id="searchOverlay">
