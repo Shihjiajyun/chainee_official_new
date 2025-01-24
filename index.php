@@ -1,5 +1,21 @@
 <?php
 session_start();
+require 'php/db.php';
+
+
+$query = "
+    SELECT id, course_name, course_price, course_image, course_description, duration
+    FROM courses
+";
+$result = $mysqli->query($query);
+
+// 檢查是否有課程數據
+$courses = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $courses[] = $row; // 將每個課程存入數組
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +29,6 @@ session_start();
     <link rel="stylesheet" href="./css/article.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -23,95 +38,45 @@ session_start();
     <?php include './navbar.php'; ?>
 
     <!-- 主視覺 -->
-    <?php include './tools/main.php'; ?>
+    <!-- <?php include './tools/main.php'; ?> -->
 
     <!-- 主視覺2 -->
-    <?php include './tools/main2.php'; ?>
+    <!-- <?php include './tools/main2.php'; ?> -->
 
-    <!-- 獨家大師 -->
+    <!-- 課程上線中 -->
     <main class="main">
         <div class="container">
-            <h2 class="section-title blue-underline">獨家大師</h2>
+            <h2 class="section-title blue-underline">課程上線中</h2>
             <div class="grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <a href="" class="card-link">
-                        <div class="card-image">
-                            <img src="./img/lesson.jpg" alt="課程縮圖">
+                <?php if (!empty($courses)) : ?>
+                    <?php foreach ($courses as $course) : ?>
+                        <div class="card">
+                            <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
+                                <div class="card-image">
+                                    <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
+                                </div>
+                                <div class="card-content">
+                                    <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">立即上課</a>
+                                    <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
+                                    <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'], 2)); ?></p>
+                                    <p class="card-description">
+                                        <?php echo htmlspecialchars(mb_strimwidth($course['course_description'], 0, 100, '...')); ?>
+                                    </p>
+                                    <div class="card-meta">
+                                        <span><?php echo htmlspecialchars($course['duration']); ?> 小時</span>
+                                        <span>17504 人</span> <!-- 示例數據 -->
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="card-content">
-                            <a href="#" class="btn btn-primary mt-1">立即上課</a>
-                            <h3 class="card-title">鏈習生</h3>
-                            <p class="card-author">by 鏈習生 Benson</p>
-                            <p class="card-price">NT$ 12,000</p>
-                            <div class="card-meta">
-                                <span>11小時14分</span>
-                                <span>17504 人</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <a href="" class="card-link">
-                        <div class="card-image">
-                            <img src="./img/lesson1.jpg" alt="課程縮圖">
-                        </div>
-                        <div class="card-content">
-                            <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">鏈習生</h3>
-                            <p class="card-author">by MJ 鏈習生</p>
-                            <p class="card-price">NT$ 15,800</p>
-                            <div class="card-meta">
-                                <span>10小時35分</span>
-                                <span>24323 人</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <a href="" class="card-link">
-                        <div class="card-image">
-                            <img src="./img/lesson2.jpg" alt="課程縮圖">
-
-                        </div>
-                        <div class="card-content">
-                            <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">鏈習生</h3>
-                            <p class="card-author">by 鏈習生</p>
-                            <p class="card-price">NT$ 17,900</p>
-                            <div class="card-meta">
-                                <span>10小時7分</span>
-                                <span>4244 人</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <a href="" class="card-link">
-                        <div class="card-image">
-                            <img src="./img/lesson.jpg" alt="課程縮圖">
-                        </div>
-                        <div class="card-content">
-                            <a href="#" class="btn btn-primary">立即上課</a>
-                            <h3 class="card-title">鏈習生</h3>
-                            <p class="card-author">by 鏈習生</p>
-                            <p class="card-price">NT$ 19,960</p>
-                            <div class="card-meta">
-                                <span>22小時50分</span>
-                                <span>2764 人</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <p>目前沒有可用課程。</p>
+                <?php endif; ?>
             </div>
         </div>
     </main>
+
 
     <!-- 文章專欄 -->
     <div class="container">

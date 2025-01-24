@@ -12,26 +12,35 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
     exit();
 }
 
-$course_id = (int) $_GET['id'];
+$id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
 
-// 查詢課程數據
-$query = "
-    SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary
-    FROM courses
-    WHERE id = ?
-";
-$stmt = $mysqli->prepare($query);
-$stmt->bind_param('i', $course_id);
-$stmt->execute();
-$result = $stmt->get_result();
+// 初始化字段数据
+if ($id === 0) {
+    // 创建新课程，所有字段为空
+    $course = [
+        'course_name' => '',
+        'course_price' => '',
+        'course_image' => '',
+        'course_description' => '',
+        'start_date' => '',
+        'duration' => '',
+        'units' => '',
+        'course_summary' => ''
+    ];
+} else {
+    // 编辑现有课程，查询数据库
+    $query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary FROM courses WHERE id = ?";
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-if ($result->num_rows === 0) {
-    die('找不到該課程資料');
+    if ($result->num_rows > 0) {
+        $course = $result->fetch_assoc();
+    } else {
+        die('找不到該課程資料');
+    }
 }
-
-// 獲取課程資料
-$course = $result->fetch_assoc();
-$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +67,7 @@ $stmt->close();
         <h1 class="mb-4">編輯課程資訊</h1>
         <form action="php/upload_course.php" method="POST" enctype="multipart/form-data">
             <!-- 隱藏欄位，用於提交課程 ID -->
-            <input type="hidden" name="id" value="<?php echo htmlspecialchars($course_id); ?>">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
             <div class="mb-3">
                 <label for="course_name" class="form-label">課程名稱</label>
@@ -105,10 +114,14 @@ $stmt->close();
             </div>
 
             <button type="submit" class="btn btn-primary">儲存變更</button>
+            <a class="btn btn-secondary" href="./admin_courses.php">返回</a>
         </form>
+        
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 預覽圖片 -->
     <script>
         document.getElementById('course_image').addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -129,6 +142,7 @@ $stmt->close();
         });
     </script>
 
+<!-- 刪除網址 -->
     <script>
         function removeSuccessParam() {
             // 获取当前的 URL

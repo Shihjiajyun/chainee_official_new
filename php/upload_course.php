@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
 
 // 表單提交處理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $course_id = $_POST['id']; // 接收隱藏欄位中的課程 ID
+    $course_id = $_POST['id'];
     $course_name = $_POST['course_name'];
     $course_price = $_POST['course_price'];
     $course_description = $_POST['course_description'];
@@ -55,50 +55,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // 更新資料庫，保存課程資訊
-    // 如果 $courseImageUrl 為 NULL，則保留原圖片
-    $query = "UPDATE courses
-              SET course_name = ?, course_price = ?, course_description = ?, start_date = ?, duration = ?, 
-                  units = ?, course_summary = ?, updated_at = NOW()";
-
-    if ($courseImageUrl) {
-        $query .= ", course_image = ?";
-    }
-
-    $query .= " WHERE id = ?";
-
-    if ($courseImageUrl) {
+    if ($course_id == 0) {
+        // 如果 course_id 為 0，表示新增課程
+        $query = "INSERT INTO courses (course_name, course_price, course_image, course_description, start_date, duration, units, course_summary, created_at)
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param(
-            'sdsssissi',
+            'sdsssiss',
             $course_name,
             $course_price,
+            $courseImageUrl,
             $course_description,
             $start_date,
             $duration,
             $units,
-            $course_summary,
-            $courseImageUrl,
-            $course_id
+            $course_summary
         );
     } else {
-        $stmt = $mysqli->prepare($query);
-        $stmt->bind_param(
-            'sdsssisi',
-            $course_name,
-            $course_price,
-            $course_description,
-            $start_date,
-            $duration,
-            $units,
-            $course_summary,
-            $course_id
-        );
+        // 如果 course_id 不為 0，表示更新現有課程
+        $query = "UPDATE courses
+                  SET course_name = ?, course_price = ?, course_description = ?, start_date = ?, duration = ?, 
+                      units = ?, course_summary = ?, updated_at = NOW()";
+
+        if ($courseImageUrl) {
+            $query .= ", course_image = ?";
+        }
+
+        $query .= " WHERE id = ?";
+
+        if ($courseImageUrl) {
+            $stmt = $mysqli->prepare($query);
+            $stmt->bind_param(
+                'sdsssissi',
+                $course_name,
+                $course_price,
+                $course_description,
+                $start_date,
+                $duration,
+                $units,
+                $course_summary,
+                $courseImageUrl,
+                $course_id
+            );
+        } else {
+            $stmt = $mysqli->prepare($query);
+            $stmt->bind_param(
+                'sdsssisi',
+                $course_name,
+                $course_price,
+                $course_description,
+                $start_date,
+                $duration,
+                $units,
+                $course_summary,
+                $course_id
+            );
+        }
     }
 
     if ($stmt->execute()) {
-        header("Location: ../admin_course.php?id={$course_id}&success=1"); // 更新成功後返回到該課程頁面
+        if ($course_id == 0) {
+            // 如果是新增課程，返回到課程列表
+            header("Location: ../admin_courses.php?success=created");
+        } else {
+            header("Location:../admin_course.php?id={$course_id}&success=1"); // 使用 trim() 确保没有多余空格或换行符
+        }
     } else {
-        die('資料庫更新失敗：' . $stmt->error);
+        die('資料庫操作失敗：' . $stmt->error);
     }
 }

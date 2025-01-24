@@ -45,46 +45,157 @@ unset($course); // 解引用，避免後續意外修改
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
+<style>
+    .main {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .card-link {
+        text-decoration: none;
+        /* 去掉下劃線 */
+        color: inherit;
+        /* 保持文字顏色 */
+        display: block;
+        /* 確保整個卡片範圍可點擊 */
+    }
+
+    .card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card-image {
+        position: relative;
+        height: 200px;
+        background: #f5f5f5;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        /* 添加平滑過渡效果 */
+    }
+
+    .card-image:hover img {
+        transform: scale(1.1);
+        /* 放大圖片 */
+        filter: brightness(1.1);
+        /* 增加亮度，可選 */
+    }
+
+    .card-image .btn-primary {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        background: #0066ff;
+        color: white;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-author {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-price {
+        color: #0066ff;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+        display: flex;
+        gap: 1rem;
+        color: #666;
+        font-size: 0.8rem;
+    }
+</style>
 
 <body>
     <?php include 'navbar.php' ?>
-    <div class="container mt-5">
-        <h1 class="mb-4">課程資訊</h1>
-        <?php if (!empty($courses)) : ?>
-            <?php foreach ($courses as $course) : ?>
-                <div class="card mb-4">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?php echo htmlspecialchars($course['course_image']); ?>" class="img-fluid rounded-start" alt="課程圖片">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h2 class="card-title"><?php echo htmlspecialchars($course['course_name']); ?></h2>
-                                <p class="card-text"><strong>價格：</strong> NT$ <?php echo htmlspecialchars(number_format($course['course_price'], 2)); ?></p>
-                                <p class="card-text"><strong>開始日期：</strong> <?php echo htmlspecialchars($course['start_date']); ?></p>
-                                <p class="card-text"><strong>課程時長：</strong> <?php echo htmlspecialchars($course['duration']); ?> 天</p>
-                                <p class="card-text"><strong>課程單元：</strong> <?php echo htmlspecialchars($course['units']); ?> 個單元</p>
-                                <p class="card-text"><strong>課程摘要：</strong></p>
-                                <p class="card-text"><?php echo nl2br(htmlspecialchars($course['course_summary'])); ?></p>
 
-                                <h3 class="mt-4">課程描述</h3>
-                                <p class="card-text"><?php echo nl2br(htmlspecialchars($course['course_description'])); ?></p>
+    <?php if (isset($_GET['success']) && $_GET['success'] === 'created'): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            課程已成功新增！
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="removeSuccessParam()"></button>
+        </div>
+    <?php endif; ?>
 
-                                <div class="mt-4">
-                                    <a href="admin_course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary">編輯課程</a>
+    <main class="main container mt-5">
+        <div class="container">
+            <div class="grid">
+                <?php if (!empty($courses)) : ?>
+                    <?php foreach ($courses as $course) : ?>
+                        <div class="card">
+                            <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
+                                <div class="card-image">
+                                    <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
                                 </div>
-                            </div>
+                                <div class="card-content">
+                                    <div class="mt-4">
+                                        <a href="admin_course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary">編輯課程</a>
+                                    </div>
+                                    <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
+                                    <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'], 2)); ?></p>
+                                    <p class="card-description">
+                                        <?php echo htmlspecialchars(mb_strimwidth($course['course_description'], 0, 100, '...')); ?>
+                                    </p>
+                                    <div class="card-meta">
+                                        <span><?php echo htmlspecialchars($course['duration']); ?> 小時</span>
+                                        <span>17504 人</span> <!-- 示例數據 -->
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else : ?>
-            <p>目前沒有課程資訊。</p>
-        <?php endif; ?>
-    </div>
+                    <?php endforeach; ?>
 
+                <?php else : ?>
+                    <p>目前沒有可用課程。</p>
+                <?php endif; ?>
+            </div>
+            <a class="btn btn-warning mt-3" href="admin_course.php?id=0 ">新增課程</a>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function removeSuccessParam() {
+            // 获取当前的 URL
+            const url = new URL(window.location.href);
+
+            // 删除 success 参数
+            url.searchParams.delete('success');
+            url.searchParams.delete('error');
+
+            // 更新地址栏中的 URL (不会刷新页面)
+            window.history.replaceState({}, document.title, url.toString());
+        }
+    </script>
 </body>
 <footer class="mt-3">
     <?php include 'footer.php' ?>
