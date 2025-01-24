@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
 }
 
 $query = "
-    SELECT id, course_name, course_price, course_image, course_description, start_date, duration, units, course_summary
+    SELECT id,discounted_price,instructor, course_name, course_price, course_image, course_description, start_date, duration, units, course_summary
     FROM courses
 ";
 $result = $mysqli->query($query);
@@ -160,7 +160,24 @@ unset($course); // 解引用，避免後續意外修改
                                         <a href="admin_course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary">編輯課程</a>
                                     </div>
                                     <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
-                                    <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'], 2)); ?></p>
+
+                                    <!-- 講師名稱 -->
+                                    <p class="card-instructor text-secondary mt-1">講師：<?php echo htmlspecialchars($course['instructor']); ?></p>
+
+                                    <!-- 價格對比 -->
+                                    <?php if (!empty($course['discounted_price']) && $course['discounted_price'] < $course['course_price']) : ?>
+                                        <div class="card-price-group">
+                                            <p class="card-price text-danger font-weight-bold">
+                                                折扣價：NT$ <?php echo htmlspecialchars(number_format($course['discounted_price'])); ?>
+                                            </p>
+                                            <p class="card-price text-muted text-decoration-line-through">
+                                                原價：NT$ <?php echo htmlspecialchars(number_format($course['course_price'])); ?>
+                                            </p>
+                                        </div>
+                                    <?php else : ?>
+                                        <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'])); ?></p>
+                                    <?php endif; ?>
+
                                     <p class="card-description">
                                         <?php echo htmlspecialchars(mb_strimwidth($course['course_description'], 0, 100, '...')); ?>
                                     </p>

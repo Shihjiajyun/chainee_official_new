@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $duration = $_POST['duration'];
     $units = $_POST['units'];
     $course_summary = $_POST['course_summary'];
+    $course_instructor = $_POST['course_instructor'];
+    $discounted_price = isset($_POST['discounted_price']) && $_POST['discounted_price'] !== '' ? $_POST['discounted_price'] : null;
 
     // 初始化圖片 URL
     $courseImageUrl = null;
@@ -83,27 +85,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($course_id == 0) {
-        // 新增課程
-        $query = "INSERT INTO courses (course_name, course_price, course_image, course_intro_image, course_description, start_date, duration, units, course_summary, created_at)
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+        $query = "INSERT INTO courses (course_name, course_price, discounted_price, course_image, course_intro_image, course_description, start_date, duration, units, course_summary, instructor, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param(
-            'sdssssiss',
+            'sddsississs',
             $course_name,
             $course_price,
+            $discounted_price,
             $courseImageUrl,
             $courseIntroImageUrl,
             $course_description,
             $start_date,
             $duration,
             $units,
-            $course_summary
+            $course_summary,
+            $course_instructor
         );
     } else {
-        // 更新課程
         $query = "UPDATE courses
-                  SET course_name = ?, course_price = ?, course_description = ?, start_date = ?, duration = ?, 
-                      units = ?, course_summary = ?, updated_at = NOW()";
+          SET course_name = ?, course_price = ?, discounted_price = ?, course_description = ?, start_date = ?, duration = ?, 
+              units = ?, course_summary = ?, instructor = ?, updated_at = NOW()";
 
         if ($courseImageUrl) {
             $query .= ", course_image = ?";
@@ -117,14 +119,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($courseImageUrl && $courseIntroImageUrl) {
             $stmt = $mysqli->prepare($query);
             $stmt->bind_param(
-                'sdsssisssi',
+                'sddsssissssi',
                 $course_name,
                 $course_price,
+                $discounted_price,
                 $course_description,
                 $start_date,
                 $duration,
                 $units,
                 $course_summary,
+                $course_instructor,
                 $courseImageUrl,
                 $courseIntroImageUrl,
                 $course_id
@@ -132,42 +136,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif ($courseImageUrl) {
             $stmt = $mysqli->prepare($query);
             $stmt->bind_param(
-                'sdsssissi',
+                'sddsssisssi',
                 $course_name,
                 $course_price,
+                $discounted_price,
                 $course_description,
                 $start_date,
                 $duration,
                 $units,
                 $course_summary,
+                $course_instructor,
                 $courseImageUrl,
                 $course_id
             );
         } elseif ($courseIntroImageUrl) {
             $stmt = $mysqli->prepare($query);
             $stmt->bind_param(
-                'sdsssissi',
+                'sddsssisssi',
                 $course_name,
                 $course_price,
+                $discounted_price,
                 $course_description,
                 $start_date,
                 $duration,
                 $units,
                 $course_summary,
+                $course_instructor,
                 $courseIntroImageUrl,
                 $course_id
             );
         } else {
             $stmt = $mysqli->prepare($query);
             $stmt->bind_param(
-                'sdsssisi',
+                'sddsssissi',
                 $course_name,
                 $course_price,
+                $discounted_price,
                 $course_description,
                 $start_date,
                 $duration,
                 $units,
                 $course_summary,
+                $course_instructor,
                 $course_id
             );
         }

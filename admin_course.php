@@ -29,7 +29,7 @@ if ($id === 0) {
     ];
 } else {
     // 编辑现有课程，查询数据库
-    $query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image FROM courses WHERE id = ?";
+    $query = "SELECT course_name,instructor, discounted_price, course_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image FROM courses WHERE id = ?";
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param('i', $id);
     $stmt->execute();
@@ -75,9 +75,20 @@ if ($id === 0) {
             </div>
 
             <div class="mb-3">
-                <label for="course_price" class="form-label">課程價格</label>
+                <label for="course_instructor" class="form-label">講師名稱</label>
+                <input type="text" class="form-control" id="course_instructor" name="course_instructor" maxlength="255" value="<?php echo isset($course['instructor']) ? htmlspecialchars($course['instructor']) : ''; ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="course_price" class="form-label">課程價格(原價)</label>
                 <input type="number" class="form-control" id="course_price" name="course_price" step="0.01" min="0" value="<?php echo htmlspecialchars($course['course_price']); ?>" required>
             </div>
+
+            <div class="mb-3">
+                <label for="discounted_price" class="form-label">打折後的價格</label>
+                <input type="number" class="form-control" id="discounted_price" name="discounted_price" step="0.01" min="0" value="<?php echo isset($course['discounted_price']) ? htmlspecialchars($course['discounted_price']) : ''; ?>" required>
+            </div>
+
 
             <div class="mb-3">
                 <label for="course_image" class="form-label">課程圖片</label>

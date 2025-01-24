@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
 $id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
 
 // 编辑现有课程，查询数据库
-$query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image FROM courses WHERE id = ?";
+$query = "SELECT course_name, course_price, discounted_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image, instructor FROM courses WHERE id = ?";
 $stmt = $mysqli->prepare($query);
 $stmt->bind_param('i', $id);
 $stmt->execute();
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
             </div>
 
             <div class="mt-5">
-                <h6 class="mb-3">講師名稱：????
+                <h6 class="mb-3">講師名稱：<?php echo htmlspecialchars($course['instructor']); ?>
                 </h6>
                 <h1 class="display-4 mb-4"><?php echo htmlspecialchars($course['course_name']); ?></h1>
 
