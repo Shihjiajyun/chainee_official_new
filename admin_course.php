@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'php/db.php'; // 引入資料庫連接
 
 // 從外部檔案讀取允許的 user_id
 $allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -10,6 +11,27 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
     header('Location: login.php');
     exit();
 }
+
+$course_id = (int) $_GET['id'];
+
+// 查詢課程數據
+$query = "
+    SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary
+    FROM courses
+    WHERE id = ?
+";
+$stmt = $mysqli->prepare($query);
+$stmt->bind_param('i', $course_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die('找不到該課程資料');
+}
+
+// 獲取課程資料
+$course = $result->fetch_assoc();
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -32,53 +54,54 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_use
         </div>
     <?php endif; ?>
 
-
-
     <div class="container mt-5">
         <h1 class="mb-4">編輯課程資訊</h1>
         <form action="php/upload_course.php" method="POST" enctype="multipart/form-data">
+            <!-- 隱藏欄位，用於提交課程 ID -->
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($course_id); ?>">
+
             <div class="mb-3">
                 <label for="course_name" class="form-label">課程名稱</label>
-                <input type="text" class="form-control" id="course_name" name="course_name" maxlength="255" required>
+                <input type="text" class="form-control" id="course_name" name="course_name" maxlength="255" value="<?php echo htmlspecialchars($course['course_name']); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="course_price" class="form-label">課程價格</label>
-                <input type="number" class="form-control" id="course_price" name="course_price" step="0.01" min="0" required>
+                <input type="number" class="form-control" id="course_price" name="course_price" step="0.01" min="0" value="<?php echo htmlspecialchars($course['course_price']); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="course_image" class="form-label">課程圖片</label>
-                <input type="file" class="form-control" id="course_image" name="course_image" accept="image/*" required>
+                <input type="file" class="form-control" id="course_image" name="course_image" accept="image/*" onchange="previewImage(event)">
                 <!-- 預覽區域 -->
                 <div class="mt-3">
-                    <img id="preview_image" src="#" alt="課程圖片預覽" style="max-width: 100%; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 5px;" />
+                    <img id="preview_image" src="<?php echo htmlspecialchars($course['course_image']); ?>" alt="課程圖片預覽" style="max-width: 100%; border: 1px solid #ddd; padding: 5px; border-radius: 5px;" />
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="course_description" class="form-label">課程描述</label>
-                <textarea class="form-control" id="course_description" name="course_description" rows="4"></textarea>
+                <textarea class="form-control" id="course_description" name="course_description" rows="4"><?php echo htmlspecialchars($course['course_description']); ?></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="start_date" class="form-label">開始日期時間</label>
-                <input type="datetime-local" class="form-control" id="start_date" name="start_date" required>
+                <input type="datetime-local" class="form-control" id="start_date" name="start_date" value="<?php echo htmlspecialchars(date('Y-m-d\TH:i', strtotime($course['start_date']))); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="duration" class="form-label">課程時長（小時）</label>
-                <input type="number" class="form-control" id="duration" name="duration" min="1" required>
+                <input type="number" class="form-control" id="duration" name="duration" min="1" value="<?php echo htmlspecialchars($course['duration']); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="units" class="form-label">課程單元數量</label>
-                <input type="number" class="form-control" id="units" name="units" min="1" required>
+                <input type="number" class="form-control" id="units" name="units" min="1" value="<?php echo htmlspecialchars($course['units']); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="course_summary" class="form-label">課程摘要</label>
-                <textarea class="form-control" id="course_summary" name="course_summary" rows="3"></textarea>
+                <textarea class="form-control" id="course_summary" name="course_summary" rows="3"><?php echo htmlspecialchars($course['course_summary']); ?></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">儲存變更</button>

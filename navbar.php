@@ -235,7 +235,7 @@
                             後台管理
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-                            <li><a class="dropdown-item" href="./admin_course.php">課程管理</a></li>
+                            <li><a class="dropdown-item" href="./admin_courses.php">課程管理</a></li>
                             <li><a class="dropdown-item" href="./manage_users.php">用戶管理(尚未開放)</a></li>
                             <li><a class="dropdown-item" href="./manage_content.php">內容管理(尚未開放)</a></li>
                         </ul>
