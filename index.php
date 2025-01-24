@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
                                     <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
                                 </div>
                                 <div class="card-content">
-                                    <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">立即上課</a>
+                                    <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">立即上課</a>
                                     <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
                                     <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'], 2)); ?></p>
                                     <p class="card-description">

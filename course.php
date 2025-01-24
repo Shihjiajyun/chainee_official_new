@@ -1,3 +1,34 @@
+<?php
+session_start();
+require 'php/db.php'; // 引入資料庫連接
+
+// 從外部檔案讀取允許的 user_id
+$allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+// 檢查目前用戶是否登入，以及是否在允許列表中
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_users)) {
+    // 如果用戶未登入或不在允許列表中，跳轉到登入頁面
+    header('Location: login.php');
+    exit();
+}
+
+$id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
+
+// 编辑现有课程，查询数据库
+$query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image FROM courses WHERE id = ?";
+$stmt = $mysqli->prepare($query);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $course = $result->fetch_assoc();
+} else {
+    die('找不到該課程資料');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -38,8 +69,9 @@
             </div>
 
             <div class="mt-5">
-                <h6 class="mb-3">講師名稱：腦哥</h6>
-                <h1 class="display-4 mb-4">操作實務篇 | 投資加密貨幣懂這些就夠了</h1>
+                <h6 class="mb-3">講師名稱：????
+                </h6>
+                <h1 class="display-4 mb-4"><?php echo htmlspecialchars($course['course_name']); ?></h1>
 
                 <div class="star-rating mb-4">
                     <i class="fas fa-star"></i>
@@ -51,7 +83,7 @@
                 </div>
 
                 <button class="btn btn-primary buy-button-video">
-                    立即購買 NT$12,000
+                    立即購買 NT$<?php echo htmlspecialchars($course['course_price']); ?>
                 </button>
             </div>
         </div>
@@ -80,7 +112,7 @@
                             </div>
                             <div>
                                 <div class="text-muted">開課時間</div>
-                                <div>2021/10/20 16:00</div>
+                                <div><?php echo htmlspecialchars($course['start_date']); ?></div>
                             </div>
                         </div>
                         <div class="course-info-item">
@@ -89,7 +121,7 @@
                             </div>
                             <div>
                                 <div class="text-muted">預計單元</div>
-                                <div>44 個</div>
+                                <div><?php echo htmlspecialchars($course['units']); ?></div>
                             </div>
                         </div>
                         <div class="course-info-item">
@@ -109,7 +141,7 @@
                             </div>
                             <div>
                                 <div class="text-muted">預計時長</div>
-                                <div>11 小時 14 分</div>
+                                <div><?php echo htmlspecialchars($course['duration']); ?></div>
                             </div>
                         </div>
                         <div class="course-info-item">
@@ -126,7 +158,7 @@
 
                 <!-- 課程說明 -->
                 <p class="mt-4">
-                    在投資加密貨幣的世界裡，掌握操作實務是成功的關鍵！《操作實務篇 | 投資加密貨幣懂這些就夠了》將帶你快速了解最實用的加密貨幣交易技巧，從平台操作、現貨與衍生品交易到風險管理，幫助你用最少的時間獲得最大效益。不論你是剛入門的新手，還是希望進一步提升操作效率的投資者，這堂課都能讓你更自信地進行每一筆交易！
+                    <?php echo htmlspecialchars($course['course_description']); ?>
                 </p>
 
                 <!-- 影片區塊 -->
@@ -160,7 +192,7 @@
                 <div class="content-area">
                     <!-- 簡介 -->
                     <div class="content active" id="intro">
-                        <img src="./img/main.jpg" alt="簡介圖片" class="content-image">
+                        <img src="<?php echo isset($course['course_intro_image']) ? htmlspecialchars($course['course_intro_image']) : ''; ?>" alt="簡介圖片" class="content-image">
                     </div>
 
                     <!-- 章節 -->

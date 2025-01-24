@@ -29,7 +29,7 @@ if ($id === 0) {
     ];
 } else {
     // 编辑现有课程，查询数据库
-    $query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary FROM courses WHERE id = ?";
+    $query = "SELECT course_name, course_price, course_image, course_description, start_date, duration, units, course_summary, course_intro_image FROM courses WHERE id = ?";
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param('i', $id);
     $stmt->execute();
@@ -89,9 +89,25 @@ if ($id === 0) {
             </div>
 
             <div class="mb-3">
-                <label for="course_description" class="form-label">課程描述</label>
+                <label for="course_description" class="form-label">課程描述(詳細介紹，只會出現在課程介紹頁面)</label>
                 <textarea class="form-control" id="course_description" name="course_description" rows="4"><?php echo htmlspecialchars($course['course_description']); ?></textarea>
             </div>
+
+
+            <div class="mb-3">
+                <label for="course_summary" class="form-label">課程摘要(簡短介紹，會出現在課程卡片上)</label>
+                <textarea class="form-control" id="course_summary" name="course_summary" rows="3"><?php echo htmlspecialchars($course['course_summary']); ?></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="course_intro_image" class="form-label">課程簡介長圖</label>
+                <input type="file" class="form-control" id="course_intro_image" name="course_intro_image" accept="image/*" onchange="previewIntroImage(event)">
+                <!-- 預覽區域 -->
+                <div class="mt-3">
+                    <img id="preview_intro_image" src="<?php echo isset($course['course_intro_image']) ? htmlspecialchars($course['course_intro_image']) : ''; ?>" alt="課程簡介長圖預覽" style="max-width: 100%; border: 1px solid #ddd; padding: 5px; border-radius: 5px;" />
+                </div>
+            </div>
+
 
             <div class="mb-3">
                 <label for="start_date" class="form-label">開始日期時間</label>
@@ -108,41 +124,43 @@ if ($id === 0) {
                 <input type="number" class="form-control" id="units" name="units" min="1" value="<?php echo htmlspecialchars($course['units']); ?>" required>
             </div>
 
-            <div class="mb-3">
-                <label for="course_summary" class="form-label">課程摘要</label>
-                <textarea class="form-control" id="course_summary" name="course_summary" rows="3"><?php echo htmlspecialchars($course['course_summary']); ?></textarea>
-            </div>
-
             <button type="submit" class="btn btn-primary">儲存變更</button>
             <a class="btn btn-secondary" href="./admin_courses.php">返回</a>
         </form>
-        
+
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- 預覽圖片 -->
     <script>
-        document.getElementById('course_image').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const preview = document.getElementById('preview_image');
+        function handleImagePreview(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
 
-            if (file) {
-                // 檢查文件是否為圖片
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result; // 設置預覽圖片的來源
-                    preview.style.display = 'block'; // 顯示預覽區域
-                };
-                reader.readAsDataURL(file); // 讀取圖片文件
-            } else {
-                preview.src = '#';
-                preview.style.display = 'none'; // 隱藏預覽區域
-            }
-        });
+            input.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result; // 設置預覽圖片的來源
+                        preview.style.display = 'block'; // 顯示預覽區域
+                    };
+                    reader.readAsDataURL(file); // 讀取圖片文件
+                } else {
+                    preview.src = '#';
+                    preview.style.display = 'none'; // 隱藏預覽區域
+                }
+            });
+        }
+
+        // 初始化預覽功能
+        handleImagePreview('course_image', 'preview_image');
+        handleImagePreview('course_intro_image', 'preview_intro_image');
     </script>
 
-<!-- 刪除網址 -->
+    <!-- 刪除網址 -->
     <script>
         function removeSuccessParam() {
             // 获取当前的 URL
