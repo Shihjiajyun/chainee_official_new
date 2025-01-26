@@ -27,7 +27,11 @@ if ($result->num_rows > 0) {
     die('找不到該課程資料');
 }
 
+$finalPrice = isset($course['discounted_price']) && $course['discounted_price'] > 0 
+    ? $course['discounted_price'] 
+    : $course['course_price'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -83,10 +87,10 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <form action="newebpay\newebpay-example\src\payment.php" method="POST" style="display: inline;">
-                    <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($course['course_price']); ?>">
-                    <input type="hidden" name="instructor" value="<?php echo htmlspecialchars($course['instructor']); ?>">
+                <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($finalPrice); ?>">
+                    <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($course['course_name']); ?>">
                     <button type="submit" class="btn btn-primary buy-button-video">
-                        立即購買 NT$<?php echo htmlspecialchars($course['course_price']); ?>
+                        立即購買 NT$<?php echo htmlspecialchars($finalPrice); ?>
                     </button>
                 </form>
 
@@ -493,7 +497,7 @@ if ($result->num_rows > 0) {
                     <div class="price-card">
                         <div class="text-center mb-4">
                             <img src="./img/lesson1.jpg" alt="課程封面" class="img-fluid rounded mb-3">
-                            <h3 class="mb-3">NT$ 12,000</h3>
+                            <h3 class="mb-3">NT$ <?php echo htmlspecialchars($finalPrice); ?></h3>
                         </div>
                         <div class="mb-4">
                             <p>✦ 無限次數觀看鏈習生</p>

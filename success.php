@@ -24,7 +24,7 @@
                 <p class="card-text"><strong>電子郵件：</strong> <?= htmlspecialchars($_GET['email'] ?? '無法提供') ?></p>
             </div>
         </div>
-        <a href="../index.php" class="btn btn-primary mt-4">繼續購物</a>
+        <a href="index.php" class="btn btn-primary mt-4">繼續購物</a>
     </div>
 </body>
 <footer class="mt-3">

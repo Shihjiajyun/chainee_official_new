@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/../newebpay/vendor/autoload.php';
+require __DIR__.'/../newebpay/newebpay-example/vendor/autoload.php';
 
 use Src\Config\Config;
 use Xup6m6fu04\NewebPay\NewebPay;
