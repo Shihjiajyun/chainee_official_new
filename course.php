@@ -27,8 +27,8 @@ if ($result->num_rows > 0) {
     die('找不到該課程資料');
 }
 
-$finalPrice = isset($course['discounted_price']) && $course['discounted_price'] > 0 
-    ? $course['discounted_price'] 
+$finalPrice = isset($course['discounted_price']) && $course['discounted_price'] > 0
+    ? $course['discounted_price']
     : $course['course_price'];
 ?>
 
@@ -87,8 +87,9 @@ $finalPrice = isset($course['discounted_price']) && $course['discounted_price'] 
                 </div>
 
                 <form action="newebpay\newebpay-example\src\payment.php" method="POST" style="display: inline;">
-                <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($finalPrice); ?>">
+                    <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($finalPrice); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($course['course_name']); ?>">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($_GET['id'] ?? '無法提供') ?>">
                     <button type="submit" class="btn btn-primary buy-button-video">
                         立即購買 NT$<?php echo htmlspecialchars($finalPrice); ?>
                     </button>

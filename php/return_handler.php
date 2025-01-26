@@ -1,4 +1,5 @@
 <?php
+require_once 'db.php';
 require __DIR__.'/../newebpay/newebpay-example/vendor/autoload.php';
 
 use Src\Config\Config;
@@ -25,6 +26,37 @@ if (!$tradeInfo || !$tradeSha) {
 // 初始化 NewebPay
 $config = Config::get();
 $newebpay = new NewebPay($config);
+
+$status = $_POST['Status'];
+$user_id = $_GET['id'] ?? null; // 從請求中獲取用戶 ID
+$course_id = $_GET['course_id'] ?? null; // 從請求中獲取課程 ID
+$amount = $_GET['amount'] ?? 0; // 從請求中獲取金額
+
+if (empty($user_id) || empty($course_id) || empty($amount) ) {
+    // 跳轉到錯誤頁面並結束執行
+    header("Location: ../login.php");
+    exit;
+}
+
+// 紀錄交易時間
+date_default_timezone_set('Asia/Taipei');
+$purchase_time = date('Y-m-d H:i:s'); // 使用 PHP 內建時間函數，採用 UTC+8 時區格式
+
+// 設置交易狀態
+$transaction_status = ($status === 'SUCCESS') ? 'SUCCESS' : 'FAILED';
+
+// 插入資料到資料表
+$stmt = $mysqli->prepare("INSERT INTO user_courses (user_id, course_id, purchase_time, status, amount) VALUES (?, ?, ?, ?, ?)");
+if ($stmt) {
+    $stmt->bind_param("iissd", $user_id, $course_id, $purchase_time, $transaction_status, $amount);
+    if (!$stmt->execute()) {
+        // 如果執行失敗，記錄錯誤訊息
+        error_log('資料插入失敗：' . $stmt->error);
+    }
+    $stmt->close();
+} else {
+    error_log('準備 SQL 語句失敗：' . $mysqli->error);
+}
 
 // 確認交易狀態
 $status = $_POST['Status'];
