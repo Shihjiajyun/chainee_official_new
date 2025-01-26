@@ -82,9 +82,14 @@ if ($result->num_rows > 0) {
                     <span class="ms-2 text-white">5</span>
                 </div>
 
-                <button class="btn btn-primary buy-button-video">
-                    立即購買 NT$<?php echo htmlspecialchars($course['course_price']); ?>
-                </button>
+                <form action="newebpay\newebpay-example\src\payment.php" method="POST" style="display: inline;">
+                    <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($course['course_price']); ?>">
+                    <input type="hidden" name="instructor" value="<?php echo htmlspecialchars($course['instructor']); ?>">
+                    <button type="submit" class="btn btn-primary buy-button-video">
+                        立即購買 NT$<?php echo htmlspecialchars($course['course_price']); ?>
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>
