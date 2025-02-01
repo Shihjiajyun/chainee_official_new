@@ -6,11 +6,11 @@ require 'php/db.php'; // 引入資料庫連接
 $allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // 檢查目前用戶是否登入，以及是否在允許列表中
-if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_users)) {
-    // 如果用戶未登入或不在允許列表中，跳轉到登入頁面
-    header('Location: login.php');
-    exit();
-}
+// if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_users)) {
+//     // 如果用戶未登入或不在允許列表中，跳轉到登入頁面
+//     header('Location: login.php');
+//     exit();
+// }
 
 $id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
 
@@ -505,10 +505,19 @@ $finalPrice = isset($course['discounted_price']) && $course['discounted_price'] 
                             <p>✦ 分期 (三期、六期) 零利率方案僅限：玉山、台新銀行信用卡</p>
                         </div>
                         <div class="d-flex gap-2">
-                            <button class="buy-button">立即購買</button>
-                            <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
+                            <!-- 立即購買按鈕 -->
+                            <button class="buy-button" onclick="submitForm()">立即購買</button>
+                            <!-- 加入購物車按鈕 -->
+                            <button class="cart-button" onclick="submitForm()"><i class="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
+
+                    <!-- 表單 -->
+                    <form id="purchase-form" action="newebpay\newebpay-example\src\payment.php" method="POST" style="display: inline;">
+                        <input type="hidden" name="course_price" value="<?php echo htmlspecialchars($finalPrice); ?>">
+                        <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($course['course_name']); ?>">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($_GET['id'] ?? '無法提供') ?>">
+                    </form>
 
                     <div class="bundle-section mb-4">
                         <div class="bundle-header">
@@ -606,6 +615,12 @@ $finalPrice = isset($course['discounted_price']) && $course['discounted_price'] 
                 });
             });
         });
+    </script>
+
+    <script>
+        function submitForm() {
+            document.getElementById('purchase-form').submit();
+        }
     </script>
 
 </body>

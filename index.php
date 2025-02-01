@@ -51,12 +51,12 @@ if ($result->num_rows > 0) {
                 <?php if (!empty($courses)) : ?>
                     <?php foreach ($courses as $course) : ?>
                         <div class="card">
-                            <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
+                            <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
                                 <div class="card-image">
                                     <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
                                 </div>
                                 <div class="card-content">
-                                    <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">立即上課</a>
+                                    <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">了解更多</a>
                                     <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
 
                                     <!-- 講師名稱 -->

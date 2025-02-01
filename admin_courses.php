@@ -151,7 +151,7 @@ unset($course); // 解引用，避免後續意外修改
                 <?php if (!empty($courses)) : ?>
                     <?php foreach ($courses as $course) : ?>
                         <div class="card">
-                            <a href="course_detail.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
+                            <a href="admin_course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
                                 <div class="card-image">
                                     <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
                                 </div>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +49,6 @@
     #subscription h4 {
         color: #343a40;
     }
-
 </style>
 
 <body>
