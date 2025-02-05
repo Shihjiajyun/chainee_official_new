@@ -29,6 +29,8 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="./css/article.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body>
@@ -44,54 +46,73 @@ if ($result->num_rows > 0) {
     <main class="main">
         <div class="container">
             <h2 class="section-title blue-underline">幣圈初心者</h2>
+            <ul class="nav nav-pills mb-4" id="choose">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">全部課程</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">加密貨幣</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">比特幣</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">以太幣</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">虛擬貨幣</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">迷因幣</a>
+                </li>
+            </ul>
+
             <div class="grid">
                 <?php if (!empty($courses)) : ?>
                     <?php foreach ($courses as $course) : ?>
-                        <div class="card">
+                        <div class="course-card">
                             <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="card-link">
                                 <div class="card-image">
                                     <img src="<?php echo htmlspecialchars($course['course_image'] ?: './img/placeholder.jpg'); ?>" alt="課程縮圖">
                                 </div>
-                                <div class="card-content">
-                                    <a href="course.php?id=<?php echo htmlspecialchars($course['id']); ?>" class="btn btn-primary mt-1">了解更多</a>
-                                    <h3 class="card-title mt-3"><?php echo htmlspecialchars($course['course_name']); ?></h3>
+                                <div class="course-info p-3">
+                                    <span class="badge-new">新手</span>
+                                    <h5 class="mt-2 fw-bold"><?php echo htmlspecialchars($course['course_name']); ?></h5>
+
+                                    <!-- 課程時間 & 瀏覽數 -->
+                                    <div class="d-flex align-items-center text-muted mt-2">
+                                        <span class="material-icons">schedule</span>
+                                        <span class="ms-1"><?php echo htmlspecialchars($course['duration']); ?> 小時</span>
+                                        <span class="material-icons ms-3">visibility</span>
+                                        <span class="ms-1">17504</span> <!-- 示例觀看數 -->
+                                    </div>
 
                                     <!-- 講師名稱 -->
-                                    <p class="card-instructor text-secondary mt-1">講師：<?php echo htmlspecialchars($course['instructor']); ?></p>
-
-                                    <!-- 價格對比 -->
-                                    <?php if (!empty($course['discounted_price']) && $course['discounted_price'] < $course['course_price']) : ?>
-                                        <div class="card-price-group">
-                                            <p class="card-price text-danger font-weight-bold">
-                                                折扣價：NT$ <?php echo htmlspecialchars(number_format($course['discounted_price'])); ?>
-                                            </p>
-                                            <p class="card-price text-muted text-decoration-line-through">
-                                                原價：NT$ <?php echo htmlspecialchars(number_format($course['course_price'])); ?>
-                                            </p>
-                                        </div>
-                                    <?php else : ?>
-                                        <p class="card-price">NT$ <?php echo htmlspecialchars(number_format($course['course_price'])); ?></p>
-                                    <?php endif; ?>
+                                    <p class="mt-2 text-secondary">講師：<?php echo htmlspecialchars($course['instructor']); ?></p>
 
                                     <!-- 課程描述 -->
-                                    <p class="card-description">
+                                    <p class="course-description text-muted mt-2">
                                         <?php echo htmlspecialchars(mb_strimwidth($course['course_description'], 0, 100, '...')); ?>
                                     </p>
 
-                                    <!-- 課程資訊 -->
-                                    <div class="card-meta">
-                                        <span><?php echo htmlspecialchars($course['duration']); ?> 小時</span>
-                                        <span>17504 人</span> <!-- 示例數據 -->
+                                    <!-- 價格顯示 -->
+                                    <div class="d-flex align-items-center mt-2">
+                                        <?php if (!empty($course['discounted_price']) && $course['discounted_price'] < $course['course_price']) : ?>
+                                            <span class="price fw-bold fs-3">NT$<?php echo htmlspecialchars(number_format($course['discounted_price'])); ?></span>
+                                            <span class="original-price ms-2">NT$<?php echo htmlspecialchars(number_format($course['course_price'])); ?></span>
+                                        <?php else : ?>
+                                            <span class="price fw-bold fs-3">NT$<?php echo htmlspecialchars(number_format($course['course_price'])); ?></span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </a>
                         </div>
-
                     <?php endforeach; ?>
                 <?php else : ?>
                     <p>目前沒有可用課程。</p>
                 <?php endif; ?>
             </div>
+
         </div>
     </main>
 
