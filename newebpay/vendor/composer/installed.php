@@ -3,7 +3,7 @@
         'name' => 'xup6m6fu04/newebpay-example',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'cd2e7bff3fb963172d7fe6a1355725dda3fc34f8',
+        'reference' => 'dc018e6b8cbf287a18bab697df15a690cfa9f504',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -238,7 +238,7 @@
         'xup6m6fu04/newebpay-example' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'cd2e7bff3fb963172d7fe6a1355725dda3fc34f8',
+            'reference' => 'dc018e6b8cbf287a18bab697df15a690cfa9f504',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

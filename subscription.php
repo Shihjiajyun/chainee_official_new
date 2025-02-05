@@ -2,6 +2,7 @@
 session_start();
 require 'php/db.php'; // 連接資料庫
 $user_id = $_SESSION['user_id'] ?? null;
+$user_email = $_SESSION['user_email'] ?? null;
 
 $has_purchased = false;
 
@@ -71,9 +72,17 @@ $backgroundImage = htmlspecialchars($subscription['main_visual'] ?: './img/logo.
                             已購買，前往上課
                         </button>
                     <?php else: ?>
-                        <button class="btn btn-lg btn-primary buy-button-video" onclick="goToPurchase(<?php echo $id; ?>)">
-                            立即購買 NT$ <?php echo number_format($subscription['price']); ?>
-                        </button>
+                        <form id="paymentForm" action="./newebpay/src/payment_subscription.php" method="POST">
+                            <input type="hidden" name="subscription_id" value="<?php echo htmlspecialchars($subscription['id']); ?>">
+                            <input type="hidden" name="subscription_name" value="<?php echo htmlspecialchars($subscription['title']); ?>">
+                            <input type="hidden" name="original_price" value="<?php echo htmlspecialchars($subscription['price']); ?>">
+                            <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
+                            <input type="hidden" name="user_email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+                            <button class="btn btn-lg btn-primary buy-button-video">
+                                立即購買 NT$ <?php echo number_format($subscription['price']); ?>
+                            </button>
+                        </form>
+
                     <?php endif; ?>
                 <?php else: ?>
                     <button class="btn btn-lg btn-secondary" onclick="redirectToLogin()">

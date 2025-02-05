@@ -10,12 +10,11 @@ error_reporting(E_ALL);
 
 // 獲取前端提交的資料
 $merchantOrderNo = $_POST['MerchantOrderNo'] ?? generateTimestamp();
-$amount = $_POST['final_price'] ?? 0;
-$itemDesc = $_POST['course_name'] ?? '未知商品';
+$amount = $_POST['original_price'] ?? 0;
+$itemDesc = $_POST['subscription_name'] ?? '未知商品';
 $email = $_POST['user_email'] ?? '';
 $user_id = $_POST['user_id'] ?? '';
-$course_id = $_POST['course_id'] ?? '';
-$discount_id = $_POST['discount_id'] ?? null; // 取得折扣碼 ID
+$subscription_id = $_POST['subscription_id'] ?? '';
 
 // 確保資料的基本安全性
 $merchantOrderNo = htmlspecialchars($merchantOrderNo, ENT_QUOTES, 'UTF-8');
@@ -43,21 +42,19 @@ $newebpay = $newebpay->payment(
 );
 
 $newebpay->setReturnURL(sprintf(
-    'https://chainee.io/memes_courses/php/return_handler.php?merchantOrderNo=%s&amount=%s&itemDesc=%s&email=%s&user_id=%s&course_id=%s&discount_id=%s',
+    'https://chainee.io/official/php/return_handler_subscription.php?merchantOrderNo=%s&amount=%s&itemDesc=%s&email=%s&user_id=%s&subscription_id=%s',
     urlencode($merchantOrderNo),
     urlencode($amount),
     urlencode($itemDesc),
     urlencode($email),
     urldecode($user_id),
-    urldecode($course_id),
-    urldecode($discount_id)
-
+    urldecode($subscription_id),
 ));
 
 
 
 // 保持 NotifyURL 不变，用于后端后台通知处理
-$newebpay->setNotifyURL('https://chainee.io/memes_courses/newebpay/src/notify.php');
+$newebpay->setNotifyURL('https://chainee.io/official/newebpay/src/notify.php');
 
 // $newebpay->setReturnURL('https://87946513.zeabur.app/newebpay/src/success.php');
 // $newebpay->setNotifyURL('https://87946513.zeabur.app/newebpay/src/notify2.php');
