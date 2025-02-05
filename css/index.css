@@ -60,7 +60,6 @@ body {
   }
 }
 
-
 .course-card {
   max-width: 400px;
   border: 1px solid #ddd;
@@ -86,7 +85,7 @@ body {
 }
 
 .badge-new {
-  background-color: #00C58E;
+  background-color: #00c58e;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -111,7 +110,6 @@ body {
 .d-flex span {
   font-size: 14px;
 }
-
 
 .container {
   width: 100%;
@@ -146,6 +144,17 @@ body {
 /* Main Content */
 .main {
   padding: 3rem 0;
+}
+
+.main h1 {
+  font-family: Noto Sans TC;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 1px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .section-title {

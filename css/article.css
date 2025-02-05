@@ -1,26 +1,37 @@
 .article-card {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .article-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .article-image {
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  width: 100%;
 }
 
 .article-number {
-    font-size: 2.5rem;
-    color: #e5e5e5;
-    font-weight: bold;
-    line-height: 1;
+  font-size: 2.5rem;
+  color: #e5e5e5;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .blue-underline {
-    border-bottom: 4px solid #0d6efd;
     display: inline-block;
+    position: relative;
     padding-bottom: 0.5rem;
+}
+
+.blue-underline::after {
+    content: "";
+    display: block;
+    width: 50%; /* 設定為文字寬度的 20% */
+    height: 4px;
+    background-color: #0d6efd;
+    position: absolute;
+    bottom: 0;
+    left: 0; /* 讓藍線的左邊與文字的左邊對齊 */
 }
