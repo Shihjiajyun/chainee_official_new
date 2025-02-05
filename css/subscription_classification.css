@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    font-family: 'Arial', sans-serif;
+}
+
+#subscription .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#subscription .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#subscription .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+#subscription .card-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+#subscription .card-text {
+    color: #6c757d;
+}
+
+#subscription h2,
+#subscription h4 {
+    color: #343a40;
+}

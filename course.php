@@ -3,7 +3,7 @@ session_start();
 require 'php/db.php'; // 引入資料庫連接
 
 // 從外部檔案讀取允許的 user_id
-$allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+// $allowed_users = file('./allowed_users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // 檢查目前用戶是否登入，以及是否在允許列表中
 // if (!isset($_SESSION['user_id']) || !in_array($_SESSION['user_id'], $allowed_users)) {

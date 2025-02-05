@@ -1,3 +1,31 @@
+<?php
+session_start();
+require 'php/db.php'; // 連接資料庫
+$user_id = $_SESSION['user_id'] ?? null;
+
+$has_purchased = false;
+
+
+// 確保 `id` 參數存在並且是數字
+$id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
+
+// 從 `subscription` 表中查詢對應的訂閱內容
+$query = "SELECT id, title, creator, description, main_visual, outline, long_image, last_updated, price
+          FROM subscription WHERE id = ?";
+$stmt = $mysqli->prepare($query);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $subscription = $result->fetch_assoc();
+} else {
+    die('找不到該訂閱內容');
+}
+
+$backgroundImage = htmlspecialchars($subscription['main_visual'] ?: './img/logo.jpg');
+?>
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -7,25 +35,59 @@
     <title>Course Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/course.css">
+    <link rel="stylesheet" href="./css/subscription.css">
 </head>
 
 <body>
     <?php include 'navbar.php' ?>
 
+    <div class="hero-section" style="background-image: url('<?php echo $backgroundImage; ?>');">
+        <div class="overlay"></div>
+
+        <div class="container position-relative text-white" id="hero">
+            <!-- 左上角標籤 -->
+            <span class="badge-started">已開課</span>
+
+            <!-- 課程標題 -->
+            <div class="course-content">
+                <h1 class="course-title"><?php echo htmlspecialchars($subscription['title']); ?></h1>
+
+                <!-- 星級評分 -->
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>5</span>
+                </div>
+            </div>
+
+            <!-- 左下角購買按鈕 -->
+            <div class="buy-section">
+                <?php if ($user_id): ?>
+                    <?php if ($has_purchased): ?>
+                        <button class="btn btn-lg btn-success" onclick="window.location.href='./video.php?subscription_id=<?php echo $id; ?>'">
+                            已購買，前往上課
+                        </button>
+                    <?php else: ?>
+                        <button class="btn btn-lg btn-primary buy-button-video" onclick="goToPurchase(<?php echo $id; ?>)">
+                            立即購買 NT$ <?php echo number_format($subscription['price']); ?>
+                        </button>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <button class="btn btn-lg btn-secondary" onclick="redirectToLogin()">
+                        購買前請先登入
+                    </button>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container py-4" id="introduce">
         <div class="row">
             <div class="col-lg-8">
-                <!-- 公告區 -->
-                <div class="announcement-bar d-flex justify-content-between mb-4">
-                    <div>
-                        <span class="me-3">最新公告</span>
-                        <span class="me-3">• 2023 線上互動工作坊 行前通知</span>
-                        <span>• 腦哥的區塊鏈入門必修課</span>
-                    </div>
-                    <a href="#" class="text-decoration-none">查看</a>
-                </div>
-
                 <!-- 課程資訊 -->
                 <h5 class="mb-4">課程資訊</h5>
                 <div class="row">
@@ -35,8 +97,8 @@
                                 <i class="far fa-calendar"></i>
                             </div>
                             <div>
-                                <div class="text-muted">開課時間</div>
-                                <div>2021/10/20 16:00</div>
+                                <div class="text-muted">最後更新時間</div>
+                                <div><?php echo htmlspecialchars(date('Y/m/d H:i', strtotime($subscription['last_updated']))); ?></div>
                             </div>
                         </div>
                         <div class="course-info-item">
@@ -44,8 +106,8 @@
                                 <i class="far fa-file-alt"></i>
                             </div>
                             <div>
-                                <div class="text-muted">預計單元</div>
-                                <div>44 個</div>
+                                <div class="text-muted">創作者</div>
+                                <div><?php echo htmlspecialchars($subscription['creator']); ?></div>
                             </div>
                         </div>
                         <div class="course-info-item">
@@ -61,15 +123,6 @@
                     <div class="col-md-6">
                         <div class="course-info-item">
                             <div class="course-info-icon">
-                                <i class="far fa-clock"></i>
-                            </div>
-                            <div>
-                                <div class="text-muted">預計時長</div>
-                                <div>11 小時 14 分</div>
-                            </div>
-                        </div>
-                        <div class="course-info-item">
-                            <div class="course-info-icon">
                                 <i class="far fa-eye"></i>
                             </div>
                             <div>
@@ -82,21 +135,18 @@
 
                 <!-- 課程說明 -->
                 <p class="mt-4">
-                    在投資加密貨幣的世界裡，掌握操作實務是成功的關鍵！《操作實務篇 | 投資加密貨幣懂這些就夠了》將帶你快速了解最實用的加密貨幣交易技巧，從平台操作、現貨與衍生品交易到風險管理，幫助你用最少的時間獲得最大效益。不論你是剛入門的新手，還是希望進一步提升操作效率的投資者，這堂課都能讓你更自信地進行每一筆交易！
+                    <?php echo nl2br(htmlspecialchars($subscription['description'])); ?>
                 </p>
 
-                <!-- 影片區塊 -->
+                <!-- 影片或封面圖 -->
                 <div class="video-container mb-4">
-                    <img src="./img/lesson1.jpg" alt="課程影片封面" class="img-fluid w-100">
+                    <img src="<?php echo htmlspecialchars($subscription['main_visual'] ?: './img/logo.jpg'); ?>" alt="訂閱封面圖" class="img-fluid w-100">
                 </div>
 
                 <!-- 標籤導航 -->
                 <ul class="nav nav-tabs mb-4 justify-content-center" id="navTabs">
                     <li class="nav-item">
                         <a class="nav-link active" data-content="intro" href="#">簡介</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-content="chapters" href="#">章節</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-content="qa" href="#">問答</a>
@@ -107,84 +157,13 @@
                     <li class="nav-item">
                         <a class="nav-link" data-content="reviews" href="#">評價</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-content="announcements" href="#">公告</a>
-                    </li>
                 </ul>
 
                 <!-- 內容區塊 -->
                 <div class="content-area">
                     <!-- 簡介 -->
                     <div class="content active" id="intro">
-                        <img src="./img/main.jpg" alt="簡介圖片" class="content-image">
-                    </div>
-
-                    <!-- 章節 -->
-                    <div class="content" id="chapters">
-                        <div class="accordion" id="chapterAccordion">
-                            <!-- 第一章 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter1" aria-expanded="true">
-                                        Chapter 1. 總論：漫談簡報
-                                        <span class="chapter-info">共 4 個單元 | 42 分</span>
-                                    </button>
-                                </h2>
-                                <div id="chapter1" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>1-1 簡報的起源與發展</li>
-                                            <li>1-2 簡報的核心目的</li>
-                                            <li>1-3 如何讓簡報更有影響力？</li>
-                                            <li>1-4 實戰案例分享</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 第二章 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter2">
-                                        Chapter 2. Strategy：擬定簡報策略
-                                        <span class="chapter-info">共 5 個單元 | 1 小時 21 分</span>
-                                    </button>
-                                </h2>
-                                <div id="chapter2" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>2-1 如何擬定簡報策略？關鍵四問 3WIH！</li>
-                                            <li>2-2 Who are they? 不打沒把握的仗：了解聽眾，做好情蒐！</li>
-                                            <li>2-3 How to impress? 讓對方認真聽：根據情資，擬定戰術打動對方！</li>
-                                            <li>2-4 Why me? 策略的最根本關鍵：思索自己能提供什麼價值？</li>
-                                            <li>2-5 What to get? 釐清最終目的，預先布局，才會發生！</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 第三章 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter3">
-                                        Chapter 3. Design：做好簡報設計
-                                        <span class="chapter-info">共 10 個單元 | 2 小時 41 分</span>
-                                    </button>
-                                </h2>
-                                <div id="chapter3" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>3-1 簡報設計的基本原則</li>
-                                            <li>3-2 圖片和文字的搭配技巧</li>
-                                            <li>3-3 版面配置的設計概念</li>
-                                            <li>3-4 顏色如何影響觀眾的感受？</li>
-                                            <li>3-5 使用圖表提升視覺溝通效率</li>
-                                            <!-- 其他單元... -->
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="<?php echo htmlspecialchars($subscription['long_image'] ?: './img/logo.jpg'); ?>" alt="簡介圖片" class="content-image">
                     </div>
 
                     <!-- 常見問題 -->
@@ -348,61 +327,6 @@
 
                     </div>
 
-                    <!-- 公告區 -->
-                    <div class="content" id="announcements">
-                        <div class="announcement-section">
-                            <!-- 公告 1 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2023 區塊鏈應用工作坊 行前通知</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2023/12/01 15:30</span>
-                                </div>
-                            </div>
-
-                            <!-- 公告 2 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2023 智能合約基礎班 開始報名</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2023/11/20 10:00</span>
-                                </div>
-                            </div>
-
-                            <!-- 公告 3 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2022 Web3 基礎培訓 行前通知</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2022/12/15 09:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -411,8 +335,8 @@
                 <div class="price-content">
                     <div class="price-card">
                         <div class="text-center mb-4">
-                            <img src="./img/lesson1.jpg" alt="課程封面" class="img-fluid rounded mb-3">
-                            <h3 class="mb-3">NT$ 12,000</h3>
+                            <img src="<?php echo htmlspecialchars($subscription['main_visual'] ?: './img/logo.jpg'); ?>" alt="課程封面" class="img-fluid rounded mb-3">
+                            <h3 class="mb-3">NT$ <?php echo number_format($subscription['price']); ?></h3>
                         </div>
                         <div class="mb-4">
                             <p>✦ 無限次數觀看鏈習生</p>
@@ -421,69 +345,6 @@
                         <div class="d-flex gap-2">
                             <button class="buy-button">立即購買</button>
                             <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="bundle-section mb-4">
-                        <div class="bundle-header">
-                            <h5 class="text-center mb-0">合購優惠</h5>
-                        </div>
-
-                        <h6 class="mb-3">投資加密貨幣</h6>
-
-                        <div class="course-card">
-                            <img src="./img/lesson2.jpg" alt="課程縮圖">
-                            <div class="ms-3">
-                                <h6 class="mb-2">認知升級篇 | 投資加密貨幣懂這些就夠了</h6>
-                                <div class="original-price">NT$ 8,900</div>
-                            </div>
-                        </div>
-
-                        <div class="course-card">
-                            <img src="./img/lesson.jpg" alt="課程縮圖">
-                            <div class="ms-3">
-                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                                <div class="original-price">NT$ 12,000</div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <div>
-                                <div class="original-price">NT$ 20,900</div>
-                                <div class="price">NT$ 19,700</div>
-                            </div>
-                            <button class="add-to-cart">加入購物車</button>
-                        </div>
-                    </div>
-
-                    <!-- 其他合購區塊 -->
-                    <div class="bundle-section mb-4">
-                        <div class="bundle-header">
-                            <h5 class="text-center mb-0">上班族想學習投資</h5>
-                        </div>
-
-                        <div class="course-card">
-                            <img src="./img/lesson1.jpg" alt="課程縮圖">
-                            <div class="ms-3">
-                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                                <div class="original-price">NT$ 12,000</div>
-                            </div>
-                        </div>
-
-                        <div class="course-card">
-                            <img src="./img/lesson1.jpg" alt="課程縮圖">
-                            <div class="ms-3">
-                                <h6 class="mb-2">投資獲利篇 | 投資加密貨幣懂這些就夠了</h6>
-                                <div class="original-price">NT$ 12,000</div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <div>
-                                <div class="original-price">NT$ 24,000</div>
-                                <div class="price">NT$ 23,300</div>
-                            </div>
-                            <button class="add-to-cart">加入購物車</button>
                         </div>
                     </div>
                 </div>
