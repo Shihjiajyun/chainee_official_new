@@ -37,16 +37,13 @@ if ($result->num_rows > 0) {
     <!-- 導覽列 -->
     <?php include './navbar.php'; ?>
 
-    <!-- 主視覺 -->
-    <!-- <?php include './tools/main.php'; ?> -->
-
     <!-- 主視覺2 -->
-    <!-- <?php include './tools/main2.php'; ?> -->
+    <?php include './tools/main2.php'; ?>
 
-    <!-- 課程上線中 -->
+    <!-- 幣圈初心者 -->
     <main class="main">
         <div class="container">
-            <h2 class="section-title blue-underline">課程上線中</h2>
+            <h2 class="section-title blue-underline">幣圈初心者</h2>
             <div class="grid">
                 <?php if (!empty($courses)) : ?>
                     <?php foreach ($courses as $course) : ?>
@@ -97,7 +94,6 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </main>
-
 
     <!-- 文章專欄 -->
     <div class="container">
