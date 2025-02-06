@@ -231,6 +231,7 @@ while ($row = $result->fetch_assoc()) {
                                     </div>
 
                                     <a href="admin_subscription.php?id=<?php echo htmlspecialchars($subscription['id']); ?>" class="btn btn-primary mt-3">編輯主題</a>
+                                    <a href="admin_subscription.php?id=<?php echo htmlspecialchars($subscription['id']); ?>" class="btn btn-primary mt-3">編輯文章</a>
                                 </div>
                             </a>
                         </div>
