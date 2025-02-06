@@ -1,3 +1,33 @@
+<?php
+require_once 'php/db.php';
+
+// 檢查 GET 參數
+$course_id = $_GET['course_id'] ?? null;
+$subscription_id = $_GET['subscription_id'] ?? null;
+$transaction = null;
+
+if ($course_id) {
+    // 從 user_courses 查詢交易資料
+    $stmt = $mysqli->prepare("SELECT id, user_id, course_id, purchase_time, status, amount FROM user_courses WHERE id = ? LIMIT 1");
+    $stmt->bind_param("i", $course_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $transaction = $result->fetch_assoc();
+    $stmt->close();
+} elseif ($subscription_id) {
+    // 從 transactions_subscription 查詢交易資料
+    $stmt = $mysqli->prepare("SELECT id, user_id, subscription_id, transaction_id, amount, created_at FROM transactions_subscription WHERE id = ? LIMIT 1");
+    $stmt->bind_param("i", $subscription_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $transaction = $result->fetch_assoc();
+    $stmt->close();
+}
+
+// 關閉資料庫連線
+$mysqli->close();
+?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -18,10 +48,14 @@
         <div class="card mx-auto" style="max-width: 600px;">
             <div class="card-body">
                 <h5 class="card-title">交易明細</h5>
-                <p class="card-text"><strong>交易編號：</strong> <?= htmlspecialchars($_GET['transaction_id'] ?? '無法提供') ?></p>
-                <p class="card-text"><strong>金額：</strong> <?= htmlspecialchars($_GET['amount'] ?? '無法提供') ?></p>
-                <p class="card-text"><strong>商品描述：</strong> <?= htmlspecialchars($_GET['itemDesc'] ?? '未知商品') ?></p>
-                <p class="card-text"><strong>電子郵件：</strong> <?= htmlspecialchars($_GET['email'] ?? '無法提供') ?></p>
+                <?php if ($transaction): ?>
+                    <p class="card-text"><strong>交易編號：</strong> <?= htmlspecialchars($transaction['id']) ?></p>
+                    <p class="card-text"><strong>金額：</strong> <?= htmlspecialchars($transaction['amount']) ?> 元</p>
+                    <p class="card-text"><strong>交易類型：</strong> <?= $course_id ? '課程' : '訂閱' ?></p>
+                    <p class="card-text"><strong>交易時間：</strong> <?= htmlspecialchars($transaction['purchase_time'] ?? $transaction['created_at']) ?></p>
+                <?php else: ?>
+                    <p class="text-danger">未找到相關交易資訊。</p>
+                <?php endif; ?>
             </div>
         </div>
         <a href="index.php" class="btn btn-primary mt-4">繼續購物</a>

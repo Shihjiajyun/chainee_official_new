@@ -29,6 +29,10 @@ if (!$stmt->execute()) {
     die(json_encode(["success" => false, "message" => "交易記錄失敗: " . $stmt->error]));
 }
 
+// **取得剛剛插入資料的 ID**
+$subscription_id = $stmt->insert_id;
+$stmt->close();
+
 // **開立發票**
 $invoiceUrl = 'https://chainee.io/official/php/invoice.php'; // 替換為實際 URL
 $invoiceData = [
@@ -63,7 +67,7 @@ if ($httpCode !== 200 || !isset($responseData['Status']) || $responseData['Statu
     die(json_encode(["success" => false, "message" => "發票開立失敗: $errorMessage"]));
 }
 
-// **發票成功，跳轉到成功頁面**
-header("Location: ../success.php?course_id=$subscription_id");
+// **發票成功，跳轉到成功頁面，使用插入資料時的 id**
+header("Location: ../success.php?subscription_id=$subscription_id");
 exit;
 ?>

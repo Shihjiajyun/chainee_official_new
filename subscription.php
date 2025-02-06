@@ -6,7 +6,6 @@ $user_email = $_SESSION['user_email'] ?? null;
 
 $has_purchased = false;
 
-
 // 確保 `id` 參數存在並且是數字
 $id = isset($_GET['id']) && is_numeric($_GET['id']) ? (int) $_GET['id'] : 0;
 
@@ -25,6 +24,21 @@ if ($result->num_rows > 0) {
 }
 
 $backgroundImage = htmlspecialchars($subscription['main_visual'] ?: './img/logo.jpg');
+
+// **檢查該用戶是否已購買該訂閱**
+if ($user_id) {
+    $checkPurchaseQuery = "SELECT id FROM transactions_subscription WHERE user_id = ? AND subscription_id = ? LIMIT 1";
+    $stmt = $mysqli->prepare($checkPurchaseQuery);
+    $stmt->bind_param('ii', $user_id, $id);
+    $stmt->execute();
+    $purchaseResult = $stmt->get_result();
+
+    if ($purchaseResult->num_rows > 0) {
+        $has_purchased = true;
+        $transaction = $purchaseResult->fetch_assoc();
+        $transaction_id = $transaction['id']; // 取得交易 ID
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -352,8 +366,28 @@ $backgroundImage = htmlspecialchars($subscription['main_visual'] ?: './img/logo.
                             <p>✦ 分期 (三期、六期) 零利率方案僅限：玉山、台新銀行信用卡</p>
                         </div>
                         <div class="d-flex gap-2">
-                            <button class="buy-button">立即購買</button>
-                            <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
+                            <?php if (!$user_id): ?>
+                                <!-- 未登入 -->
+                                <button class="btn btn-lg btn-secondary w-100" onclick="redirectToLogin()">購買前請先登入</button>
+                            <?php elseif ($has_purchased): ?>
+                                <!-- 已購買 -->
+                                <button class="btn btn-lg btn-success w-100" onclick="window.location.href='./video.php?transaction_id=<?php echo $transaction_id; ?>'">
+                                    已購買，前往上課
+                                </button>
+                            <?php else: ?>
+                                <!-- 尚未購買 -->
+                                <form id="paymentForm" action="./newebpay/src/payment_subscription.php" method="POST" class="w-100">
+                                    <input type="hidden" name="subscription_id" value="<?php echo htmlspecialchars($subscription['id']); ?>">
+                                    <input type="hidden" name="subscription_name" value="<?php echo htmlspecialchars($subscription['title']); ?>">
+                                    <input type="hidden" name="original_price" value="<?php echo htmlspecialchars($subscription['price']); ?>">
+                                    <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
+                                    <input type="hidden" name="user_email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+                                    <button class="btn btn-lg btn-primary w-100">立即購買</button>
+                                </form>
+                                <button class="btn btn-lg btn-outline-secondary w-100" onclick="addToCart(<?php echo $subscription['id']; ?>)">
+                                    <i class="fas fa-shopping-cart"></i> 加入購物車
+                                </button>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
