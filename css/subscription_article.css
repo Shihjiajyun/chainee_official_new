@@ -159,7 +159,6 @@ aside h3::before {
 /* 文章圖片 */
 .article-item img {
     width: 100%;
-    height: 120px;
     /* 固定高度 */
     object-fit: cover;
     border-radius: 8px;
@@ -239,4 +238,69 @@ aside::-webkit-scrollbar-thumb:hover {
 .header {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* 確保圖片自適應 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 響應式調整 */
+@media (max-width: 991px) {
+
+    /* 在平板與手機上，側邊欄導航與推薦文章區塊將放置於內容上方 */
+    #navbar-example {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    aside {
+        order: 1;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* 在手機上讓導航變為可折疊的按鈕 */
+    #navbar-example {
+        display: none;
+    }
+
+    .nav-toggler {
+        display: block;
+        background: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .nav-toggler.active+#navbar-example {
+        display: block;
+    }
+}
+
+/* 主要內容區域調整 */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 讓主要內容區域在小螢幕時佔滿 */
+@media (max-width: 991px) {
+    main {
+        flex: 1 1 100%;
+    }
+
+    aside {
+        height: auto;
+    }
 }
