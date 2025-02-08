@@ -8,7 +8,7 @@ use Google\Cloud\Storage\StorageClient;
 $article_id = isset($_POST['article_id']) ? $mysqli->real_escape_string($_POST['article_id']) : '';
 $title = isset($_POST['title']) ? $mysqli->real_escape_string($_POST['title']) : '';
 $preview_text = isset($_POST['preview_text']) ? $mysqli->real_escape_string($_POST['preview_text']) : '';
-$markdown_content = isset($_POST['markdown_content']) ? $mysqli->real_escape_string($_POST['markdown_content']) : '';
+$markdown_content = str_replace("\r\n", "\n", $_POST['markdown_content']) ? $mysqli->real_escape_string($_POST['markdown_content']) : '';
 $html_content = nl2br($markdown_content); // 簡單轉換 Markdown（可以替換成 Markdown 解析器）
 
 if (!$article_id || !$title || !$preview_text || !$markdown_content) {
