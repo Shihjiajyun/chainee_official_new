@@ -26,7 +26,7 @@
 
       <!-- QR Code & Social Media -->
       <div class="col-md-3 col-sm-6 text-center">
-        <img src="./img/Qrcode.png" alt="LINE QR Code" class="img-fluid mb-3" style="max-width: 100px;">
+        <img src="./img/QRcode.png" alt="LINE QR Code" class="img-fluid mb-3" style="max-width: 100px;">
         <div class="d-flex justify-content-center gap-3">
           <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
           <a href="#" class="text-white fs-4"><i class="fab fa-line"></i></a>
