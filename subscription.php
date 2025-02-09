@@ -82,7 +82,7 @@ if ($user_id) {
             <div class="buy-section">
                 <?php if ($user_id): ?>
                     <?php if ($has_purchased): ?>
-                        <button class="btn btn-lg btn-success" onclick="window.location.href='./video.php?subscription_id=<?php echo $id; ?>'">
+                        <button class="btn btn-lg btn-success" onclick="window.location.href='./subscription_articles.php?id=<?php echo $id; ?>'">
                             已購買，前往上課
                         </button>
                     <?php else: ?>
@@ -371,7 +371,7 @@ if ($user_id) {
                                 <button class="btn btn-lg btn-secondary w-100" onclick="redirectToLogin()">購買前請先登入</button>
                             <?php elseif ($has_purchased): ?>
                                 <!-- 已購買 -->
-                                <button class="btn btn-lg btn-success w-100" onclick="window.location.href='./video.php?transaction_id=<?php echo $transaction_id; ?>'">
+                                <button class="btn btn-lg btn-success w-100" onclick="window.location.href='./subscription_articles.php?id=<?php echo $id; ?>'">
                                     已購買，前往上課
                                 </button>
                             <?php else: ?>

@@ -9,7 +9,8 @@ $article_id = isset($_POST['article_id']) ? $mysqli->real_escape_string($_POST['
 $title = isset($_POST['title']) ? $mysqli->real_escape_string($_POST['title']) : '';
 $preview_text = isset($_POST['preview_text']) ? $mysqli->real_escape_string($_POST['preview_text']) : '';
 $markdown_content = isset($_POST['markdown_content']) ? $_POST['markdown_content'] : '';
-
+date_default_timezone_set('Asia/Taipei'); // 設定 PHP 為台灣時區
+$updated_at = date('Y-m-d H:i:s'); // 取得當前台灣時間（UTC+8）
 // 確保 Markdown 內容不會被 real_escape_string 影響
 $markdown_content = str_replace("\r\n", "\n", $markdown_content);
 
@@ -60,12 +61,12 @@ if (!empty($_FILES['preview_image']['name']) && $_FILES['preview_image']['error'
     $preview_image = "https://storage.googleapis.com/{$bucketName}/article_images/{$fileName}";
 }
 
-// 3. **更新資料庫**
+
 $query = "UPDATE subscriptions_articles 
-          SET title = ?, preview_text = ?, markdown_content = ?, html_content = ?, preview_image = ?, updated_at = NOW()
+          SET title = ?, preview_text = ?, markdown_content = ?, html_content = ?, preview_image = ?, updated_at = ?
           WHERE article_id = ?";
 $stmt = $mysqli->prepare($query);
-$stmt->bind_param("ssssss", $title, $preview_text, $markdown_content, $html_content, $preview_image, $article_id);
+$stmt->bind_param("sssssss", $title, $preview_text, $markdown_content, $html_content, $preview_image, $updated_at, $article_id);
 
 if ($stmt->execute()) {
     echo "文章更新成功！<a href='../admin_subscriptions.php'>返回文章列表</a>";

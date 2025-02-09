@@ -1,0 +1,48 @@
+.subscription-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0d6efd;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-link {
+    text-decoration: none; /* 移除預設超連結樣式 */
+    color: inherit; /* 保持原始文字顏色 */
+}
+
+.card-link .card {
+    transition: transform 0.2s;
+}
+
+.card-link .card:hover {
+    transform: translateY(-5px);
+}
