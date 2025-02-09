@@ -14,14 +14,23 @@ $stmt = $mysqli->prepare($query);
 $stmt->bind_param("s", $article_id);
 $stmt->execute();
 $result = $stmt->get_result();
-$article['markdown_content'] = str_replace("\r\n", "\n", $article['markdown_content']);
 
 if ($result->num_rows == 0) {
     die("文章未找到！");
 }
 
+// 正確順序：先 fetch 資料，再修改內容
 $article = $result->fetch_assoc();
+
+// 確保 markdown_content 存在才處理
+if (isset($article['markdown_content'])) {
+    $article['markdown_content'] = str_replace("\\n", "\n", $article['markdown_content']);
+}
+
+$stmt->close();
+$mysqli->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -85,7 +94,8 @@ $article = $result->fetch_assoc();
                 <label class="form-label">文章內容 (Markdown)</label>
                 <div id="editor-container"></div>
                 <textarea name="markdown_content" id="markdown-content"
-                    style="display:none;"><?= htmlspecialchars($article['markdown_content']) ?></textarea>
+                    style="display:none;"><?= nl2br(htmlspecialchars($article['markdown_content'])) ?></textarea>
+
             </div>
 
             <!-- 提交按鈕 -->
