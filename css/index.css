@@ -335,3 +335,24 @@ body {
   height: 10.5px;
   object-fit: contain;
 }
+
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100px; /* 設定頭像大小 */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

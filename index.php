@@ -30,6 +30,9 @@ if ($result->num_rows > 0) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -276,6 +279,46 @@ if ($result->num_rows > 0) {
             <!-- 專欄作家 -->
             <div class="col-lg-6 mb-5">
                 <h2 class="mb-4 blue-underline">專欄作家</h2>
+
+                <!-- Swiper 主容器 -->
+                <div class="swiper-container">
+                    <!-- Swiper 主容器 -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 1</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 2</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 3</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 4</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 5</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/author.png" alt="Avatar">
+                                <p class="author-name text-center">作者 6</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 自訂左右切換按鈕 -->
+                    <div class="swiper-buttons">
+                        <div class="swiper-button-prev custom-prev"></div>
+                        <div class="swiper-button-next custom-next"></div>
+                    </div>
+                </div>
+
                 <?php
                 $recommendedArticles = [
                     [
@@ -401,6 +444,7 @@ if ($result->num_rows > 0) {
     <?php include('./tools/students_back.php'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- 計算卡片標題 -->
     <script>
@@ -420,6 +464,21 @@ if ($result->num_rows > 0) {
             cardTitles.forEach(title => {
                 title.style.height = `${maxHeight}px`;
             });
+        });
+    </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            /* 一次顯示4張 */
+            spaceBetween: 20,
+            /* 圖片間距 */
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true,
+            /* 無限循環 */
         });
     </script>
 </body>
