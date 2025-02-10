@@ -2,201 +2,178 @@
 <html lang="zh-Hant">
 
 <head>
-    <meta charset="UTF-8">
-    <title>主視覺 Coverflow 範例</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Coverflow 輪播 - 顯示 5 張</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 引入 Swiper CSS (官方 CDN) -->
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/swiper@8.3.2/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8.3.2/swiper-bundle.min.css">
 
-    <style>
-        /* 基礎重置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    /* 全域 CSS 重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #f5f5f5;
-            font-family: sans-serif;
-            color: #333;
-            /* 讓頁面佔滿可視區 */
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    body {
+      background-color: #f7f7f7;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
 
-        /* Swiper 主容器大小 (可自行調整) */
-        .swiper {
-            width: 85%;
-            max-width: 1200px;
-            height: 500px;
-            position: relative;
-        }
+    /* Swiper 容器 */
+    /* Swiper 容器 */
+    .swiper {
+      height: 50vh;
+      /* 控制輪播區塊的高度 */
+      position: relative;
+    }
 
-        /* 每個 Slide 設定固定寬度，以便左右可半露 */
-        .swiper-slide {
-            width: 800px;
-            /* 關鍵：固定寬度，若螢幕足夠寬，會顯示左右半露 */
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ccc;
-            /* 預設底色 */
-        }
+    /* Slide 設定 */
+    .swiper-slide {
+      width: 100%;
+      max-width: 1400px;
+      /* 確保每張圖片夠大 */
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 7;
+      /* 長方形比例 */
+    }
 
-        /* 主視覺背景圖，可改成您自己的圖片 URL */
-        .slide-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* 圖片自動裁切填滿 */
-        }
+    /* 背景圖片 */
+    .slide-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        /* 疊加在背景上方的文字或人物區塊 */
-        .slide-overlay {
-            position: relative;
-            z-index: 2;
-            /* 讓文字位於背景圖之上 */
-            text-align: center;
-            color: #fff;
-            /* 可改成符合背景的顏色 */
-            padding: 2rem;
-        }
+    /* 黑色遮罩：非中間的卡片變暗 */
+    .swiper-slide:not(.swiper-slide-active)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
 
-        .slide-overlay h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+    /* 讓 active slide 沒有遮罩 */
+    .swiper-slide.swiper-slide-active::before {
+      display: none;
+    }
 
-        /* 關鍵詞示例 */
-        .keywords {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
+    /* 箭頭按鈕 */
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #333;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
 
-        .keywords span {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-        }
+    .swiper-button-next {
+      right: 0;
+    }
 
-        /* Swiper 分頁器、箭頭基本樣式 */
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: #333;
-        }
+    .swiper-button-prev {
+      left: 0;
+    }
 
-        .swiper-pagination-bullet {
-            background: rgba(0, 0, 0, 0.2);
-        }
+    /* Swiper 分頁器 */
+    .swiper-pagination-bullet {
+      background: rgba(0, 0, 0, 0.3);
+    }
 
-        .swiper-pagination-bullet-active {
-            background: #333;
-        }
-    </style>
+    .swiper-pagination-bullet-active {
+      background: #333;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- 單一 Swiper 容器 -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
+  <!-- Swiper 容器 -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
 
-            <!-- Slide 1 (大圖 + 疊加人物 / 文字) -->
-            <div class="swiper-slide">
-                <img
-                    class="slide-bg"
-                    src="https://via.placeholder.com/1200x600/666/fff?text=加密新手+投資創富"
-                    alt="Slide 1" />
-                <div class="slide-overlay">
-                    <h1>加密新手 投資創富</h1>
-                    <div class="keywords">
-                        <span>技術</span>
-                        <span>心態</span>
-                        <span>分析</span>
-                        <span>知識</span>
-                        <span>風控</span>
-                        <span>策略</span>
-                        <span>理財</span>
-                        <span>平台</span>
-                    </div>
-                </div>
-            </div>
+      <!-- 5 張圖片 (全部使用 img/main.jpg) -->
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 1" />
+      </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 2" />
+      </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 3" />
+      </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 4" />
+      </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 5" />
+      </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 6" />
+      </div>
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <img
-                    class="slide-bg"
-                    src="https://via.placeholder.com/1200x600/444/fff?text=第二個主視覺"
-                    alt="Slide 2" />
-                <div class="slide-overlay">
-                    <h1>第二個主視覺標題</h1>
-                    <p>這裡可放更多文字敘述或按鈕</p>
-                </div>
-            </div>
+      <div class="swiper-slide">
+        <img class="slide-bg" src="img/main.jpg" alt="Slide 7" />
+      </div>
 
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <img
-                    class="slide-bg"
-                    src="https://via.placeholder.com/1200x600/222/fff?text=第三個主視覺"
-                    alt="Slide 3" />
-                <div class="slide-overlay">
-                    <h1>第三個主視覺標題</h1>
-                    <p>根據需求自訂內文</p>
-                </div>
-            </div>
 
-        </div>
-
-        <!-- 分頁器、前後切換按鈕 -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </div>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper@8.3.2/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var swiper = new Swiper(".mySwiper", {
-                // 使用 coverflow 效果
-                effect: "coverflow",
-                centeredSlides: true,
-                slidesPerView: "auto", // 搭配固定寬度 .swiper-slide
-                coverflowEffect: {
-                    rotate: 0, // 旋轉角度 (可調大讓卡片斜斜的)
-                    stretch: -100, // 調整左右卡片距離(負值往內靠、正值往外擴)
-                    depth: 200, // 3D 深度
-                    modifier: 1,
-                    slideShadows: false
-                },
-                loop: true, // 無限輪播
-                grabCursor: true, // 滑鼠移上顯示抓手
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        });
-    </script>
+    <!-- 分頁器 + 左右箭頭 -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8.3.2/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        centeredSlides: true,
+        slidesPerView: "auto", // 讓圖片自適應寬度
+        spaceBetween: -500, // 讓左右卡片重疊更多
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 300, // 讓左右卡片更接近中間
+          depth: 1000, // 減少 3D 景深
+          modifier: 1,
+          slideShadows: false,
+        },
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    });
+  </script>
+
 </body>
 
 </html>

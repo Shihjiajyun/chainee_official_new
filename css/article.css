@@ -20,18 +20,19 @@
 }
 
 .blue-underline {
-    display: inline-block;
-    position: relative;
-    padding-bottom: 0.5rem;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
 .blue-underline::after {
-    content: "";
-    display: block;
-    width: 50%; /* 設定為文字寬度的 20% */
-    height: 4px;
-    background-color: #0d6efd;
-    position: absolute;
-    bottom: 0;
-    left: 0; /* 讓藍線的左邊與文字的左邊對齊 */
+  content: "";
+  display: block;
+  width: 50%; /* 設定為文字寬度的 20% */
+  max-width: 40px;
+  height: 4px;
+  background-color: #0d6efd;
+  position: absolute;
+  bottom: 0;
+  left: 0; /* 讓藍線的左邊與文字的左邊對齊 */
 }
