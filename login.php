@@ -10,8 +10,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入/註冊頁面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/test2.css">
 </head>
 
 <body>
@@ -25,114 +28,110 @@ session_start();
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- 左側英雄區塊 -->
-            <div class="col-lg-6 p-0">
-                <div class="hero-section p-5 d-flex flex-column justify-content-center">
-                    <h1 class="display-4 fw-bold mb-3">精品大師線上課程平台</h1>
-                    <p class="lead">專業講師 X 精實影音課程，你最聰明的學習選擇</p>
+    <div class="container" id="login">
+        <!-- Login Form -->
+        <div class="form-box login">
+            <form action="#">
+                <h1>登入</h1>
+                <div class="input-box">
+                    <input type="email" placeholder="電子郵件" required>
+                    <i class='bx bxs-envelope'></i>
                 </div>
+                <div class="input-box">
+                    <input type="password" placeholder="密碼" required>
+                    <!-- <i class='bx bxs-lock-alt'></i> -->
+                    <i class='bx bxs-show toggle-password'></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="#">忘記密碼？</a>
+                </div>
+                <button type="submit" class="btn front">登入</button>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-box register">
+            <form action="#">
+                <h1>註冊</h1>
+                <div class="input-box email-box">
+                    <input type="email" placeholder="電子郵件" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder="驗證碼" required>
+                    <i class='bx bxs-check-shield'></i>
+                </div>
+                <button type="button" class="verify-btn btn">收取驗證碼</button>
+
+                <div class="input-box">
+                    <input type="password" placeholder="密碼" required>
+                    <!-- <i class='bx bxs-lock-alt'></i> -->
+                    <i class='bx bxs-show toggle-password'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="確認密碼" required>
+                    <!-- <i class='bx bxs-lock-alt'></i> -->
+                    <i class='bx bxs-show toggle-password'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder="推薦碼(選填)" id="referral">
+                    <i class='bx bxs-user'></i>
+                    <!-- <span class="tooltip">If you have a referral code, enter it here.</span> -->
+                </div>
+
+                <button type="submit" class="btn front">註冊</button>
+            </form>
+        </div>
+
+        <!-- Toggle Panels -->
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>您好，歡迎回來！</h1>
+                <p>還沒有帳號嗎？</p>
+                <button class="btn register-btn">註冊</button>
             </div>
 
-            <!-- 右側表單區塊 -->
-            <div class="col-lg-6 auth-section">
-                <div class="w-100 px-4 px-lg-5">
-                    <!-- 登入表單 -->
-                    <form id="loginForm">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="h3 fw-bold mb-0">登入</h2>
-                            <a href="#" class="text-decoration-none" onclick="toggleForms(event)">還不是會員嗎？註冊</a>
-                        </div>
-
-                        <div class="mb-4">
-                            <!-- 電子信箱輸入框 -->
-                            <input type="email" name="email" class="form-control form-control-lg mb-3" placeholder="電子信箱" required>
-
-                            <!-- 密碼輸入框 -->
-                            <div class="position-relative">
-                                <input type="password" name="password" class="form-control form-control-lg" placeholder="密碼" required>
-                                <span class="password-toggle">
-                                    <i class="bi bi-eye"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="remember">
-                                <label class="form-check-label" for="remember">記住我的帳號密碼</label>
-                            </div>
-                            <a href="#" class="text-decoration-none">忘記密碼</a>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-3 mb-4">登入</button>
-                    </form>
-
-                    <!-- 註冊表單 -->
-                    <form id="registerForm">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="h3 fw-bold mb-0">註冊</h2>
-                            <a href="#" class="text-decoration-none" onclick="toggleForms(event)">已經有帳號了嗎？登入</a>
-                        </div>
-
-                        <div class="mb-4">
-                            <!-- 電子信箱輸入框 -->
-                            <div class="input-group mb-3">
-                                <input type="email" id="emailInput" class="form-control form-control-lg" placeholder="電子信箱" required>
-                                <button type="button" id="sendCodeBtn" class="btn btn-secondary">寄送驗證碼</button>
-                            </div>
-
-                            <!-- 驗證碼輸入框 -->
-                            <div class="position-relative mb-3">
-                                <input type="text" id="verificationCodeInput" class="form-control form-control-lg" placeholder="輸入驗證碼" required>
-                            </div>
-
-                            <!-- 密碼輸入框 -->
-                            <div class="position-relative mb-3">
-                                <input type="password" id="passwordInput" class="form-control form-control-lg" placeholder="密碼" required>
-                            </div>
-
-                            <!-- 再次輸入密碼 -->
-                            <div class="position-relative mb-3">
-                                <input type="password" id="confirmPasswordInput" class="form-control form-control-lg" placeholder="再次輸入密碼" required>
-                            </div>
-
-                            <!-- 推薦碼輸入框（選填） -->
-                            <div class="position-relative">
-                                <input type="text" id="referralCodeInput" class="form-control form-control-lg" placeholder="推薦碼">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-3 mb-4">立即註冊</button>
-                    </form>
-
-
-                    <!-- 社群登入區塊 -->
-                    <div class="text-center">
-                        <p class="text-muted mb-4" id="socialText">或使用快速登入</p>
-                        <div class="d-flex justify-content-center">
-                            <button class="social-login-btn">
-                                <img src="https://www.google.com/favicon.ico" alt="Google">
-                            </button>
-                            <button class="social-login-btn">
-                                <img src="https://www.facebook.com/favicon.ico" alt="Facebook">
-                            </button>
-                            <button class="social-login-btn">
-                                <img src="https://github.com/favicon.ico" alt="GitHub">
-                            </button>
-                        </div>
-                        <p class="mt-4 text-muted small">
-                            註冊即表示同意 <a href="#" class="text-decoration-none">使用者條款</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="toggle-panel toggle-right">
+                <h1>歡迎回來！</h1>
+                <p>已經有帳號了嗎？</p>
+                <button class="btn login-btn">登入</button>
             </div>
         </div>
     </div>
 
+    <script>
+        const container = document.querySelector('.container');
+        const registerBtn = document.querySelector('.register-btn');
+        const loginBtn = document.querySelector('.login-btn');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add('active');
+        })
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+        })
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/login.js"></script>
+    <script>
+        document.querySelectorAll(".toggle-password").forEach(icon => {
+            icon.addEventListener("click", function() {
+                let input = this.previousElementSibling; // 找到對應的 input 欄位
+                if (input.type === "password") {
+                    input.type = "text";
+                    this.classList.replace("bxs-show", "bxs-hide"); // 切換為隱藏圖標
+                } else {
+                    input.type = "password";
+                    this.classList.replace("bxs-hide", "bxs-show"); // 切換為顯示圖標
+                }
+            });
+        });
+    </script>
 
 </body>
 <footer>
