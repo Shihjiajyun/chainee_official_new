@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
     <link rel="stylesheet" href="css/test2.css">
     <title>鏈習生 - 首頁</title>
 </head>
@@ -81,7 +80,8 @@
     }
 
     .feedback-card {
-        width: 80%;
+        width: 90%;
+        max-width: none;
         /* 讓卡片佔 80% 的寬度 */
         /* max-width: 800px; */
         /* 避免卡片在大螢幕上過寬 */
@@ -97,9 +97,10 @@
     .swiper-slide {
         display: flex;
         justify-content: center;
-        /* 確保 Swiper 卡片置中 */
+        align-items: center;
+        padding: 0;
+        margin: 0;
     }
-
 
     .feedback-user {
         display: flex;
@@ -113,7 +114,7 @@
         /* 稍微加大頭像，提高辨識度 */
         height: 60px;
         border-radius: 50%;
-        object-fit: cover;
+        /* object-fit: cover; */
         border: 2px solid #3461fd;
         /* 增加外框，提高識別 */
     }
@@ -171,13 +172,17 @@
 
     /* 左側按鈕 */
     .swiper-button-prev {
-        left: -10px;
+        z-index: 999;
+        overflow: visible !important;
+        left: 10px;
         /* 向內縮，讓按鈕更貼近卡片 */
     }
 
     /* 右側按鈕 */
     .swiper-button-next {
-        right: 50px;
+        z-index: 999;
+        overflow: visible !important;
+        right: 10px;
     }
 
     /* 按鈕懸停效果 */
@@ -190,8 +195,9 @@
     /* Swiper 按鈕圖示大小 */
     .swiper-button-prev:after,
     .swiper-button-next:after {
+        overflow: visible !important;
+        z-index: 999;
         font-size: 24px;
-        /* 調整圖標大小 */
     }
 
     /* 響應式調整 */
@@ -218,6 +224,11 @@
             font-size: 14px;
         }
     }
+
+    .swiper-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 </style>
 
 <body>
@@ -225,7 +236,7 @@
 
         <!-- 導覽列 -->
         <nav class="navbar navbar-expand-lg">
-            <div class="container p-0">
+            <div class="container ">
                 <!-- LOGO 使用文字 -->
                 <a class="navbar-brand" href="#">
                     <span>C</span><span>hainee</span>
@@ -1003,28 +1014,6 @@
             </div>
         </section>
 
-        <!--  -->
-        <section class="cta-section">
-            <div class="cta-container">
-                <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/266d1ce97d5ac40971fadfa296c1d1568e4594e1208be5aefa65483a796de02d?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="Join our learning platform" class="cta-image" />
-                <div class="cta-content">
-                    <div class="cta-wrapper">
-                        <div class="cta-text">
-                            <div class="cta-header">
-                                <h2 class="cta-title">Join <span style="color: #3461fd;">World's largest</span> learning platform today</h2>
-                                <p class="cta-subtitle">Start learning by registering for free</p>
-                            </div>
-                            <p class="cta-description">
-                                Ut pharetra ipsum nec leo blandit, sit amet tincidunt eros pharetra. Nam sed imperdiet turpis. In hac habitasse platea dictumst.
-                                Praesent nulla massa, hendrerit vestibulum gravida in, feugiat auctor felis.
-                            </p>
-                        </div>
-                        <a href="#" class="cta-button">Sign up for Free</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
@@ -1060,70 +1049,7 @@
 
 </body>
 <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <div class="footer-logo">
-                <span style="color: #ffc27a;">e</span>
-                <span style="color: #fff;">Dex</span>
-            </div>
-            <h3 class="footer-contact">Contact Us</h3>
-            <p class="footer-phone">Call : +123 400 123</p>
-            <p class="footer-address">
-                Praesent nulla massa, hendrerit vestibulum gravida in, feugiat auctor felis.
-            </p>
-            <p class="footer-email">Email: example@mail.com</p>
-            <div class="footer-social">
-                <a href="#" class="social-icon" aria-label="Facebook">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/f6f79b2be891becd515e86c47ab51ceb01d835889f23a0f6ff856e3779c52a7d?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="" class="social-img" />
-                </a>
-                <a href="#" class="social-icon" aria-label="Twitter">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/67ffe3eabafbbca8ad50550c26b2e9bd0c90f21e8b0d16b80bd2fc89ad4a4806?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="" class="social-img" />
-                </a>
-                <a href="#" class="social-icon" aria-label="LinkedIn">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/4843e2aded353c559acbd6f6b857185eb2bb87eadb3dc09a2a3d58b225000fa6?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="" class="social-img" />
-                </a>
-                <a href="#" class="social-icon" aria-label="Instagram">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/b887d0de21c34f0d5a7ecc5579539b406b00c2f15f711ad0d7c890e58b43718e?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="" class="social-img" />
-                </a>
-                <a href="#" class="social-icon" aria-label="YouTube">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/40300a42648344a4b8d0004a6ba32a91/04b12cbdad4b878dda9ab37b86d47df9444badbb7278aca1e0485c40657674d9?apiKey=40300a42648344a4b8d0004a6ba32a91&" alt="" class="social-img" />
-                </a>
-            </div>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-links-title">Explore</h3>
-            <nav class="footer-links">
-                <a href="#" class="footer-link">Home</a>
-                <a href="#" class="footer-link">About</a>
-                <a href="#" class="footer-link">Course</a>
-                <a href="#" class="footer-link">Blog</a>
-                <a href="#" class="footer-link">Contact</a>
-            </nav>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-categories-title">Category</h3>
-            <nav class="footer-categories">
-                <a href="#" class="footer-category">Design</a>
-                <a href="#" class="footer-category">Development</a>
-                <a href="#" class="footer-category">Marketing</a>
-                <a href="#" class="footer-category">Business</a>
-                <a href="#" class="footer-category">Lifestyle</a>
-                <a href="#" class="footer-category">Photography</a>
-                <a href="#" class="footer-category">Music</a>
-            </nav>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-newsletter-title">Subscribe</h3>
-            <p class="footer-newsletter-description">
-                Lorem Ipsum has been them an industry printer took a galley make book.
-            </p>
-            <form class="footer-newsletter">
-                <label for="newsletter-email" class="visually-hidden">Email here</label>
-                <input type="email" id="newsletter-email" class="footer-newsletter-input" placeholder="Email here" required>
-                <button type="submit" class="footer-newsletter-button">Subscribe Now</button>
-            </form>
-        </div>
-    </div>
+    <?php include 'footer.php' ?>
 </footer>
 
 </html>
