@@ -1048,7 +1048,7 @@
     </script>
 
 </body>
-<footer class="footer">
+<footer class="mt-3">
     <?php include 'footer.php' ?>
 </footer>
 
