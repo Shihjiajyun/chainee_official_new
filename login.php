@@ -14,7 +14,7 @@ session_start();
 
     <!-- <link rel="stylesheet" href="css/login.css"> -->
     <link rel="stylesheet" href="css/loading.css">
-    <link rel="stylesheet" href="css/test2.css">
+    <link rel="stylesheet" href="css/login2.css">
 </head>
 
 <body>
