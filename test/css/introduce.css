@@ -1,0 +1,27 @@
+.bg-dark-green {
+  background-color: #2b3735; /* 深墨綠色 */
+}
+
+/* Breadcrumb 的白色文字 */
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 讓 breadcrumb 的白色連結在 hover 時有較高對比 */
+.breadcrumb-item a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* 調整按鈕顏色 */
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #1e3a34;
+  border-color: #ffffff;
+}
+
+.icons {
+  font-size: 40px;
+  margin-right: 15px;
+  color: #00262b;
+}

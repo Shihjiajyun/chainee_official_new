@@ -7,9 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/test2.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>鏈習生 - 首頁</title>
 </head>
+
 <style>
     .course-card {
         background: white;
@@ -232,57 +233,8 @@
 </style>
 
 <body>
+    <?php include 'navbar.php' ?>
     <div class="landing-page">
-
-        <!-- 導覽列 -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container ">
-                <!-- LOGO 使用文字 -->
-                <a class="navbar-brand" href="#">
-                    <span>C</span><span>hainee</span>
-                </a>
-
-                <!-- 漢堡選單按鈕 -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- 選單 -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">首頁</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">公開講座</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">線上課程</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="knowledge.php" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown">
-                                幣圈知識庫
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">
-                                <li><a class="dropdown-item" href="./learn_crypto.php">學幣圈</a></li>
-                                <li><a class="dropdown-item" href="./learn-investing.php">學投資</a></li>
-                                <li><a class="dropdown-item" href="./open-accounts.php">學開戶</a></li>
-                                <li><a class="dropdown-item" href="./find-deals.php">撿好康</a></li>
-                                <li><a class="dropdown-item" href="./columnists.php">專欄作家</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">線上小幫手</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-lock me-2"></i>登入/註冊</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </nav>
 
         <!-- 網頁主視覺 -->
         <section class="hero-section">
@@ -362,8 +314,7 @@
             <p class="courses-description">
                 剛踏入幣圈的初心者看過來
             </p>
-            <!-- Bootstrap 連結 -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+            <a href="introduce.php" class="btn-custom mt-2">立即查看</a>
 
             <div class="container my-5">
                 <div class="row g-4">
