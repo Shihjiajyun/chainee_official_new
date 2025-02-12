@@ -135,13 +135,19 @@
                     padding: 0 20px;
                 }
             }
+
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+                /* 確保不會有多餘間距 */
+            }
         </style>
 
         <!-- 導覽列 -->
         <nav class="navbar navbar-expand-lg">
             <div class="container ">
                 <!-- LOGO 使用文字 -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <span>C</span><span>hainee</span>
                 </a>
 
@@ -154,7 +160,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">首頁</a>
+                            <a class="nav-link active" href="index.php">首頁</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">公開講座</a>
@@ -163,7 +169,7 @@
                             <a class="nav-link" href="#">線上課程</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="knowledge.php" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="knowledge.php" id="knowledgeDropdown" role="button">
                                 幣圈知識庫
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">
