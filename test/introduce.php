@@ -106,7 +106,7 @@
 <body>
     <?php include 'navbar.php' ?>
     <div class="min-vh-100">
-        <!-- Hero Section -->
+        <!-- 主視覺 -->
         <div class="bg-dark-green text-white py-5">
             <div class="container">
                 <!-- Breadcrumb -->
@@ -122,9 +122,9 @@
                 </nav>
 
                 <!-- Hero Content -->
-                <h1 class="display-2 fw-bold mb-4">認識幣圈初心者</h1>
+                <h1 class="display-2 fw-bold mb-4">認識鏈習生</h1>
                 <p class="lead mb-5">
-                    雖然許多人都想進入加密貨幣市場，但對於新手來說，這個領域可能會感到困惑和複雜。透過我們的線上課程，讓您輕鬆掌握加密貨幣的基礎知識。
+                    鏈習生是一個針對區塊鏈學習者的專案，旨在幫助你從零開始了解區塊鏈技術，學習智能合約開發，並探索 Web3 世界的無限可能。
                 </p>
 
                 <!-- Action Buttons -->
@@ -136,68 +136,9 @@
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 introduce">
-                    <h2 class="h3 mb-4" style="color: #00262b;font-weight:900;">什麼是幣圈初心者？</h2>
-                    <p>
-                        幣圈初心者是指剛開始接觸加密貨幣市場的投資者。他們通常需要學習基本的區塊鏈知識、
-                        交易平台使用方式、市場分析技巧等。新手在進入市場時，應該謹慎行事，從小額投資開始，並持續學習相關知識。
-                    </p>
-                    <p class="">
-                        許多新手在剛進入市場時會感到困惑和不安。這是正常的，因為加密貨幣市場確實比傳統
-                        金融市場更加複雜和波動。建議新手可以從了解比特幣開始，逐步擴展到其他加密貨幣，
-                        同時要特別注意風險管理和資金控管。
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <img
-                        src="./img/leadership.png"
-                        alt="加密貨幣學習示意圖"
-                        class="img-fluid rounded shadow" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-
+        <!-- 成為鏈習生獲得三個東西 -->
         <div class="container my-5">
-            <h2 class="section-title">簡單成為幣圈初心者三步驟</h2>
-            <p class="section-subtitle">跟著這三個簡單步驟，快速進入幣圈世界</p>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-user-plus icons"></i>
-                        <div class="feature-text">
-                            <h4>註冊交易所</h4>
-                            <p>選擇適合的交易所並完成 KYC 驗證。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-wallet icons"></i>
-                        <div class="feature-text">
-                            <h4>入金並購買加密貨幣</h4>
-                            <p>存入法幣或 USDT，開始你的第一筆交易。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-chart-line icons"></i>
-                        <div class="feature-text">
-                            <h4>開始學習交易</h4>
-                            <p>了解現貨、合約、質押等投資方式。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-5">
-        </div>
-
-        <div class="container my-5">
-            <h2 class="section-title">成為幣圈初心者之後，你可以獲得的三個東西</h2>
+            <h2 class="section-title">成為鏈習生之後，你可以獲得的三個東西</h2>
             <p class="section-subtitle">了解加密貨幣的世界，獲取更多機會</p>
 
             <div class="row">
@@ -231,108 +172,307 @@
             </div>
         </div>
 
+        <!-- 什麼是鏈習生 -->
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 introduce">
+                    <h2 class="h3 mb-4" style="color: #00262b;font-weight:900;">什麼是鏈習生？</h2>
+                    <p>
+                        鏈習生是一個專注於區塊鏈學習與實作的培訓計畫，旨在幫助學習者從基礎概念到實際應用，全面掌握區塊鏈技術。無論你是剛接觸區塊鏈的新手，還是想深入學習智能合約開發與 Web3 技術的開發者，都能在鏈習生找到適合的學習內容與實作機會。
+                    </p>
+                    <p class="">
+                        在這個計畫中，我們提供系統化的學習資源，涵蓋區塊鏈基礎、去中心化應用（DApp）開發、智能合約設計、安全性原則等核心技術。同時，我們強調動手實作，讓學員透過模擬交易、鏈上數據分析、智能合約部署等挑戰，累積實戰經驗，將學習成果轉化為可展示的作品。
+                    </p>
+                    <p>鏈習生不僅是一個學習平台，更是一個連結區塊鏈產業與學習者的橋樑。我們透過社群互動、業界導師指導、專案合作等方式，幫助學員與業界建立聯繫，拓展未來的職涯與發展機會。</p>
+
+                </div>
+                <div class="col-lg-6">
+                    <img
+                        src="./img/leadership.png"
+                        alt="加密貨幣學習示意圖"
+                        class="img-fluid rounded shadow" style="width: 100%;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- 簡單三步驟 -->
+        <div id="stepsContainer"></div>
+
+        <!-- 可以獲得的三個東西 -->
+        <div id="benefitsContainer"></div>
+
+        <!-- 課程篩選 -->
         <div class="container my-5">
             <h2 class="text-center fw-bold">課程篩選</h2>
             <p class="text-center text-muted">選擇你感興趣的課程分類</p>
 
             <!-- 選擇篩選類別 -->
             <div class="d-flex justify-content-center flex-wrap mb-4">
-                <button class="filter-btn active" data-category="all">全部課程</button>
-                <button class="filter-btn" data-category="crypto">加密貨幣</button>
-                <button class="filter-btn" data-category="finance">金融與投資</button>
-                <button class="filter-btn" data-category="tech">區塊鏈技術</button>
+                <button class="filter-btn" data-category="all">全部課程</button>
+                <button class="filter-btn" data-category="beginner">幣圈初心者</button>
+                <button class="filter-btn" data-category="intermediate">幣圈見習家</button>
+                <button class="filter-btn" data-category="advanced">幣圈實戰冒險者</button>
             </div>
 
             <!-- 課程清單 -->
-            <div class="row" id="courseContainer">
-                <!-- 動態生成課程卡片 -->
-            </div>
+            <div class="row" id="courseContainer"></div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const courses = [{
-                    title: "比特幣基礎與投資",
-                    category: "crypto",
-                    image: "./img/lesson3.jpg",
-                    provider: "加密學院",
-                    type: "課程"
-                },
-                {
-                    title: "NFT 入門指南",
-                    category: "crypto",
-                    image: "./img/lesson4.jpg",
-                    provider: "區塊鏈學習中心",
-                    type: "課程"
-                },
-                {
-                    title: "智能合約開發",
-                    category: "tech",
-                    image: "./img/lesson5.jpg",
-                    provider: "開發者學院",
-                    type: "技術培訓"
-                },
-                {
-                    title: "DeFi 金融應用",
-                    category: "finance",
-                    image: "./img/lesson3.jpg",
-                    provider: "投資大師班",
-                    type: "高級課程"
-                },
-                {
-                    title: "區塊鏈安全與風險管理",
-                    category: "tech",
-                    image: "./img/lesson4.jpg",
-                    provider: "安全技術學院",
-                    type: "專業證書"
-                },
-                {
-                    title: "投資策略與市場分析",
-                    category: "finance",
-                    image: "./img/lesson5.jpg",
-                    provider: "金融大學",
-                    type: "課程"
-                }
-            ];
+            const categoryNames = {
+                all: "全部課程",
+                beginner: "幣圈初心者",
+                intermediate: "幣圈見習家",
+                advanced: "幣圈實戰冒險者"
+            };
+
+            const courses = {
+                beginner: [{
+                        title: "比特幣基礎與投資",
+                        category: "beginner",
+                        image: "./img/lesson3.jpg",
+                        provider: "加密學院",
+                        type: "基礎課程"
+                    },
+                    {
+                        title: "區塊鏈入門",
+                        category: "beginner",
+                        image: "./img/lesson4.jpg",
+                        provider: "區塊鏈學習中心",
+                        type: "基礎課程"
+                    }
+                ],
+                intermediate: [{
+                        title: "NFT 入門指南",
+                        category: "intermediate",
+                        image: "./img/lesson3.jpg",
+                        provider: "NFT 學院",
+                        type: "進階課程"
+                    },
+                    {
+                        title: "智能合約開發",
+                        category: "intermediate",
+                        image: "./img/lesson4.jpg",
+                        provider: "開發者學院",
+                        type: "技術培訓"
+                    }
+                ],
+                advanced: [{
+                        title: "DeFi 金融應用",
+                        category: "advanced",
+                        image: "./img/lesson5.jpg",
+                        provider: "投資大師班",
+                        type: "高級課程"
+                    },
+                    {
+                        title: "區塊鏈安全與風險管理",
+                        category: "advanced",
+                        image: "./img/lesson5.jpg",
+                        provider: "安全技術學院",
+                        type: "專業證書"
+                    }
+                ]
+            };
+
+            const steps = {
+                beginner: [{
+                        icon: "fas fa-user-plus",
+                        title: "註冊交易所",
+                        desc: "選擇適合的交易所並完成 KYC 驗證。"
+                    },
+                    {
+                        icon: "fas fa-wallet",
+                        title: "入金並購買加密貨幣",
+                        desc: "存入法幣或 USDT，開始你的第一筆交易。"
+                    },
+                    {
+                        icon: "fas fa-chart-line",
+                        title: "開始學習交易",
+                        desc: "了解現貨、合約、質押等投資方式。"
+                    }
+                ],
+                intermediate: [{
+                        icon: "fas fa-search-dollar",
+                        title: "探索市場",
+                        desc: "學習如何分析市場趨勢，找到合適的投資機會。"
+                    },
+                    {
+                        icon: "fas fa-user-graduate",
+                        title: "進階交易技巧",
+                        desc: "掌握技術分析與風險管理，提高交易勝率。"
+                    },
+                    {
+                        icon: "fas fa-briefcase",
+                        title: "策略應用",
+                        desc: "學習使用 DeFi、NFT 與 DAO 進行投資與管理。"
+                    }
+                ],
+                advanced: [{
+                        icon: "fas fa-code",
+                        title: "開發區塊鏈應用",
+                        desc: "學習智能合約開發，打造自己的區塊鏈應用。"
+                    },
+                    {
+                        icon: "fas fa-network-wired",
+                        title: "深入去中心化金融",
+                        desc: "深入理解流動性挖礦、槓桿交易等高級應用。"
+                    },
+                    {
+                        icon: "fas fa-users",
+                        title: "創建幣圈品牌",
+                        desc: "學習如何建立自己的幣圈影響力，創造更多機會。"
+                    }
+                ]
+            };
+
+            const benefits = {
+                beginner: [{
+                        icon: "fas fa-coins",
+                        title: "被動收入機會",
+                        desc: "透過質押（Staking）、DeFi、流動性挖礦等方式賺取額外收益。"
+                    },
+                    {
+                        icon: "fas fa-lightbulb",
+                        title: "金融與技術知識",
+                        desc: "學習區塊鏈、NFT、智能合約等核心概念，提升你的競爭力。"
+                    },
+                    {
+                        icon: "fas fa-handshake",
+                        title: "更多合作與社群",
+                        desc: "參與幣圈社群，找到志同道合的夥伴，一起探索新機會。"
+                    }
+                ],
+                intermediate: [{
+                        icon: "fas fa-chart-pie",
+                        title: "市場分析能力",
+                        desc: "培養分析市場趨勢的能力，做出更聰明的投資決策。"
+                    },
+                    {
+                        icon: "fas fa-laptop-code",
+                        title: "學習技術交易",
+                        desc: "掌握技術分析與量化交易，提高你的投資技巧。"
+                    },
+                    {
+                        icon: "fas fa-trophy",
+                        title: "成為專業投資者",
+                        desc: "持續學習，提升專業知識，讓投資成為你的核心競爭力。"
+                    }
+                ],
+                advanced: [{
+                        icon: "fas fa-rocket",
+                        title: "打造區塊鏈事業",
+                        desc: "從開發應用到投資管理，讓區塊鏈成為你的事業基石。"
+                    },
+                    {
+                        icon: "fas fa-globe",
+                        title: "進入全球市場",
+                        desc: "與國際投資者、開發者合作，拓展你的影響力與機會。"
+                    },
+                    {
+                        icon: "fas fa-user-shield",
+                        title: "安全與風控",
+                        desc: "學習如何保護資產，避免詐騙與安全風險。"
+                    }
+                ]
+            };
 
             const courseContainer = document.getElementById("courseContainer");
+            const stepsContainer = document.getElementById("stepsContainer");
+            const benefitsContainer = document.getElementById("benefitsContainer");
             const filterButtons = document.querySelectorAll(".filter-btn");
 
-            function displayCourses(category) {
-                courseContainer.innerHTML = "";
-                const filteredCourses = category === "all" ? courses : courses.filter(course => course.category === category);
+            function getCategoryFromURL() {
+                const params = new URLSearchParams(window.location.search);
+                return params.get("category") || "all";
+            }
 
-                filteredCourses.forEach(course => {
-                    const courseHTML = `
-                    <div class="col-md-4 mb-4">
-                        <div class="course-card">
-                            <img src="${course.image}" alt="${course.title}">
-                            <h5>${course.title}</h5>
-                            <p class="text-muted">${course.provider}</p>
-                            <span class="badge-custom">${course.type}</span>
-                        </div>
-                    </div>
-                `;
-                    courseContainer.innerHTML += courseHTML;
+            function updateActiveButton(category) {
+                filterButtons.forEach(button => {
+                    button.classList.toggle("active", button.getAttribute("data-category") === category);
                 });
             }
 
-            // 初始顯示所有課程
-            displayCourses("all");
+            // 初始化時讓對應的按鈕亮起
+            document.addEventListener("DOMContentLoaded", function() {
+                const initialCategory = getCategoryFromURL();
+                updateActiveButton(initialCategory);
+            });
 
-            // 綁定按鈕事件
+            // 點擊按鈕時更新網址與 active 樣式
             filterButtons.forEach(button => {
                 button.addEventListener("click", function() {
-                    document.querySelector(".filter-btn.active").classList.remove("active");
-                    this.classList.add("active");
                     const selectedCategory = this.getAttribute("data-category");
-                    displayCourses(selectedCategory);
+
+                    // 更新網址
+                    const newUrl = new URL(window.location);
+                    newUrl.searchParams.set("category", selectedCategory);
+                    window.history.pushState({}, "", newUrl);
+
+                    // 更新按鈕 active 樣式
+                    updateActiveButton(selectedCategory);
+
+                    // 更新頁面內容
+                    updatePage(selectedCategory);
                 });
             });
+
+            function displayCourses(category) {
+                courseContainer.innerHTML = "";
+                const filteredCourses = category === "all" ? [].concat(...Object.values(courses)) : courses[category] || [];
+
+                filteredCourses.forEach(course => {
+                    courseContainer.innerHTML += `
+                <div class="col-md-4 mb-4">
+                    <div class="course-card">
+                        <img src="${course.image}" alt="${course.title}">
+                        <h5>${course.title}</h5>
+                        <p class="text-muted">${course.provider}</p>
+                        <span class="badge-custom">${course.type}</span>
+                    </div>
+                </div>
+            `;
+                });
+            }
+
+            function displaySection(container, title, items) {
+                container.innerHTML = `
+            <div class="container my-5">
+                <h2 class="section-title">${title}</h2>
+                <div class="row">
+                    ${items.map(item => `
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <i class="${item.icon} icons"></i>
+                                <h4>${item.title}</h4>
+                                <p>${item.desc}</p>
+                            </div>
+                        </div>
+                    `).join("")}
+                </div>
+            </div>
+        `;
+            }
+
+            function updatePage(category) {
+                updateActiveButton(category);
+
+                if (category === "all") {
+                    displayCourses("all"); // 顯示所有課程
+                } else {
+                    displayCourses(category);
+                    displaySection(stepsContainer, `成為 ${categoryNames[category]} 的簡單三步驟`, steps[category]);
+                    displaySection(benefitsContainer, `成為 ${categoryNames[category]} 你可以獲得的三個東西`, benefits[category]);
+                }
+            }
+
+            const initialCategory = getCategoryFromURL();
+            updatePage(initialCategory);
         });
     </script>
 </body>

@@ -360,7 +360,7 @@
             <p class="courses-description">
                 剛踏入幣圈的初心者看過來
             </p>
-            <a href="introduce.php" class="btn-custom mt-2">立即查看</a>
+            <a href="introduce.php?category=beginner" class="btn-custom mt-2">立即查看</a>
 
             <div class="container my-5">
                 <div class="row g-4">
@@ -493,8 +493,8 @@
                 <p class="courses-description">
                     踏入幣圈一段時間的的見習家看過來
                 </p>
-                <!-- Bootstrap 連結 -->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+                <a href="introduce.php?category=intermediate" class="btn-custom mt-2">立即查看</a>
 
                 <div class="container my-5">
                     <div class="row g-4">
@@ -627,6 +627,7 @@
             <p class="courses-description">
                 幣圈實戰冒險者看過來
             </p>
+            <a href="introduce.php?category=advanced" class="btn-custom mt-2">立即查看</a>
 
             <div class="container my-5">
                 <div class="row g-4">
@@ -749,7 +750,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
         </section>
 
