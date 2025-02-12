@@ -89,9 +89,9 @@
     }
 
     .course-card img {
-        width: 100%;
+        /* width: 100%; */
         border-radius: 8px;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
     }
 
     .badge-custom {
@@ -100,6 +100,71 @@
         border-radius: 5px;
         padding: 5px 10px;
         font-size: 0.85rem;
+    }
+</style>
+<style>
+    .course-card {
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .course-image {
+        width: 100%;
+        /* height: 160px; */
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .course-content {
+        padding: 16px;
+    }
+
+    .university-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: white;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+    }
+
+    .university-badge img {
+        height: 24px;
+        margin-right: 8px;
+    }
+
+    .course-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .course-provider {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .course-badge {
+        display: inline-block;
+        background: #eee;
+        color: #333;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 12px;
+        margin-top: 10px;
+        font-weight: bold;
     }
 </style>
 
@@ -428,17 +493,24 @@
 
                 filteredCourses.forEach(course => {
                     courseContainer.innerHTML += `
-                <div class="col-md-4 mb-4">
-                    <div class="course-card">
-                        <img src="${course.image}" alt="${course.title}">
-                        <h5>${course.title}</h5>
-                        <p class="text-muted">${course.provider}</p>
-                        <span class="badge-custom">${course.type}</span>
+            <div class="col-md-4 mb-4">
+                <div class="course-card">
+                    <div class="university-badge">
+                        <img src="./img/logo.png" alt="${course.provider}">
+                        <span>${course.provider}</span>
+                    </div>
+                    <img class="course-image" src="${course.image}" alt="${course.title}">
+                    <div class="course-content">
+                        <h5 class="course-title">${course.title}</h5>
+                        <p class="course-provider">${course.provider}</p>
+                        <span class="course-badge">${course.type}</span>
                     </div>
                 </div>
-            `;
+            </div>
+        `;
                 });
             }
+
 
             function displaySection(container, title, items) {
                 container.innerHTML = `
