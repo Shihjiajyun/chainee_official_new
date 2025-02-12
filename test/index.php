@@ -231,6 +231,19 @@
         margin: 0 !important;
     }
 </style>
+<style>
+    .hero-video {
+        width: 50%;
+        /* 與圖片各佔一半 */
+        max-width: 600px;
+    }
+
+    .hero-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+</style>
 
 <body>
     <?php include 'navbar.php' ?>
@@ -240,26 +253,59 @@
         <section class="hero-section">
             <div class="hero-content container">
                 <div class="hero-wrapper">
-                    <div class="hero-text">
-                        <div class="hero-text-content">
-                            <h1 class="hero-title">從零開始</h1>
-                            <h1 class="hero-title">
-                                乘上<span style="color: #ffc27a;">世紀最大金融浪潮</span>
-                            </h1>
-                            <form class="search-bar" role="search">
-                                <label for="course-search" class="visually-hidden">你今天想學習甚麼？</label>
-                                <div class="search-wrapper">
-                                    <input type="search" id="course-search" class="search-placeholder" placeholder="你今天想學習甚麼？" aria-label="Search for courses">
-                                    <button type="submit" class="search-button">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
+
+                    <!-- 左側 Swiper 影片 -->
+                    <div class="hero-video">
+                        <div class="swiper hero-video-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- 影片 1 -->
+                                <div class="swiper-slide">
+                                    <iframe width="100%" height="315"
+                                        src="https://www.youtube.com/embed/qvdGZHDo4mU?autoplay=1&mute=1&loop=1&playlist=qvdGZHDo4mU"
+                                        frameborder="0" allowfullscreen>
+                                    </iframe>
                                 </div>
-                            </form>
+                                <!-- 影片 2 -->
+                                <div class="swiper-slide">
+                                    <iframe width="100%" height="315"
+                                        src="https://www.youtube.com/embed/Meh0whvRv7U?autoplay=1&mute=1&loop=1&playlist=Meh0whvRv7U"
+                                        frameborder="0" allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <!-- 影片 3 -->
+                                <div class="swiper-slide">
+                                    <iframe width="100%" height="315"
+                                        src="https://www.youtube.com/embed/OL0cZabjl3U?autoplay=1&mute=1&loop=1&playlist=OL0cZabjl3U"
+                                        frameborder="0" allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <!-- Swiper 按鈕 -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+
+                            <!-- 分頁點點 -->
+                            <div class="swiper-pagination"></div>
                         </div>
+
+                        <!-- 🔍 搜尋欄位 -->
+                        <form class="search-bar" role="search">
+                            <label for="course-search" class="visually-hidden">你今天想學習甚麼？</label>
+                            <div class="search-wrapper">
+                                <input type="search" id="course-search" class="search-placeholder" placeholder="你今天想學習甚麼？" aria-label="Search for courses">
+                                <button type="submit" class="search-button">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
+
+                    <!-- 右側圖片 -->
                     <div class="hero-image">
-                        <img src="./img/456123.png" />
+                        <img src="./img/456123.png" alt="主視覺圖片">
                     </div>
+
                 </div>
             </div>
         </section>
@@ -394,20 +440,13 @@
                                     </div>
                                     <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-regular fa-star star-icon"></i>
-                                        </div>
-                                        <span>(22)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 800</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -425,22 +464,15 @@
                                         <img src="./img/lesson4.jpg" alt="Python course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">NFT與數位資產：市場分析與投資策略</h3>
+                                    <h3 class="course-title">破解牛市密碼：2025 投資幣圈三大黃金準則</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                        </div>
-                                        <span>(18)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-calendar-days"></i> 2025-02-15（六）下午 2 點</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 700</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -542,20 +574,13 @@
                                         </div>
                                         <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
                                         <div class="course-rating">
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-regular fa-star star-icon"></i>
-                                            </div>
-                                            <span>(22)</span>
+                                            <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                         </div>
                                     </div>
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 800</span>
+                                            <span class="course-price">$ 免費</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -573,22 +598,15 @@
                                             <img src="./img/lesson4.jpg" alt="Python course" class="course-img">
                                             <div class="course-tag">初心者</div>
                                         </div>
-                                        <h3 class="course-title">NFT與數位資產：市場分析與投資策略</h3>
+                                        <h3 class="course-title">破解牛市密碼：2025 投資幣圈三大黃金準則</h3>
                                         <div class="course-rating">
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                            </div>
-                                            <span>(18)</span>
+                                            <span class="text-secondary"><i class="fa-solid fa-calendar-days"></i> 2025-02-15（六）下午 2 點</span>
                                         </div>
                                     </div>
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 700</span>
+                                            <span class="course-price">$ 免費</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -688,20 +706,13 @@
                                     </div>
                                     <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-regular fa-star star-icon"></i>
-                                        </div>
-                                        <span>(22)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 800</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -719,22 +730,15 @@
                                         <img src="./img/lesson4.jpg" alt="Python course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">NFT與數位資產：市場分析與投資策略</h3>
+                                    <h3 class="course-title">破解牛市密碼：2025 投資幣圈三大黃金準則</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                        </div>
-                                        <span>(18)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-calendar-days"></i> 2025-02-15（六）下午 2 點</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 700</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -745,6 +749,7 @@
                     </div>
                 </div>
             </div>
+            
 
         </section>
 
@@ -998,6 +1003,30 @@
         });
     </script>
 
+    <!-- 主視覺影片切換 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var swiper = new Swiper(".hero-video-swiper", {
+                loop: true, // 無限循環
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                autoplay: {
+                    delay: 5000, // 5秒後自動換片
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
 </body>
 <footer class="mt-3">
     <?php include 'footer.php' ?>
