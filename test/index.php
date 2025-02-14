@@ -251,7 +251,7 @@
         display: flex;
         gap: 20px;
         margin-top: 60px;
-        margin-left: 60px;
+        margin-right: 60px;
     }
 
     #course .swiper-button-prev,
@@ -365,6 +365,34 @@
         margin-right: 5px;
     }
 </style>
+<style>
+    .courses-header {
+        display: flex;
+        justify-content: space-between;
+        /* 左右對齊 */
+        align-items: center;
+        /* 垂直置中 */
+    }
+
+    .controls-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* 調整按鈕與箭頭之間的距離 */
+    }
+
+    .view-more {
+        text-decoration: underline;
+        color: rgb(0, 0, 0);
+        margin-right: 10px;
+    }
+
+    .swiper-controls {
+        display: flex;
+        gap: 5px;
+        /* 控制左右箭頭間距 */
+    }
+</style>
 
 <body>
     <?php include 'navbar.php' ?>
@@ -378,22 +406,24 @@
 
         <div class="gradient-overlay"></div>
 
-        <div class="hero-content">
-            <h1>為自己學習最迷人</h1>
-            <p>鏈習生 線上學習平台，找到適合你的學習方式，迎接新改變！</p>
+        <div class="courses-section">
+            <div class="hero-content ">
+                <h1>為自己學習最迷人</h1>
+                <p>鏈習生 線上學習平台，找到適合你的學習方式，迎接新改變！</p>
 
-            <div class="search-bar">
-                <input type="text" placeholder="今天想學點什麼？">
-                <button><i class="fas fa-search"></i></button>
+                <div class="search-bar">
+                    <input type="text" placeholder="今天想學點什麼？">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="tags">
+                    <div class="tag">24堂新年希望加速器 🚀</div>
+                    <div class="tag">先搶先贏 / 最低77折</div>
+                    <div class="tag">長期問答攻防戰</div>
+                    <div class="tag">2025請假攻略</div>
+                </div>
+
             </div>
-
-            <div class="tags">
-                <div class="tag">24堂新年希望加速器 🚀</div>
-                <div class="tag">先搶先贏 / 最低77折</div>
-                <div class="tag">長期問答攻防戰</div>
-                <div class="tag">2025請假攻略</div>
-            </div>
-
         </div>
     </div>
 
@@ -442,14 +472,20 @@
     <!-- 幣圈初心者 -->
     <section class="courses-section" id="course" style="margin-top: 50px;">
         <h2 class="courses-title"><span style="color: #3461fd;">幣圈初心者</span></h2>
-        <p class="courses-description">
-            剛踏入幣圈的初心者看過來
-            <a href="introduce.php?category=beginner" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
-        </p>
-        <div class="swiper-controls">
-            <div class="swiper-button-prev swiper-button-prev-1"></div>
-            <div class="swiper-button-next swiper-button-next-1"></div>
+        <div class="courses-header">
+            <p class="courses-description">
+                剛踏入幣圈的初心者看過來
+            </p>
+            <div class="controls-container">
+                <a href="introduce.php?category=beginner" class="view-more">查看更多</a>
+                <div class="swiper-controls">
+                    <div class="swiper-button-prev swiper-button-prev-1"></div>
+                    <div class="swiper-button-next swiper-button-next-1"></div>
+                </div>
+            </div>
         </div>
+
+
         <div class="container mb-5">
             <div class="swiper mySwiper1">
                 <div class="swiper-wrapper">
@@ -589,13 +625,17 @@
     <div style="width:100vw;background-color: rgba(231, 233, 235, 0.5);">
         <section class="courses-section pt-5" id="course" style="margin-top: 50px;">
             <h2 class="courses-title"><span style="color: #3461fd;">幣圈見習家</span></h2>
-            <p class="courses-description">
-                剛踏入幣圈的初心者看過來
-                <a href="introduce.php?category=intermediate" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
-            </p>
-            <div class="swiper-controls">
-                <div class="swiper-button-prev swiper-button-prev-2"></div>
-                <div class="swiper-button-next swiper-button-next-2"></div>
+            <div class="courses-header">
+                <p class="courses-description">
+                    剛踏入幣圈的初心者看過來
+                </p>
+                <div class="controls-container">
+                    <a href="introduce.php?category=intermediate" class="view-more">查看更多</a>
+                    <div class="swiper-controls">
+                        <div class="swiper-button-prev swiper-button-prev-2"></div>
+                        <div class="swiper-button-next swiper-button-next-2"></div>
+                    </div>
+                </div>
             </div>
             <div class="container mb-5">
                 <div class="swiper mySwiper2">
@@ -736,14 +776,20 @@
     <!-- 幣圈實戰冒險者 -->
     <section class="courses-section" id="course" style="margin-top: 50px;">
         <h2 class="courses-title"><span style="color: #3461fd;">幣圈實戰冒險者</span></h2>
-        <p class="courses-description">
-            剛踏入幣圈的初心者看過來
-            <a href="introduce.php?category=advanced" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
-        </p>
-        <div class="swiper-controls">
-            <div class="swiper-button-prev swiper-button-prev-3"></div>
-            <div class="swiper-button-next swiper-button-next-3"></div>
+
+        <div class="courses-header">
+            <p class="courses-description">
+                剛踏入幣圈的初心者看過來
+            </p>
+            <div class="controls-container">
+                <a href="introduce.php?category=advanced" class="view-more">查看更多</a>
+                <div class="swiper-controls">
+                    <div class="swiper-button-prev swiper-button-prev-3"></div>
+                    <div class="swiper-button-next swiper-button-next-3"></div>
+                </div>
+            </div>
         </div>
+
         <div class="container mb-5">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">

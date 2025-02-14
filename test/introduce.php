@@ -172,7 +172,7 @@
         border: 1px solid rgb(176, 179, 176);
         /* 綠色框線 */
         border-radius: 12px;
-        padding: 10px 30px ;
+        padding: 10px 30px;
     }
 </style>
 
@@ -535,12 +535,17 @@
                         <h5 class="course-title">${course.title}</h5>
                         <p class="course-provider">${course.provider}</p>
                         <span class="course-badge">${course.type}</span>
+                        <div class="text-center mt-3">
+                            <a href="./course.php" 
+                               class="btn btn-success">前往購買</a>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
                 });
             }
+
 
 
             function displaySection(container, title, items) {
