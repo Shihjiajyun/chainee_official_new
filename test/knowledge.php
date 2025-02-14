@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/knowledge.css">
 </head>
+
 <style>
     .main-visual {
         position: relative;
@@ -17,7 +18,7 @@
         align-items: center;
         justify-content: space-between;
         background: url('https://chainee.io/wp-content/uploads/2024/05/%E5%85%8D%E8%B2%BB%E6%96%87%E7%AB%A0%E9%A0%81%E9%A6%96%E5%9C%96%E8%83%8C%E6%99%AF%E7%85%A7-scaled.jpg') center/cover no-repeat;
-        height: 500px;
+        height:58vh;
         padding: 0 10%;
         color: white;
         overflow: hidden;
