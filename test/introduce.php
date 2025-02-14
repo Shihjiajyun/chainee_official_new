@@ -166,6 +166,14 @@
         margin-top: 10px;
         font-weight: bold;
     }
+
+    #stepsContainer .container,
+    #benefitsContainer .container {
+        border: 1px solid rgb(176, 179, 176);
+        /* 綠色框線 */
+        border-radius: 12px;
+        padding: 10px 30px ;
+    }
 </style>
 
 <body>
@@ -187,10 +195,11 @@
                 </nav>
 
                 <!-- Hero Content -->
-                <h1 class="display-2 fw-bold mb-4">認識鏈習生</h1>
-                <p class="lead mb-5">
+                <h1 id="heroTitle" class="display-2 fw-bold mb-4">認識鏈習生</h1>
+                <p id="heroDescription" class="lead mb-5">
                     鏈習生是一個針對區塊鏈學習者的專案，旨在幫助你從零開始了解區塊鏈技術，學習智能合約開發，並探索 Web3 世界的無限可能。
                 </p>
+
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-3 flex-wrap">
@@ -201,70 +210,11 @@
             </div>
         </div>
 
-        <!-- 成為鏈習生獲得三個東西 -->
-        <div class="container my-5">
-            <h2 class="section-title">成為鏈習生之後，你可以獲得的三個東西</h2>
-            <p class="section-subtitle">了解加密貨幣的世界，獲取更多機會</p>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-coins icons"></i>
-                        <div class="feature-text">
-                            <h4>被動收入機會</h4>
-                            <p>透過質押（Staking）、DeFi、流動性挖礦等方式賺取額外收益。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-lightbulb icons"></i>
-                        <div class="feature-text">
-                            <h4>金融與技術知識</h4>
-                            <p>學習區塊鏈、NFT、智能合約等核心概念，提升你的競爭力。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fas fa-handshake icons"></i>
-                        <div class="feature-text">
-                            <h4>更多合作與社群</h4>
-                            <p>參與幣圈社群，找到志同道合的夥伴，一起探索新機會。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 什麼是鏈習生 -->
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 introduce">
-                    <h2 class="h3 mb-4" style="color: #00262b;font-weight:900;">什麼是鏈習生？</h2>
-                    <p>
-                        鏈習生是一個專注於區塊鏈學習與實作的培訓計畫，旨在幫助學習者從基礎概念到實際應用，全面掌握區塊鏈技術。無論你是剛接觸區塊鏈的新手，還是想深入學習智能合約開發與 Web3 技術的開發者，都能在鏈習生找到適合的學習內容與實作機會。
-                    </p>
-                    <p class="">
-                        在這個計畫中，我們提供系統化的學習資源，涵蓋區塊鏈基礎、去中心化應用（DApp）開發、智能合約設計、安全性原則等核心技術。同時，我們強調動手實作，讓學員透過模擬交易、鏈上數據分析、智能合約部署等挑戰，累積實戰經驗，將學習成果轉化為可展示的作品。
-                    </p>
-                    <p>鏈習生不僅是一個學習平台，更是一個連結區塊鏈產業與學習者的橋樑。我們透過社群互動、業界導師指導、專案合作等方式，幫助學員與業界建立聯繫，拓展未來的職涯與發展機會。</p>
-
-                </div>
-                <div class="col-lg-6">
-                    <img
-                        src="./img/leadership.png"
-                        alt="加密貨幣學習示意圖"
-                        class="img-fluid rounded shadow" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-
         <!-- 簡單三步驟 -->
         <div id="stepsContainer"></div>
 
         <!-- 可以獲得的三個東西 -->
-        <div id="benefitsContainer"></div>
+        <div id="benefitsContainer" style="min-height: 230px;"></div>
 
         <!-- 課程篩選 -->
         <div class="container my-5">
@@ -287,6 +237,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -295,6 +246,13 @@
                 beginner: "幣圈初心者",
                 intermediate: "幣圈見習家",
                 advanced: "幣圈實戰冒險者"
+            };
+
+            const categoryDescriptions = {
+                all: "探索各種區塊鏈與加密貨幣課程，適合所有學習階段的學員。",
+                beginner: "鏈習生是一個針對區塊鏈學習者的專案，幫助你從零開始學習區塊鏈與加密貨幣。",
+                intermediate: "學習進階區塊鏈應用，包括 NFT、智能合約與去中心化金融（DeFi）。",
+                advanced: "探索高級區塊鏈技術，如開發 DApp、智能合約安全、以及專業投資策略。"
             };
 
             const courses = {
@@ -450,6 +408,8 @@
             const courseContainer = document.getElementById("courseContainer");
             const stepsContainer = document.getElementById("stepsContainer");
             const benefitsContainer = document.getElementById("benefitsContainer");
+            const heroTitle = document.getElementById("heroTitle");
+            const heroDescription = document.getElementById("heroDescription");
             const filterButtons = document.querySelectorAll(".filter-btn");
 
             function getCategoryFromURL() {
@@ -463,11 +423,85 @@
                 });
             }
 
-            // 初始化時讓對應的按鈕亮起
-            document.addEventListener("DOMContentLoaded", function() {
-                const initialCategory = getCategoryFromURL();
-                updateActiveButton(initialCategory);
-            });
+            function updatePage(category) {
+                updateActiveButton(category);
+
+                // **動畫：先將內容移動到畫面外**
+                gsap.to("#stepsContainer", {
+                    x: 100,
+                    opacity: 0,
+                    duration: 0.3
+                });
+                gsap.to("#benefitsContainer", {
+                    x: 100,
+                    opacity: 0,
+                    duration: 0.3
+                });
+
+                // **標題與描述先淡出**
+                gsap.to("#heroTitle", {
+                    opacity: 0,
+                    x: 50,
+                    duration: 0.3
+                });
+                gsap.to("#heroDescription", {
+                    opacity: 0,
+                    x: 50,
+                    duration: 0.3
+                });
+
+                setTimeout(() => {
+                    if (category === "all") {
+                        displayCourses("all");
+                    } else {
+                        displayCourses(category);
+                        displaySection(stepsContainer, `成為 ${categoryNames[category]} 的簡單三步驟`, steps[category]);
+                        displaySection(benefitsContainer, `成為 ${categoryNames[category]} 你可以獲得的三個東西`, benefits[category]);
+                    }
+
+                    // **更新標題與描述**
+                    if (heroTitle && heroDescription) {
+                        heroTitle.textContent = `認識 ${categoryNames[category]}`;
+                        heroDescription.textContent = categoryDescriptions[category];
+                    }
+
+                    // **動畫：新內容從右側滑入**
+                    gsap.fromTo("#stepsContainer", {
+                        x: 100,
+                        opacity: 0
+                    }, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.5
+                    });
+                    gsap.fromTo("#benefitsContainer", {
+                        x: 100,
+                        opacity: 0
+                    }, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.5
+                    });
+
+                    // **標題與描述滑入**
+                    gsap.fromTo("#heroTitle", {
+                        x: 50,
+                        opacity: 0
+                    }, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.5
+                    });
+                    gsap.fromTo("#heroDescription", {
+                        x: 50,
+                        opacity: 0
+                    }, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.5
+                    });
+                }, 300); // 等待舊內容動畫結束後再更新標題與內容
+            };
 
             // 點擊按鈕時更新網址與 active 樣式
             filterButtons.forEach(button => {
@@ -478,9 +512,6 @@
                     const newUrl = new URL(window.location);
                     newUrl.searchParams.set("category", selectedCategory);
                     window.history.pushState({}, "", newUrl);
-
-                    // 更新按鈕 active 樣式
-                    updateActiveButton(selectedCategory);
 
                     // 更新頁面內容
                     updatePage(selectedCategory);
@@ -529,18 +560,6 @@
                 </div>
             </div>
         `;
-            }
-
-            function updatePage(category) {
-                updateActiveButton(category);
-
-                if (category === "all") {
-                    displayCourses("all"); // 顯示所有課程
-                } else {
-                    displayCourses(category);
-                    displaySection(stepsContainer, `成為 ${categoryNames[category]} 的簡單三步驟`, steps[category]);
-                    displaySection(benefitsContainer, `成為 ${categoryNames[category]} 你可以獲得的三個東西`, benefits[category]);
-                }
             }
 
             const initialCategory = getCategoryFromURL();
