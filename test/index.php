@@ -20,7 +20,7 @@
 
     .course-title {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: 700;
         max-width: 100%;
         /* 限制最大寬度 */
         white-space: normal;
@@ -52,6 +52,12 @@
     .course-price {
         font-size: 20px;
         font-weight: bold;
+        font-family: Public Sans;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.05px;
+
     }
 
     .course-action {
@@ -231,25 +237,25 @@
         padding-bottom: 40px;
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
+    #course .swiper-button-next,
+    #course .swiper-button-prev {
         color: #3461fd;
         /* 讓按鈕顏色與標題一致 */
     }
 
-    .swiper-pagination-bullet {
+    #course .swiper-pagination-bullet {
         background: #3461fd;
     }
 
-    .courses-section .swiper-controls {
+    #course .swiper-controls {
         display: flex;
         gap: 20px;
         margin-top: 60px;
         margin-left: 60px;
     }
 
-    .courses-section .swiper-button-prev,
-    .courses-section .swiper-button-next {
+    #course .swiper-button-prev,
+    #course .swiper-button-next {
         position: static !important;
         /* 取消 Swiper 預設的絕對定位 */
         width: 40px;
@@ -265,9 +271,98 @@
         transition: background 0.3s ease;
     }
 
-    .courses-section .swiper-button-prev:hover,
-    .courses-section .swiper-button-next:hover {
+    #course .swiper-button-prev:hover,
+    #course .swiper-button-next:hover {
         background-color: #294bce;
+    }
+</style>
+
+<style>
+    /* 左側關於我們區塊 */
+    .about-section {
+        background: linear-gradient(135deg, #f8f9fa, #e3e6eb);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        height: 100%;
+    }
+
+    .instructors-section h3 {
+        color: var(--2nd-Primary-500, #3461fd);
+        font-family: Public Sans;
+        font-weight: 600;
+        font-size: clamp(50px, 5vw, 56px);
+        line-height: 56px;
+        letter-spacing: 0%;
+
+    }
+
+    /* 右側熱門文章區塊 */
+    .popular-articles {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .article-card {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-image {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        margin-left: 10px;
+    }
+
+    .article-content {
+        padding: 10px;
+    }
+
+    .article-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+    }
+
+    .article-description {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .article-card:hover .article-title {
+        color: #3461fd;
+    }
+
+    /* 移除超連結底線 */
+    .article-card {
+        text-decoration: none;
+    }
+
+    /* 調整文章資訊排版 */
+    .article-meta {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #777;
+        margin-top: 5px;
+    }
+
+    .article-meta i {
+        margin-right: 5px;
     }
 </style>
 
@@ -345,18 +440,18 @@
     </section>
 
     <!-- 幣圈初心者 -->
-    <section class="courses-section" style="margin-top: 50px;">
+    <section class="courses-section" id="course" style="margin-top: 50px;">
         <h2 class="courses-title"><span style="color: #3461fd;">幣圈初心者</span></h2>
         <p class="courses-description">
             剛踏入幣圈的初心者看過來
             <a href="introduce.php?category=beginner" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
         </p>
         <div class="swiper-controls">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev swiper-button-prev-1"></div>
+            <div class="swiper-button-next swiper-button-next-1"></div>
         </div>
         <div class="container mb-5">
-            <div class="swiper mySwiper">
+            <div class="swiper mySwiper1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="course-card">
@@ -485,29 +580,179 @@
                 </div>
 
                 <!-- 分頁點 -->
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination swiper-pagination-1"></div>
             </div>
         </div>
     </section>
 
     <!-- 幣圈見習家 -->
     <div style="width:100vw;background-color: rgba(231, 233, 235, 0.5);">
-        <section class="courses-section pt-5">
+        <section class="courses-section pt-5" id="course" style="margin-top: 50px;">
             <h2 class="courses-title"><span style="color: #3461fd;">幣圈見習家</span></h2>
             <p class="courses-description">
-                踏入幣圈一段時間的的見習家看過來
+                剛踏入幣圈的初心者看過來
+                <a href="introduce.php?category=intermediate" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
             </p>
+            <div class="swiper-controls">
+                <div class="swiper-button-prev swiper-button-prev-2"></div>
+                <div class="swiper-button-next swiper-button-next-2"></div>
+            </div>
+            <div class="container mb-5">
+                <div class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <div class="course-inner">
+                                        <div class="course-image">
+                                            <img src="./img/lesson5.jpg" alt="HTML course" class="course-img">
+                                            <div class="course-tag">初心者</div>
+                                        </div>
+                                        <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
+                                        <div class="course-rating">
+                                            <div class="rating-stars">
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                            </div>
+                                            <span>(15)</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <div class="course-divider"></div>
+                                        <div class="course-price-wrapper">
+                                            <span class="course-price">$ 500</span>
+                                            <button class="course-action" aria-label="Add to cart">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <a href="introduce.php?category=intermediate" class="btn-custom mt-2">立即查看</a>
+                        <div class="swiper-slide">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <div class="course-inner">
+                                        <div class="course-image">
+                                            <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                            <div class="course-tag">初心者</div>
+                                        </div>
+                                        <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                        <div class="course-rating">
+                                            <div class="rating-stars">
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                            </div>
+                                            <span>(30)</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <div class="course-divider"></div>
+                                        <div class="course-price-wrapper">
+                                            <span class="course-price">$ 600</span>
+                                            <button class="course-action" aria-label="Add to cart">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="container my-5">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
+                        <div class="swiper-slide">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <div class="course-inner">
+                                        <div class="course-image">
+                                            <img src="./img/lesson5.jpg" alt="JavaScript course" class="course-img">
+                                            <div class="course-tag">初心者</div>
+                                        </div>
+                                        <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
+                                        <div class="course-rating">
+                                            <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <div class="course-divider"></div>
+                                        <div class="course-price-wrapper">
+                                            <span class="course-price">$ 免費</span>
+                                            <button class="course-action" aria-label="Add to cart">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <div class="course-inner">
+                                        <div class="course-image">
+                                            <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                            <div class="course-tag">初心者</div>
+                                        </div>
+                                        <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                        <div class="course-rating">
+                                            <div class="rating-stars">
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star star-icon"></i>
+                                                <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                            </div>
+                                            <span>(30)</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <div class="course-divider"></div>
+                                        <div class="course-price-wrapper">
+                                            <span class="course-price">$ 600</span>
+                                            <button class="course-action" aria-label="Add to cart">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 分頁點 -->
+                    <div class="swiper-pagination swiper-pagination-2"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 幣圈實戰冒險者 -->
+    <section class="courses-section" id="course" style="margin-top: 50px;">
+        <h2 class="courses-title"><span style="color: #3461fd;">幣圈實戰冒險者</span></h2>
+        <p class="courses-description">
+            剛踏入幣圈的初心者看過來
+            <a href="introduce.php?category=advanced" style="text-decoration: underline; color:rgb(148, 150, 156); margin-left: 10px;">查看更多</a>
+        </p>
+        <div class="swiper-controls">
+            <div class="swiper-button-prev swiper-button-prev-3"></div>
+            <div class="swiper-button-next swiper-button-next-3"></div>
+        </div>
+        <div class="container mb-5">
+            <div class="swiper mySwiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson3.jpg" alt="HTML course" class="course-img">
+                                        <img src="./img/lesson5.jpg" alt="HTML course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
                                     <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
@@ -535,7 +780,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
@@ -568,7 +813,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
@@ -594,23 +839,30 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson4.jpg" alt="Python course" class="course-img">
+                                        <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">破解牛市密碼：2025 投資幣圈三大黃金準則</h3>
+                                    <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
                                     <div class="course-rating">
-                                        <span class="text-secondary"><i class="fa-solid fa-calendar-days"></i> 2025-02-15（六）下午 2 點</span>
+                                        <div class="rating-stars">
+                                            <i class="fa-solid fa-star star-icon"></i>
+                                            <i class="fa-solid fa-star star-icon"></i>
+                                            <i class="fa-solid fa-star star-icon"></i>
+                                            <i class="fa-solid fa-star star-icon"></i>
+                                            <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                        </div>
+                                        <span>(30)</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 免費</span>
+                                        <span class="course-price">$ 600</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -620,204 +872,84 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </section>
-    </div>
-
-    <!-- 幣圈實戰冒險者 -->
-    <section class="courses-section">
-        <h2 class="courses-title"><span style="color: #3461fd;">幣圈實戰冒險者</span></h2>
-        <p class="courses-description">
-            幣圈實戰冒險者看過來
-        </p>
-        <a href="introduce.php?category=advanced" class="btn-custom mt-2">立即查看</a>
-
-        <div class="container my-5">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="course-card">
-                        <div class="course-content">
-                            <div class="course-inner">
-                                <div class="course-image">
-                                    <img src="./img/lesson3.jpg" alt="HTML course" class="course-img">
-                                    <div class="course-tag">初心者</div>
-                                </div>
-                                <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
-                                <div class="course-rating">
-                                    <div class="rating-stars">
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                    </div>
-                                    <span>(15)</span>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-divider"></div>
-                                <div class="course-price-wrapper">
-                                    <span class="course-price">$ 500</span>
-                                    <button class="course-action" aria-label="Add to cart">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="course-card">
-                        <div class="course-content">
-                            <div class="course-inner">
-                                <div class="course-image">
-                                    <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
-                                    <div class="course-tag">初心者</div>
-                                </div>
-                                <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
-                                <div class="course-rating">
-                                    <div class="rating-stars">
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star star-icon"></i>
-                                        <i class="fa-solid fa-star-half-alt star-icon"></i>
-                                    </div>
-                                    <span>(30)</span>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-divider"></div>
-                                <div class="course-price-wrapper">
-                                    <span class="course-price">$ 600</span>
-                                    <button class="course-action" aria-label="Add to cart">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="course-card">
-                        <div class="course-content">
-                            <div class="course-inner">
-                                <div class="course-image">
-                                    <img src="./img/lesson5.jpg" alt="JavaScript course" class="course-img">
-                                    <div class="course-tag">初心者</div>
-                                </div>
-                                <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
-                                <div class="course-rating">
-                                    <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-divider"></div>
-                                <div class="course-price-wrapper">
-                                    <span class="course-price">$ 免費</span>
-                                    <button class="course-action" aria-label="Add to cart">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="course-card">
-                        <div class="course-content">
-                            <div class="course-inner">
-                                <div class="course-image">
-                                    <img src="./img/lesson4.jpg" alt="Python course" class="course-img">
-                                    <div class="course-tag">初心者</div>
-                                </div>
-                                <h3 class="course-title">破解牛市密碼：2025 投資幣圈三大黃金準則</h3>
-                                <div class="course-rating">
-                                    <span class="text-secondary"><i class="fa-solid fa-calendar-days"></i> 2025-02-15（六）下午 2 點</span>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-divider"></div>
-                                <div class="course-price-wrapper">
-                                    <span class="course-price">$ 免費</span>
-                                    <button class="course-action" aria-label="Add to cart">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- 分頁點 -->
+                <div class="swiper-pagination swiper-pagination-3"></div>
             </div>
         </div>
-
-
     </section>
 
     <!-- 專欄作家 -->
-    <div style="width:100vw;background-color: rgba(231, 233, 235, 0.5);">
-        <section class="instructors-section pt-5" style="margin-left: auto;margin-right: auto;">
-            <h2 class="instructors-title"><span style="color: #3461fd;">專欄作家</span></h2>
-            <p class="instructors-description">
-                您可以在鏈習生網站自由的探索每一位專業幣圈作家文章
-            </p>
-
+    <div style="width:100vw; background-color: rgba(231, 233, 235, 0.5);">
+        <section class="instructors-section pt-5" id="course" style="margin-left: auto; margin-right: auto;">
             <div class="container my-5">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="instructor-card">
-                            <div class="instructor-content">
-                                <img src="./img/author1.jpg" alt="Jacob Jones" class="instructor-image">
-                                <div class="instructor-info">
-                                    <h3 class="instructor-name">Jacob Jones</h3>
-                                    <p class="instructor-specialty">UI-UX Design Expert</p>
-                                </div>
-                            </div>
+                <div class="row">
+                    <!-- 左側區塊：關於我們 -->
+                    <div class="col-md-6">
+                        <div class="about-section">
+                            <h3>關於我們</h3>
+                            <p>鏈習生專欄作家來自各個區塊鏈領域，包括 DeFi、NFT、Web3 開發等，為讀者提供最前線的加密貨幣趨勢與分析。</p>
+                            <p>我們的作家不僅擁有豐富的產業經驗，還精通技術與市場趨勢，幫助投資者和開發者更快理解區塊鏈技術的發展動向。無論是智能合約的應用、去中心化金融（DeFi）策略，還是 NFT 和 Web3 的未來趨勢，這裡都能找到專業的見解。</p>
+                            <p>我們致力於提供易懂且具有實用價值的內容，讓區塊鏈知識不再艱澀難懂。探索我們的專欄，學習來自業界專家的洞察與技巧！</p>
+                            <p>我們致力於提供易懂且具有實用價值的內容，讓區塊鏈知識不再艱澀難懂。探索我們的專欄，學習來自業界專家的洞察與技巧！</p>
                         </div>
+
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="instructor-card">
-                            <div class="instructor-content">
-                                <img src="./img/author2.jpg" alt="Emily Smith" class="instructor-image">
-                                <div class="instructor-info">
-                                    <h3 class="instructor-name">Emily Smith</h3>
-                                    <p class="instructor-specialty">Blockchain Developer</p>
+                    <!-- 右側區塊：熱門文章 -->
+                    <div class="col-md-6">
+                        <h3>熱門文章</h3>
+                        <div class="popular-articles">
+                            <a href="#" class="article-card">
+                                <img src="./img/lesson3.jpg" alt="比特幣 ETF" class="article-image">
+                                <div class="article-content">
+                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
+                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <div class="article-meta">
+                                        <i class="fas fa-user"></i> 由 Jacob Jones
+                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </a>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="instructor-card">
-                            <div class="instructor-content">
-                                <img src="./img/author3.jpg" alt="Michael Brown" class="instructor-image">
-                                <div class="instructor-info">
-                                    <h3 class="instructor-name">Michael Brown</h3>
-                                    <p class="instructor-specialty">DeFi & Crypto Analyst</p>
+                            <a href="#" class="article-card">
+                                <img src="./img/lesson3.jpg" alt="比特幣 ETF" class="article-image">
+                                <div class="article-content">
+                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
+                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <div class="article-meta">
+                                        <i class="fas fa-user"></i> 由 Jacob Jones
+                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </a>
+                            <a href="#" class="article-card">
+                                <img src="./img/lesson4.jpg" alt="比特幣 ETF" class="article-image">
+                                <div class="article-content">
+                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
+                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <div class="article-meta">
+                                        <i class="fas fa-user"></i> 由 Jacob Jones
+                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
+                                    </div>
+                                </div>
+                            </a>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="instructor-card">
-                            <div class="instructor-content">
-                                <img src="./img/author4.jpg" alt="Sophia White" class="instructor-image">
-                                <div class="instructor-info">
-                                    <h3 class="instructor-name">Sophia White</h3>
-                                    <p class="instructor-specialty">NFT & Web3 Strategist</p>
+                            <a href="#" class="article-card">
+                                <img src="./img/lesson5.jpg" alt="比特幣 ETF" class="article-image">
+                                <div class="article-content">
+                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
+                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <div class="article-meta">
+                                        <i class="fas fa-user"></i> 由 Jacob Jones
+                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 
@@ -982,7 +1114,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             var swiper = new Swiper(".feedback-swiper", {
                 loop: true,
-                slidesPerView: 3, // 一次顯示 3 張回饋
+                slidesPerView: 1, // 一次顯示 3 張回饋
                 spaceBetween: 0, // 卡片之間的間距
                 navigation: {
                     nextEl: ".swiper-button-next",
@@ -1009,29 +1141,77 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1, // 每次顯示 1 個
-                spaceBetween: 20, // 卡片間距
-                loop: true, // 無限循環滑動
+            // Swiper 1
+            var swiper1 = new Swiper(".mySwiper1", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
                 navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next-1",
+                    prevEl: ".swiper-button-prev-1",
                 },
                 pagination: {
-                    el: ".swiper-pagination",
+                    el: ".swiper-pagination-1",
                     clickable: true,
                 },
                 breakpoints: {
                     768: {
-                        slidesPerView: 2, // 平板顯示 2 個
+                        slidesPerView: 2
                     },
                     1024: {
-                        slidesPerView: 3, // 桌機顯示 3 個
+                        slidesPerView: 3
+                    },
+                }
+            });
+
+            // Swiper 2
+            var swiper2 = new Swiper(".mySwiper2", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next-2",
+                    prevEl: ".swiper-button-prev-2",
+                },
+                pagination: {
+                    el: ".swiper-pagination-2",
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    },
+                }
+            });
+
+            // Swiper 3
+            var swiper3 = new Swiper(".mySwiper3", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next-3",
+                    prevEl: ".swiper-button-prev-3",
+                },
+                pagination: {
+                    el: ".swiper-pagination-3",
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
                     },
                 }
             });
         });
     </script>
+
 
 </body>
 <footer class="mt-3">

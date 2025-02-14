@@ -46,8 +46,6 @@ body {
   color: #ffc27a;
 }
 
-
-
 @media (max-width: 991px) {
   .hero-section {
     max-width: 100%;
@@ -390,12 +388,15 @@ body {
   align-self: start;
   margin-left: 60px;
   font: 600 56px/1 Public Sans, sans-serif;
+  font-family: Public Sans;
+  font-weight: 600;
+  font-size: clamp(50px, 5vw, 56px);
+  line-height: 56px;
 }
 
 @media (max-width: 991px) {
   .courses-title {
     max-width: 100%;
-    font-size: 40px;
   }
 }
 
@@ -403,7 +404,11 @@ body {
   color: var(--Gray-500, #6d737a);
   align-self: start;
   margin: 16px 0 0 60px;
-  font: 400 20px/1.4 Public Sans, sans-serif;
+  font-family: Public Sans;
+  font-weight: 400;
+  font-size: clamp(20px, 3vw, 20px);
+  line-height: 28px;
+  letter-spacing: 0%;
 }
 
 @media (max-width: 991px) {
@@ -537,6 +542,8 @@ body {
   align-items: center;
   gap: 11px;
   justify-content: start;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .rating-stars {
@@ -1524,7 +1531,6 @@ body {
     padding: 0 20px;
   }
 }
-
 
 .stats-section {
   background-color: #f8f9fa;
