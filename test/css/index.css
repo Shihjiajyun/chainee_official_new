@@ -2,50 +2,6 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
-  background-color: #6c7dfb;
-  /* 藍色背景 */
-}
-
-.navbar-brand {
-  font-size: 30px;
-  font-weight: 900;
-}
-
-.navbar-brand span:first-child {
-  color: #ffc27a;
-  /* 'C' 的顏色 */
-}
-
-.navbar-brand span:last-child {
-  color: #fff;
-  /* 'hainee' 的顏色 */
-}
-
-.nav-link {
-  color: #fff !important;
-  /* 導覽連結預設白色 */
-  transition: 0.3s;
-}
-
-.nav-link.active,
-.nav-link:hover {
-  color: #ffc27a !important;
-  /* 滑鼠懸停 & active 狀態變色 */
-}
-
-.login-btn {
-  color: white;
-  background: none;
-  border: none;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.login-btn:hover {
-  color: #ffc27a;
-}
-
 @media (max-width: 991px) {
   .hero-section {
     max-width: 100%;
@@ -56,68 +12,6 @@ body {
 @media (max-width: 991px) {
   .header {
     max-width: 100%;
-    padding: 0 20px;
-  }
-}
-
-.logo {
-  color: #000;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.1px;
-  align-self: stretch;
-  margin: auto 0;
-}
-
-@media (max-width: 991px) {
-  .logo {
-    font-size: 40px;
-  }
-}
-
-.nav-menu {
-  align-self: stretch;
-  display: flex;
-  min-width: 240px;
-  align-items: start;
-  font-weight: 500;
-  white-space: nowrap;
-  justify-content: start;
-  margin: auto 0;
-}
-
-@media (max-width: 991px) {
-  .nav-menu {
-    max-width: 100%;
-    white-space: initial;
-  }
-}
-
-.nav-item {
-  border-radius: 8px;
-  gap: 8px;
-  padding: 12px 24px;
-}
-
-@media (max-width: 991px) {
-  .nav-item {
-    white-space: initial;
-    padding: 0 20px;
-  }
-}
-
-.nav-item-active {
-  border-radius: 8px;
-  gap: 8px;
-  color: var(--Secondary-500, #ffc27a);
-  font-weight: 600;
-  padding: 12px 24px;
-}
-
-@media (max-width: 991px) {
-  .nav-item-active {
-    white-space: initial;
     padding: 0 20px;
   }
 }
@@ -171,7 +65,7 @@ body {
 
 .hero-section {
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
   height: 64vh;
   display: flex;
   align-items: center;
@@ -194,11 +88,20 @@ body {
   object-fit: cover;
 }
 
-.gradient-overlay {
+.gradient-overlay1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 30%; /* 你可以調整這個數值來增加白色範圍 */
+  height: 100%;
+  background: white;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 30%; /* 調整原本的 left 值，避免重疊太多 */
+  width: 40%;
   height: 100%;
   background: linear-gradient(
     to left,
@@ -207,13 +110,14 @@ body {
   );
 }
 
+
 .hero-content {
   position: relative;
   z-index: 2;
-  color: black;
+  color: #585858;
   text-align: left;
-  padding-left: 5%;
-  max-width: 400px;
+  margin-left: 60px;
+  max-width: 550px;
 }
 
 .hero-content h1 {
@@ -247,7 +151,7 @@ body {
 }
 
 .search-bar button {
-  background: black;
+  background: #585858;
   color: white;
   border: none;
   padding: 5px 15px;
@@ -267,20 +171,23 @@ body {
 }
 
 .tag {
-  background: #f3f3f3;
-  color: #333;
+  background: transparent; /* 移除背景色 */
+  color: #585858;
   padding: 8px 12px;
+  border: 2px solid #f3f3f3; /* 添加輝框 */
   border-radius: 15px;
   font-size: 14px;
   margin-right: 8px;
   margin-bottom: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tag:hover {
-  background: #ddd;
+  border-color: #ccc; /* 滑鼠懸停時，邊框變淡 */
+  color: #000; /* 可增加懸停效果 */
 }
+
 .stats-section {
   background: var(--2nd-Primary-50, #f1f2f8);
   background-color: var(--2nd-Primary-50, #f1f2f8);
@@ -390,7 +297,7 @@ body {
   font: 600 56px/1 Public Sans, sans-serif;
   font-family: Public Sans;
   font-weight: 600;
-  font-size: clamp(50px, 5vw, 56px);
+  font-size: 56px;
   line-height: 56px;
 }
 
@@ -401,12 +308,12 @@ body {
 }
 
 .courses-description {
-  color:  #000000;
+  color:  #9b9b9b;
   align-self: start;
   margin: 16px 0 0 60px;
   font-family: Public Sans;
   font-weight: 400;
-  font-size: clamp(20px, 3vw, 20px);
+  font-size: 20px;
   line-height: 28px;
   letter-spacing: 0%;
 }
@@ -499,7 +406,7 @@ body {
 .course-img {
   position: absolute;
   inset: 0;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -1551,7 +1458,7 @@ body {
 }
 
 .stat-icon-wrapper {
-  background: #6c7dfb;
+  background: #144a99;
   padding: 20px;
   border-radius: 50%;
   display: flex;
@@ -1634,3 +1541,4 @@ body {
     margin-right: auto;
   }
 }
+

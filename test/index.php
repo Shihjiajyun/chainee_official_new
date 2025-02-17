@@ -65,7 +65,7 @@
         border: none;
         cursor: pointer;
         font-size: 20px;
-        color: #6c7dfb;
+        color: #144a99;
         transition: color 0.3s ease;
     }
 
@@ -115,7 +115,7 @@
         height: 60px;
         border-radius: 50%;
         /* object-fit: cover; */
-        border: 2px solid #3461fd;
+        border: 2px solid #144a99;
         /* 增加外框，提高識別 */
     }
 
@@ -155,7 +155,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        color: #3461fd;
+        color: #144a99;
         font-size: 18px;
         width: 45px;
         height: 45px;
@@ -188,7 +188,7 @@
     /* 按鈕懸停效果 */
     .swiper-button-prev:hover,
     .swiper-button-next:hover {
-        background: #3461fd;
+        background: #144a99;
         color: white;
     }
 
@@ -260,7 +260,7 @@
         /* 取消 Swiper 預設的絕對定位 */
         width: 40px;
         height: 40px;
-        background-color: #3461fd;
+        background-color: #144a99;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -284,14 +284,15 @@
         border-radius: 12px;
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        height: 100%;
+        height: 90%;
+        font-size: 20px
     }
 
     .instructors-section h3 {
-        color: var(--2nd-Primary-500, #3461fd);
+        color: #144a99;
         font-family: Public Sans;
         font-weight: 600;
-        font-size: clamp(50px, 5vw, 56px);
+        font-size: 56px;
         line-height: 56px;
         letter-spacing: 0%;
 
@@ -350,6 +351,7 @@
     /* 移除超連結底線 */
     .article-card {
         text-decoration: none;
+        padding: 10px;
     }
 
     /* 調整文章資訊排版 */
@@ -364,7 +366,36 @@
     .article-meta i {
         margin-right: 5px;
     }
+
+    .instructors-section .read-more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: #144a99;
+        border-top: 1px solid #eee;
+        padding: 10px;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 10px;
+    }
+
+    .instructors-section .read-more:hover {
+        background: #144a99;
+        color: white;
+    }
+
+    .instructors-section .read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .instructors-section .read-more:hover i {
+        transform: translateX(5px);
+    }
 </style>
+
 <style>
     .courses-header {
         display: flex;
@@ -383,8 +414,9 @@
 
     .view-more {
         text-decoration: underline;
-        color: rgb(0, 0, 0);
+        color: #9b9b9b;
         margin-right: 10px;
+        font-size: 20px;
     }
 
     .swiper-controls {
@@ -402,8 +434,7 @@
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/qvdGZHDo4mU?autoplay=1&mute=1&loop=1&playlist=qvdGZHDo4mU" frameborder="0" allowfullscreen></iframe>
         </div>
-
-
+        <div class="gradient-overlay1"></div>
         <div class="gradient-overlay"></div>
 
         <div class="courses-section">
@@ -471,7 +502,7 @@
 
     <!-- 幣圈初心者 -->
     <section class="courses-section" id="course" style="margin-top: 50px;">
-        <h2 class="courses-title"><span style="color: #3461fd;">幣圈初心者</span></h2>
+        <h2 class="courses-title"><span style="color: #144a99;">幣圈初心者</span></h2>
         <div class="courses-header">
             <p class="courses-description">
                 剛踏入幣圈的初心者看過來
@@ -494,10 +525,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson5.jpg" alt="HTML course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
+                                    <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
                                     <div class="course-rating">
                                         <div class="rating-stars">
                                             <i class="fa-solid fa-star star-icon"></i>
@@ -622,9 +653,9 @@
     </section>
 
     <!-- 幣圈見習家 -->
-    <div style="width:100vw;background-color: rgba(231, 233, 235, 0.5);">
+    <div style="background-color: rgba(231, 233, 235, 0.5);">
         <section class="courses-section pt-5" id="course" style="margin-top: 50px;">
-            <h2 class="courses-title"><span style="color: #3461fd;">幣圈見習家</span></h2>
+            <h2 class="courses-title"><span style="color: #144a99;">幣圈見習家</span></h2>
             <div class="courses-header">
                 <p class="courses-description">
                     剛踏入幣圈的初心者看過來
@@ -775,7 +806,7 @@
 
     <!-- 幣圈實戰冒險者 -->
     <section class="courses-section" id="course" style="margin-top: 50px;">
-        <h2 class="courses-title"><span style="color: #3461fd;">幣圈實戰冒險者</span></h2>
+        <h2 class="courses-title"><span style="color: #144a99;">幣圈實戰冒險者</span></h2>
 
         <div class="courses-header">
             <p class="courses-description">
@@ -925,15 +956,15 @@
         </div>
     </section>
 
-    <!-- 專欄作家 -->
-    <div style="width:100vw; background-color: rgba(231, 233, 235, 0.5);">
+    <!-- 關於我們、熱門文章 -->
+    <div style=" background-color: rgba(231, 233, 235, 0.5);">
         <section class="instructors-section pt-5" id="course" style="margin-left: auto; margin-right: auto;">
             <div class="container my-5">
                 <div class="row">
                     <!-- 左側區塊：關於我們 -->
                     <div class="col-md-6">
+                        <h3>關於我們</h3>
                         <div class="about-section">
-                            <h3>關於我們</h3>
                             <p>鏈習生專欄作家來自各個區塊鏈領域，包括 DeFi、NFT、Web3 開發等，為讀者提供最前線的加密貨幣趨勢與分析。</p>
                             <p>我們的作家不僅擁有豐富的產業經驗，還精通技術與市場趨勢，幫助投資者和開發者更快理解區塊鏈技術的發展動向。無論是智能合約的應用、去中心化金融（DeFi）策略，還是 NFT 和 Web3 的未來趨勢，這裡都能找到專業的見解。</p>
                             <p>我們致力於提供易懂且具有實用價值的內容，讓區塊鏈知識不再艱澀難懂。探索我們的專欄，學習來自業界專家的洞察與技巧！</p>
@@ -980,16 +1011,9 @@
                                     </div>
                                 </div>
                             </a>
-
-                            <a href="#" class="article-card">
-                                <img src="./img/lesson5.jpg" alt="比特幣 ETF" class="article-image">
-                                <div class="article-content">
-                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
-                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
-                                    <div class="article-meta">
-                                        <i class="fas fa-user"></i> 由 Jacob Jones
-                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
-                                    </div>
+                            <a href="#">
+                                <div class="read-more">
+                                    <span>查看更多</span> <i class="fas fa-arrow-right"></i>
                                 </div>
                             </a>
                         </div>
@@ -1001,7 +1025,7 @@
 
     <!-- 學員反饋 -->
     <section class="courses-section block ">
-        <h2 class="courses-title"><span style="color: #3461fd;">學員反饋</span></h2>
+        <h2 class="courses-title"><span style="color: #144a99;">學員反饋</span></h2>
 
         <div class="swiper feedback-swiper mt-5" style="padding-bottom: 30px;width: 92%;">
             <div class="swiper-wrapper">
@@ -1155,7 +1179,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var swiper = new Swiper(".feedback-swiper", {
