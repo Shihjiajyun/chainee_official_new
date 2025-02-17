@@ -556,7 +556,7 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$107,999</span>
+                                        <span class="course-price">NT$10,799</span>
                                         <a href="course.php" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </a>
@@ -591,7 +591,7 @@
                                     <div class="course-price-wrapper">
 
                                         <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$107,999</span>
+                                        <span class="course-price">NT$10,799</span>
                                         <a href="course.php" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </a>
@@ -617,7 +617,7 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 免費</span>
+                                        <span class="course-price">$ 免費文章</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -643,7 +643,7 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 免費</span>
+                                        <span class="course-price">$ 免費文章</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -703,7 +703,7 @@
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
                                             <span class="course-original-price"><del>NT$14,500</del></span>
-                                            <span class="course-price">NT$107,999</span>
+                                            <span class="course-price">NT$10,799</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -738,7 +738,7 @@
                                         <div class="course-price-wrapper">
 
                                             <span class="course-original-price"><del>NT$14,500</del></span>
-                                            <span class="course-price">NT$107,999</span>
+                                            <span class="course-price">NT$10,799</span>
 
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
@@ -765,7 +765,7 @@
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 免費</span>
+                                            <span class="course-price">$ 免費文章</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -791,7 +791,7 @@
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 免費</span>
+                                            <span class="course-price">$ 免費文章</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -853,7 +853,7 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$107,999</span>
+                                        <span class="course-price">NT$10,799</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -888,7 +888,7 @@
                                     <div class="course-price-wrapper">
 
                                         <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$107,999</span>
+                                        <span class="course-price">NT$10,799</span>
 
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
@@ -915,7 +915,7 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 免費</span>
+                                        <span class="course-price">$ 免費文章</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -941,7 +941,7 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 免費</span>
+                                        <span class="course-price">$ 免費文章</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>

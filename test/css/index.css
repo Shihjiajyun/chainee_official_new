@@ -113,7 +113,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  color: #585858;
+  color: #1a1a1a;
   text-align: left;
   margin-left: 60px;
   max-width: 550px;
@@ -173,7 +173,7 @@ body {
   background: transparent; /* 移除背景色 */
   color: #585858;
   padding: 8px 12px;
-  border: 2px solid #f3f3f3; /* 添加輝框 */
+  border: 2px solid #222222; /* 添加輝框 */
   border-radius: 15px;
   font-size: 14px;
   margin-right: 8px;
@@ -307,7 +307,7 @@ body {
 }
 
 .courses-description {
-  color: #9b9b9b;
+  color: #222222;
   align-self: start;
   margin: 16px 0 0 60px;
   font-family: Public Sans;

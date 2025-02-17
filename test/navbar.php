@@ -1,7 +1,7 @@
 <style>
     /* 設定導覽列背景顏色 */
     .navbar {
-        background-color:rgb(56, 107, 185);
+        background-color: rgb(56, 107, 185);
         padding: 12px 0px;
     }
 
@@ -166,15 +166,11 @@
 
         <!-- 導覽列選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="margin-left: 20px;">
                 <li class="nav-item"><a class="nav-link active" href="index.php">首頁</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">鏈金術基地</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">新手成長地圖</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">公開講座</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">線上課程</a></li>
-
-                <!-- 幣圈知識庫（下拉選單） -->
-                <!-- 幣圈知識庫（自動展開的下拉選單） -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button">
                         幣圈知識庫
@@ -187,8 +183,9 @@
                         <li><a class="dropdown-item" href="./columnists.php">專欄作家</a></li>
                     </ul>
                 </li>
-
                 <li class="nav-item"><a class="nav-link" href="#">線上小幫手</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">新手成長地圖</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">鏈金術基地</a></li>
             </ul>
 
             <!-- 登入/註冊按鈕 -->

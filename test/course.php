@@ -39,9 +39,9 @@
                         <p class="course-description">
                             乘上未來金融趨勢，投資加密貨幣並賺取超越傳統股市的報酬，任何人都可以在合規、安全的環境下，用四大面向挑選短中長期投資的幣種，並透過理財工具輕鬆地完成自動化，創建穩健的被動收入。
                         </p>
-                        <p class="course-description">
-                        在華語加密貨幣教育圈，深耕多年的腦哥，將結合過去帶領上百萬學員的經驗，在 8 小時內，以化繁為簡的大白話，帶你從加密貨幣的趨勢，到懶人交易、長期實戰的基礎分析和風險認知，以各種面向了解加密貨幣投資。
-                        </p>
+                        <!-- <p class="course-description">
+                            在華語加密貨幣教育圈，深耕多年的腦哥，將結合過去帶領上百萬學員的經驗，在 8 小時內，以化繁為簡的大白話，帶你從加密貨幣的趨勢，到懶人交易、長期實戰的基礎分析和風險認知，以各種面向了解加密貨幣投資。
+                        </p> -->
                         <p class="course-description-2">
                             * 課程內含「認知升級篇」、「操作實務篇」、「投資獲利篇」、「名人專訪篇」，以及未來購買新篇章 3 折優惠資格
                         </p>
@@ -58,22 +58,25 @@
                 <!-- 標籤導航 -->
                 <ul class="nav nav-tabs mb-4" id="navTabs">
                     <li class="nav-item">
-                        <a class="nav-link active" data-content="info" href="#">課程資訊</a>
+                        <a class="nav-link active" data-content="info" href="#info">課程資訊</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-content="intro" href="#">簡介</a>
+                        <a class="nav-link" data-content="intro" href="#announcements">最新公告</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-content="chapters" href="#">課程大綱</a>
+                        <a class="nav-link" data-content="intro" href="#intro">簡介</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-content="comments" href="#">講師介紹</a>
+                        <a class="nav-link" data-content="chapters" href="#chapters">課程大綱</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-content="qa" href="#">常見問題</a>
+                        <a class="nav-link" data-content="comments" href="#instructor">講師介紹</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-content="reviews" href="#">評價</a>
+                        <a class="nav-link" data-content="qa" href="#qa">常見問題</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-content="reviews" href="#reviews">評價</a>
                     </li>
                 </ul>
 
@@ -156,7 +159,67 @@
 
                     </div>
 
+                    <!-- 最新公告 -->
+                    <div class="content" id="announcements">
+                        <h5 class="mb-4">最新公告</h5>
+                        <div class="announcement-section">
+                            <!-- 公告 1 -->
+                            <div class="announcement">
+                                <div class="announcement-header">
+                                    <span class="announcement-lock">🔒</span>
+                                    <span class="announcement-type">會員限定</span>
+                                </div>
+                                <div class="announcement-body">
+                                    <span class="announcement-icon">📍</span>
+                                    <span class="announcement-title">2023 區塊鏈應用工作坊 行前通知</span>
+                                    <span class="announcement-separator">|</span>
+                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
+                                </div>
+                                <div class="announcement-footer">
+                                    <span class="announcement-date">2023/12/01 15:30</span>
+                                </div>
+                            </div>
+
+                            <!-- 公告 2 -->
+                            <div class="announcement">
+                                <div class="announcement-header">
+                                    <span class="announcement-lock">🔒</span>
+                                    <span class="announcement-type">會員限定</span>
+                                </div>
+                                <div class="announcement-body">
+                                    <span class="announcement-icon">📍</span>
+                                    <span class="announcement-title">2023 智能合約基礎班 開始報名</span>
+                                    <span class="announcement-separator">|</span>
+                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
+                                </div>
+                                <div class="announcement-footer">
+                                    <span class="announcement-date">2023/11/20 10:00</span>
+                                </div>
+                            </div>
+
+                            <!-- 公告 3 -->
+                            <div class="announcement">
+                                <div class="announcement-header">
+                                    <span class="announcement-lock">🔒</span>
+                                    <span class="announcement-type">會員限定</span>
+                                </div>
+                                <div class="announcement-body">
+                                    <span class="announcement-icon">📍</span>
+                                    <span class="announcement-title">2022 Web3 基礎培訓 行前通知</span>
+                                    <span class="announcement-separator">|</span>
+                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
+                                </div>
+                                <div class="announcement-footer">
+                                    <span class="announcement-date">2022/12/15 09:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 簡介 -->
                     <div class="content" id="intro">
+                        <h5 class="mb-4">簡介</h5>
                         <div class="container">
                             <img src="https://chainee.io/wp-content/uploads/2024/05/row-1-column-1.jpg" alt="">
                             <img src="https://chainee.io/wp-content/uploads/2024/05/row-3-column-1.jpg" alt="">
@@ -164,8 +227,9 @@
                         </div>
                     </div>
 
-                    <!-- 章節 -->
+                    <!-- 課程大綱 -->
                     <div class="content" id="chapters">
+                        <h5 class="mb-4">課程大綱</h5>
                         <div class="accordion" id="chapterAccordion">
                             <!-- 第一章 -->
                             <div class="accordion-item">
@@ -232,8 +296,38 @@
                         </div>
                     </div>
 
+                    <!-- 講師介紹 -->
+                    <div class="content" id="instructor">
+                        <h5 class="mb-4">講師介紹</h5>
+
+                        <div class="row align-items-center">
+                            <!-- 講師圖片 -->
+                            <div class="col-md-6 text-center">
+                                <img src="https://chainee.io/wp-content/uploads/2024/01/brain_bro.png" alt="講師圖片" class="instructor-img">
+                            </div>
+
+                            <!-- 講師資訊 -->
+                            <div class="col-md-6">
+                                <div class="instructor-info">
+                                    <h3 class="instructor-name">腦哥</h3>
+                                    <p class="instructor-title">區塊鏈投資專家、加密貨幣教育者</p>
+                                    <p class="instructor-description">
+                                        擁有超過 10 年投資經驗，專注於加密貨幣市場，擁有上百萬粉絲的追隨。曾受邀至各大平台分享區塊鏈投資策略，透過簡單易懂的方式，幫助新手快速理解加密貨幣交易的核心概念。
+                                    </p>
+
+                                    <ul class="instructor-highlights">
+                                        <li><i class="fas fa-check-circle"></i> 10 年投資經驗，累積超過 10 萬學員</li>
+                                        <li><i class="fas fa-check-circle"></i> 曾任多家交易所顧問，熟悉市場運作</li>
+                                        <li><i class="fas fa-check-circle"></i> 專注於風險管理與策略交易</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 常見問題 -->
                     <div class="content" id="qa">
+                        <h5 class="mb-4">常見問題</h5>
                         <div class="accordion" id="faqAccordion">
                             <!-- 問題 1 -->
                             <div class="accordion-item">
@@ -294,64 +388,9 @@
 
                     </div>
 
-                    <!-- 留言區 -->
-                    <div class="content" id="comments">
-                        <div class="comment-section">
-                            <!-- 提示登入 -->
-                            <div class="login-prompt">
-                                <a href="#" class="login-link">登入</a> 後才可留言發問喔！
-                            </div>
-
-                            <!-- 留言清單 -->
-                            <div class="comment-list">
-                                <!-- 留言 1 -->
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <img src="./img/login_logo.jpg" alt="XXX" class="user-avatar">
-                                        <div class="user-info">
-                                            <span class="user-name">XXX</span>
-                                            <span class="comment-date">2024/12/27 18:20:47</span>
-                                        </div>
-                                    </div>
-                                    <div class="comment-body">
-                                        社會人士可以參加嗎？
-                                    </div>
-                                </div>
-
-                                <!-- 留言 2 -->
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <img src="./img/login_logo.jpg" alt="XXX" class="user-avatar">
-                                        <div class="user-info">
-                                            <span class="user-name">XXX</span>
-                                            <span class="comment-date">2024/09/05 11:57:11</span>
-                                        </div>
-                                    </div>
-                                    <div class="comment-body">
-                                        請問2024有線上互動坊的規劃嗎？
-                                    </div>
-                                </div>
-
-                                <!-- 留言 3 -->
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <img src="./img/login_logo.jpg" alt="XXX" class="user-avatar">
-                                        <div class="user-info">
-                                            <span class="user-name">XXX</span>
-                                            <span class="comment-date">2023/03/25 23:58:33</span>
-                                        </div>
-                                    </div>
-                                    <div class="comment-body">
-                                        是否能分享更多相關的課程內容？
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
                     <!-- 評價區 -->
                     <div class="content" id="reviews">
+                        <h5 class="mb-4">評價</h5>
                         <div class="review-section">
                             <!-- 評價 1 -->
                             <div class="review">
@@ -391,67 +430,10 @@
                         </div>
 
                     </div>
-
-                    <!-- 公告區 -->
-                    <div class="content" id="announcements">
-                        <div class="announcement-section">
-                            <!-- 公告 1 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2023 區塊鏈應用工作坊 行前通知</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2023/12/01 15:30</span>
-                                </div>
-                            </div>
-
-                            <!-- 公告 2 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2023 智能合約基礎班 開始報名</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2023/11/20 10:00</span>
-                                </div>
-                            </div>
-
-                            <!-- 公告 3 -->
-                            <div class="announcement">
-                                <div class="announcement-header">
-                                    <span class="announcement-lock">🔒</span>
-                                    <span class="announcement-type">會員限定</span>
-                                </div>
-                                <div class="announcement-body">
-                                    <span class="announcement-icon">📍</span>
-                                    <span class="announcement-title">2022 Web3 基礎培訓 行前通知</span>
-                                    <span class="announcement-separator">|</span>
-                                    <span class="announcement-instructor">腦哥的區塊鏈進階課程</span>
-                                </div>
-                                <div class="announcement-footer">
-                                    <span class="announcement-date">2022/12/15 09:00</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <!-- 價格卡片 -->
+            <!-- 右側價格卡片 -->
             <div class="col-lg-4" id="price">
                 <div class="price-card">
                     <!-- 課程圖片 -->
@@ -477,22 +459,8 @@
                         <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div>
-
-    <div class="container py-4">
-        <div class="row">
-            <div class="col-lg-8">
-
-                <!-- 內容區塊 -->
-
-
-            </div>
-
-            <!-- 側邊欄 -->
-            <div class="col-lg-4">
+                <!-- 合購卡片 -->
                 <!-- 合購優惠區塊 -->
                 <div class="bundle-section mb-4">
                     <div class="bundle-header">
@@ -557,39 +525,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- 切換內容 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.nav-link');
-            const contents = document.querySelectorAll('.content');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    // Remove active class from all tabs
-                    tabs.forEach(t => t.classList.remove('active'));
-
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-
-                    // Hide all content
-                    contents.forEach(content => content.classList.remove('active'));
-
-                    // Show corresponding content
-                    const targetId = this.getAttribute('data-content');
-                    const targetContent = document.getElementById(targetId);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 <footer>

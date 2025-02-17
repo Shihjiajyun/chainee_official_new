@@ -227,8 +227,69 @@
   border-radius: 4px;
 }
 
-.content-area .content {
-  display: none;
+/* 讓講師圖片適應不同裝置 */
+.instructor-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 講師資訊區塊 */
+.instructor-info {
+  padding: 20px;
+}
+
+/* 講師名稱 */
+.instructor-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2572e4;
+}
+
+/* 講師頭銜 */
+.instructor-title {
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 介紹文字 */
+.instructor-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 高光特點 */
+.instructor-highlights {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.instructor-highlights li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.instructor-highlights i {
+  color: #28a745;
+  margin-right: 8px;
+}
+
+/* RWD 響應式調整 */
+@media (max-width: 991px) {
+  .instructor-info {
+    text-align: center;
+  }
+
+  .instructor-highlights {
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 .content.active {
@@ -594,7 +655,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg') no-repeat center/cover;
+  background: url("https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg")
+    no-repeat center/cover;
   z-index: -1;
 }
 
@@ -644,7 +706,7 @@
 
 /* 標籤 */
 .course-badge {
-  background-color: #2E9E9E;
+  background-color: #2e9e9e;
   border-radius: 10px;
   padding: 10px 15px;
   font-size: 16px;
@@ -686,7 +748,7 @@
 .course-description-2 {
   font-size: 16px;
   margin-top: 15px;
-  color: #FFD700;
+  color: #ffd700;
 }
 
 /* RWD 響應式調整 */
