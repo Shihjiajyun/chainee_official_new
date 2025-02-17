@@ -110,7 +110,6 @@ body {
   );
 }
 
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -308,7 +307,7 @@ body {
 }
 
 .courses-description {
-  color:  #9b9b9b;
+  color: #9b9b9b;
   align-self: start;
   margin: 16px 0 0 60px;
   font-family: Public Sans;
@@ -382,42 +381,44 @@ body {
   justify-content: start;
 }
 
+/* 讓 .course-image 的高度自適應圖片 */
 .course-image {
   display: flex;
   flex-direction: column;
   border-radius: 12px;
   position: relative;
-  aspect-ratio: 1.353;
   width: 100%;
+  height: auto; /* 讓容器跟隨圖片高度 */
   align-items: start;
   color: var(--Gray-Black, #1b1d1f);
   white-space: nowrap;
-  padding: 7px 8px 164px;
-  font: 500 16px Public Sans, sans-serif;
+  padding: 7px 8px;
 }
 
+/* 移除 aspect-ratio 來確保高度與圖片一致 */
 @media (max-width: 991px) {
   .course-image {
     white-space: initial;
-    padding: 0 20px 100px 0;
+    padding: 0;
   }
 }
 
+/* 讓圖片填滿 .course-image，並保持原始比例 */
 .course-img {
-  position: absolute;
-  inset: 0;
-  /* height: 100%; */
   width: 100%;
-  object-fit: cover;
+  height: auto; /* 讓圖片根據比例調整 */
+  object-fit: cover; /* 避免變形 */
   object-position: center;
+  position: static; /* 移除 absolute，避免影響父元素 */
 }
 
+/* 讓標籤不會超出圖片區域 */
 .course-tag {
-  position: relative;
+  position: absolute;
+  top: 10px; /* 固定在圖片內部的左上角 */
+  left: 10px;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.6);
-  margin-bottom: -33px;
-  background: var(--Gray-White, #fff);
   padding: 6px 13px;
 }
 
@@ -426,14 +427,6 @@ body {
     margin-bottom: 10px;
     white-space: initial;
   }
-}
-
-.course-title {
-  color: var(--Gray-700, #363a3d);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-top: 16px;
-  font: 500 20px/1.4 Public Sans, sans-serif;
 }
 
 @media (max-width: 991px) {
@@ -503,6 +496,12 @@ body {
   align-self: stretch;
   margin: auto 0;
   font: 600 24px/1 Public Sans, sans-serif;
+}
+
+.course-original-price {
+  font-size: 14px;
+  color: #888; /* 顏色變淡 */
+  margin-right: 8px;
 }
 
 .course-action {
@@ -1541,4 +1540,3 @@ body {
     margin-right: auto;
   }
 }
-

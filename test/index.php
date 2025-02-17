@@ -325,6 +325,7 @@
         height: 90px;
         object-fit: cover;
         margin-left: 10px;
+        border-radius: 10px;
     }
 
     .article-content {
@@ -423,6 +424,17 @@
         display: flex;
         gap: 5px;
         /* 控制左右箭頭間距 */
+    }
+
+    /* 讓 .container 高度根據內部內容變化 */
+    .courses-section .container {
+        display: flex;
+        align-items: stretch;
+        /* 確保內部內容拉伸至最大高度 */
+        justify-content: center;
+        /* 讓內容置中 */
+        height: auto;
+        max-height: 500px;
     }
 </style>
 
@@ -543,7 +555,8 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 500</span>
+                                        <span class="course-original-price"><del>NT$14,500</del></span>
+                                        <span class="course-price">NT$107,999</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -558,10 +571,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                    <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
                                     <div class="course-rating">
                                         <div class="rating-stars">
                                             <i class="fa-solid fa-star star-icon"></i>
@@ -576,7 +589,10 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 600</span>
+
+                                        <span class="course-original-price"><del>NT$14,500</del></span>
+                                        <span class="course-price">NT$107,999</span>
+
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -591,10 +607,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson5.jpg" alt="JavaScript course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
+                                    <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                     <div class="course-rating">
                                         <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
@@ -617,25 +633,18 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                    <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star-half-alt star-icon"></i>
-                                        </div>
-                                        <span>(30)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 600</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -669,17 +678,17 @@
                 </div>
             </div>
             <div class="container mb-5">
-                <div class="swiper mySwiper2">
+                <div class="swiper mySwiper1">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="course-card">
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="./img/lesson5.jpg" alt="HTML course" class="course-img">
+                                            <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
                                             <div class="course-tag">初心者</div>
                                         </div>
-                                        <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
+                                        <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
                                         <div class="course-rating">
                                             <div class="rating-stars">
                                                 <i class="fa-solid fa-star star-icon"></i>
@@ -694,7 +703,8 @@
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 500</span>
+                                            <span class="course-original-price"><del>NT$14,500</del></span>
+                                            <span class="course-price">NT$107,999</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -709,10 +719,10 @@
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                            <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
                                             <div class="course-tag">初心者</div>
                                         </div>
-                                        <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                        <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
                                         <div class="course-rating">
                                             <div class="rating-stars">
                                                 <i class="fa-solid fa-star star-icon"></i>
@@ -727,7 +737,10 @@
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 600</span>
+
+                                            <span class="course-original-price"><del>NT$14,500</del></span>
+                                            <span class="course-price">NT$107,999</span>
+
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -742,10 +755,10 @@
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="./img/lesson5.jpg" alt="JavaScript course" class="course-img">
+                                            <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
                                             <div class="course-tag">初心者</div>
                                         </div>
-                                        <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
+                                        <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                         <div class="course-rating">
                                             <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                         </div>
@@ -768,25 +781,18 @@
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                            <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
                                             <div class="course-tag">初心者</div>
                                         </div>
-                                        <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                        <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                         <div class="course-rating">
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star-half-alt star-icon"></i>
-                                            </div>
-                                            <span>(30)</span>
+                                            <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                         </div>
                                     </div>
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-price">$ 600</span>
+                                            <span class="course-price">$ 免費</span>
                                             <button class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </button>
@@ -798,7 +804,7 @@
                     </div>
 
                     <!-- 分頁點 -->
-                    <div class="swiper-pagination swiper-pagination-2"></div>
+                    <div class="swiper-pagination swiper-pagination-1"></div>
                 </div>
             </div>
         </section>
@@ -822,17 +828,17 @@
         </div>
 
         <div class="container mb-5">
-            <div class="swiper mySwiper3">
+            <div class="swiper mySwiper1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson5.jpg" alt="HTML course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">投資獲利篇，投資加密貨幣懂這些就夠了</h3>
+                                    <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
                                     <div class="course-rating">
                                         <div class="rating-stars">
                                             <i class="fa-solid fa-star star-icon"></i>
@@ -847,7 +853,8 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 500</span>
+                                        <span class="course-original-price"><del>NT$14,500</del></span>
+                                        <span class="course-price">NT$107,999</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -862,10 +869,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                    <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
                                     <div class="course-rating">
                                         <div class="rating-stars">
                                             <i class="fa-solid fa-star star-icon"></i>
@@ -880,7 +887,10 @@
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 600</span>
+
+                                        <span class="course-original-price"><del>NT$14,500</del></span>
+                                        <span class="course-price">NT$107,999</span>
+
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -895,10 +905,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson5.jpg" alt="JavaScript course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">智能合約開發：從零開始打造去中心化應用</h3>
+                                    <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                     <div class="course-rating">
                                         <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
@@ -921,25 +931,18 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="./img/lesson4.jpg" alt="CSS course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">初心者</div>
                                     </div>
-                                    <h3 class="course-title">區塊鏈技術入門，從基礎到實戰</h3>
+                                    <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                     <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star-half-alt star-icon"></i>
-                                        </div>
-                                        <span>(30)</span>
+                                        <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-                                        <span class="course-price">$ 600</span>
+                                        <span class="course-price">$ 免費</span>
                                         <button class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </button>
@@ -951,7 +954,7 @@
                 </div>
 
                 <!-- 分頁點 -->
-                <div class="swiper-pagination swiper-pagination-3"></div>
+                <div class="swiper-pagination swiper-pagination-1"></div>
             </div>
         </div>
     </section>
@@ -978,10 +981,10 @@
                         <h3>熱門文章</h3>
                         <div class="popular-articles">
                             <a href="#" class="article-card">
-                                <img src="./img/lesson3.jpg" alt="比特幣 ETF" class="article-image">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-13-at-00.05.26@2x-r1fdewlut9nthd2309cn7oijeb8kubv4ywwuma1v2c.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
-                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <p class="article-title">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p>
+                                    <!-- <p class="article-description">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p> -->
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
                                         <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
@@ -990,10 +993,10 @@
                             </a>
 
                             <a href="#" class="article-card">
-                                <img src="./img/lesson3.jpg" alt="比特幣 ETF" class="article-image">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-10-at-18.04.09@2x-r1anphvs5scaatbcnxmlfvaaktqk0mxnc5araij7a0.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
-                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <p class="article-title">合約網格是什麼？合約網格教學：做多、中性、做空策略、參數設定、風險、常見問題一次看</p>
+                                    
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
                                         <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
@@ -1001,10 +1004,10 @@
                                 </div>
                             </a>
                             <a href="#" class="article-card">
-                                <img src="./img/lesson4.jpg" alt="比特幣 ETF" class="article-image">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/0212-%E7%9B%A4%E5%8B%A2%E5%88%86%E6%9E%90-r1eb4z382jdls6kv5n3d0ealpqvuzrko6se9xl4gig.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">比特幣 ETF 的最新趨勢與影響</p>
-                                    <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p>
+                                    <p class="article-title">幣圈盤勢分析 2025/02/12</p>
+                                    <!-- <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p> -->
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
                                         <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
