@@ -9,232 +9,51 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/course.css">
 </head>
-<style>
-    .course-container {
-        display: flex;
-        height: calc(100vh - 200px);
-        position: relative;
-    }
-
-    .course-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg') no-repeat center/cover;
-        z-index: -1;
-    }
-
-    .course-background::before {
-        content: "";
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        filter: blur(10px) brightness(50%);
-        z-index: -1;
-    }
-
-
-    .course-image {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .course-image img {
-        max-width: 80%;
-        max-height: 100%;
-        object-fit: contain;
-    }
-
-    .course-content {
-        width: 50%;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: white;
-    }
-
-    .course-title {
-        font-size: 32px;
-        font-weight: bold;
-    }
-
-    .course-content h3 {
-        margin-top: 10px;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .course-subtitle {
-        color: #85d8ff;
-        margin-top: 10px;
-        font-size: 24px;
-    }
-
-    .course-meta {
-        margin: 15px 0;
-        display: flex;
-        align-items: center;
-        font-size: 18px;
-    }
-
-    .course-meta span {
-        margin-right: 15px;
-        display: flex;
-        align-items: center;
-    }
-
-    .course-meta i {
-        margin-right: 5px;
-    }
-
-    .course-description {
-        font-size: 16px;
-        margin-top: 15px;
-        color: #ddd;
-    }
-
-    .course-description-2 {
-        font-size: 16px;
-        margin-top: 15px;
-        color: #FFD700;
-    }
-
-    .course-badge {
-        background-color: #2E9E9E;
-        border-radius: 10px;
-        padding: 10px 0px;
-        font-size: 16px;
-        font-weight: bold;
-        display: inline-block;
-        color: white;
-        margin-bottom: 10px;
-        max-width: 80px;
-        text-align: center;
-    }
-
-    #navTabs .nav-item {
-        padding: 0;
-    }
-
-    .price-card {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    .price-card .course-image {
-        width: 100%;
-        /* 確保圖片填滿容器 */
-        /* max-width: 300px; */
-        /* 限制最大寬度 */
-        border-radius: 10px;
-        /* 圓角設計 */
-    }
-
-    .price {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        gap: 10px;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .current-price {
-        color: #f57c00;
-        /* 橙色價格 */
-    }
-
-    .original-price {
-        text-decoration: line-through;
-        color: #888;
-        /* 灰色刪除價格 */
-        font-size: 18px;
-    }
-
-    .benefits {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        text-align: left;
-        margin: 10px 0;
-    }
-
-    .icon {
-        font-size: 20px;
-        color: #555;
-        margin-right: 8px;
-    }
-
-    .buy-button {
-        background: #f57c00;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .cart-button {
-        background: transparent;
-        border: 1px solid #f57c00;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-</style>
 
 <body>
     <!-- 導覽列 -->
     <?php include 'navbar.php' ?>
 
     <div class="course-container">
+        <!-- 背景模糊 -->
         <div class="course-background"></div>
-        <div class="course-image">
-            <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="課程封面">
-        </div>
-        <div class="course-content">
-            <p class="course-badge">新手</p>
-            <h2 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h2>
-            <h3>理論x 策略 x 實戰</h3>
-            <div class="course-meta">
-                <span><i class="fas fa-user"></i> 18526 名學員</span>
-                <span><i class="fas fa-star"></i> 4.8 (11)</span>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- 課程圖片區塊 -->
+                <div class="col-lg-6 col-12">
+                    <div class="course-image">
+                        <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="課程封面">
+                    </div>
+                </div>
+
+                <!-- 課程內容區塊 -->
+                <div class="col-lg-6 col-12">
+                    <div class="course-content">
+                        <h2 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h2>
+                        <h3>理論 x 策略 x 實戰</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-user"></i> 18526 名學員</span>
+                            <span><i class="fas fa-star"></i> 4.8 (11)</span>
+                        </div>
+                        <p class="course-description">
+                            乘上未來金融趨勢，投資加密貨幣並賺取超越傳統股市的報酬，任何人都可以在合規、安全的環境下，用四大面向挑選短中長期投資的幣種，並透過理財工具輕鬆地完成自動化，創建穩健的被動收入。
+                        </p>
+                        <p class="course-description">
+                        在華語加密貨幣教育圈，深耕多年的腦哥，將結合過去帶領上百萬學員的經驗，在 8 小時內，以化繁為簡的大白話，帶你從加密貨幣的趨勢，到懶人交易、長期實戰的基礎分析和風險認知，以各種面向了解加密貨幣投資。
+                        </p>
+                        <p class="course-description-2">
+                            * 課程內含「認知升級篇」、「操作實務篇」、「投資獲利篇」、「名人專訪篇」，以及未來購買新篇章 3 折優惠資格
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="course-description">
-                乘上未來金融趨勢，投資加密貨幣並賺取超越傳統股市的報酬，任何人都可以在合規、安全的環境下，用四大面向挑選短中長期投資的幣種，並透過理財工具輕鬆地完成自動化，創建穩健的被動收入。
-            </p>
-            <p class="course-description">
-                在華語加密貨幣教育圈，深耕多年的腦哥，將結合過去帶領上百萬學員的經驗，在 8 小時內，以化繁為簡的大白話，帶你從加密貨幣的趨勢，到懶人交易、長期實戰的基礎分析和風險認知，以各種面向了解加密貨幣投資。
-            </p>
-            <p class="course-description-2">
-                * 課程內含「認知升級篇」、「操作實務篇」、「投資獲利篇」、「名人專訪篇」，以及未來購買新篇章 3 折優惠資格
-            </p>
         </div>
     </div>
 
     <div class="container py-4" id="introduce">
         <div class="row">
             <div class="col-lg-8">
-                <!-- 公告區 -->
-                <div class="announcement-bar d-flex justify-content-between mb-4">
-                    <div>
-                        <span class="me-3">最新公告</span>
-                        <span class="me-3">• 2023 線上互動工作坊 行前通知</span>
-                        <span>• 腦哥的區塊鏈入門必修課</span>
-                    </div>
-                    <a href="#" class="text-decoration-none">查看</a>
-                </div>
 
                 <!-- 標籤導航 -->
                 <ul class="nav nav-tabs mb-4" id="navTabs">

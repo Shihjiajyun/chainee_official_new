@@ -557,9 +557,9 @@
                                     <div class="course-price-wrapper">
                                         <span class="course-original-price"><del>NT$14,500</del></span>
                                         <span class="course-price">NT$107,999</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="course.php" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -592,10 +592,9 @@
 
                                         <span class="course-original-price"><del>NT$14,500</del></span>
                                         <span class="course-price">NT$107,999</span>
-
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="course.php" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -996,7 +995,7 @@
                                 <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-10-at-18.04.09@2x-r1anphvs5scaatbcnxmlfvaaktqk0mxnc5araij7a0.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
                                     <p class="article-title">合約網格是什麼？合約網格教學：做多、中性、做空策略、參數設定、風險、常見問題一次看</p>
-                                    
+
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
                                         <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14

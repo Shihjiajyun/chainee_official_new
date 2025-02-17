@@ -241,18 +241,26 @@
 }
 
 .content img {
-  max-width: 100%; /* 圖片寬度不超過容器寬度 */
-  height: auto; /* 確保圖片比例不變 */
-  margin: 0 auto; /* 居中圖片 */
-  display: block; /* 圖片在容器中獨立一行 */
+  max-width: 100%;
+  /* 圖片寬度不超過容器寬度 */
+  height: auto;
+  /* 確保圖片比例不變 */
+  margin: 0 auto;
+  /* 居中圖片 */
+  display: block;
+  /* 圖片在容器中獨立一行 */
 }
 
 /* 特定內容區塊的圖片樣式 */
 .content-image {
-  border-radius: 8px; /* 圖片圓角效果 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
-  margin-bottom: 16px; /* 圖片與其他內容的間距 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 鼠標懸停時的動畫效果 */
+  border-radius: 8px;
+  /* 圖片圓角效果 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 添加陰影效果 */
+  margin-bottom: 16px;
+  /* 圖片與其他內容的間距 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 鼠標懸停時的動畫效果 */
 }
 
 /* 章節手風琴 */
@@ -282,7 +290,8 @@
 }
 
 .accordion .accordion-body ul li::marker {
-  color: #007bff; /* 自訂項目符號的顏色 */
+  color: #007bff;
+  /* 自訂項目符號的顏色 */
 }
 
 .accordion-button {
@@ -469,7 +478,8 @@
 
 .user-rating {
   font-size: 1.2rem;
-  color: #f4c542; /* 星星顏色 */
+  color: #f4c542;
+  /* 星星顏色 */
   margin-top: 5px;
 }
 
@@ -564,4 +574,215 @@
 
 #intro .container img {
   width: 100%;
+}
+
+/* 課程區塊容器 */
+.course-container {
+  position: relative;
+  width: 100%;
+  padding: 0px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 背景模糊 */
+.course-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg') no-repeat center/cover;
+  z-index: -1;
+}
+
+.course-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(8px) brightness(40%);
+  transform: scale(1.1);
+  /* 放大背景，避免邊角沒模糊 */
+  z-index: -1;
+}
+
+/* 課程圖片區塊 */
+.course-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 內容區塊 */
+.course-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+/* 課程標題 */
+.course-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* 副標題 */
+.course-content h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 標籤 */
+.course-badge {
+  background-color: #2E9E9E;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+  max-width: 80px;
+  text-align: center;
+}
+
+/* 課程數據（學員數 & 評分） */
+.course-meta {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  flex-wrap: wrap;
+}
+
+.course-meta span {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.course-meta i {
+  margin-right: 5px;
+}
+
+/* 課程描述 */
+.course-description {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #ddd;
+}
+
+/* 額外提醒 */
+.course-description-2 {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #FFD700;
+}
+
+/* RWD 響應式調整 */
+@media (max-width: 991px) {
+  .course-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .course-title {
+    font-size: 28px;
+  }
+
+  .course-content h3 {
+    font-size: 18px;
+  }
+
+  .course-meta {
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+}
+
+#navTabs .nav-item {
+  padding: 0;
+}
+
+.price-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.price-card .course-image {
+  width: 100%;
+  /* 確保圖片填滿容器 */
+  /* max-width: 300px; */
+  /* 限制最大寬度 */
+  border-radius: 10px;
+  /* 圓角設計 */
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.current-price {
+  color: #f57c00;
+  /* 橙色價格 */
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  /* 灰色刪除價格 */
+  font-size: 18px;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.icon {
+  font-size: 20px;
+  color: #555;
+  margin-right: 8px;
+}
+
+.buy-button {
+  background: #f57c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-button {
+  background: transparent;
+  border: 1px solid #f57c00;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }
