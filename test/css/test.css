@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #144a99;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.cart-item-img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.price-details {
+    font-size: 0.95rem;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    border-bottom: 1px solid #eee;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0d3573;
+    border-color: #0d3573;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.remove-item {
+    padding: 0.5rem;
+    color: #dc3545;
+}
+
+.remove-item:hover {
+    color: #bb2d3b;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item img {
+        margin-bottom: 1rem;
+    }
+
+    .remove-item {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+/* 修改加入購物車按鈕樣式 */
+.add-to-cart {
+    background-color: white !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+.add-to-cart:hover {
+    background-color: #f8f9fa !important;
+}
+
+/* 修改刪除按鈕樣式 */
+.remove-item-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+}
+
+.remove-item-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* 折扣碼訊息樣式 */
+#couponMessage {
+    transition: all 0.3s ease;
+}
