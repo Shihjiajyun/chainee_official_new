@@ -8,6 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        .list-unstyled .fa-solid {
+            font-size: 1.2rem;
+            /* 設定統一大小 */
+            width: 1.5rem;
+            /* 確保寬度一致 */
+            text-align: center;
+            /* 讓圖標對齊 */
+        }
+
         .content-section {
             display: none;
             /* 預設隱藏所有內容 */
