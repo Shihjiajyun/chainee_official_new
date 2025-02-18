@@ -224,8 +224,7 @@
                 <button class="filter-btn" data-category="advanced">幣圈實戰冒險者</button>
             </div>
 
-            <!-- 課程清單 -->
-            <div class="row" id="courseContainer"></div>
+
         </div>
 
         <!-- 可以獲得的三個東西 -->
@@ -233,6 +232,11 @@
 
         <!-- 簡單三步驟 -->
         <div id="stepsContainer"></div>
+
+        <!-- 課程清單 -->
+        <div class="container">
+            <div class="row" id="courseContainer"></div>
+        </div>
 
     </div>
 
@@ -274,13 +278,12 @@
                     }
                 ],
                 intermediate: [{
-                        title: "呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略",
-                        category: "intermediate",
-                        image: "https://chainee.io/wp-content/uploads/2025/01/20250124.jpg",
-                        provider: "鏈習生加密學院",
-                        type: "幣圈見習家"
-                    }
-                ],
+                    title: "呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略",
+                    category: "intermediate",
+                    image: "https://chainee.io/wp-content/uploads/2025/01/20250124.jpg",
+                    provider: "鏈習生加密學院",
+                    type: "幣圈見習家"
+                }],
                 advanced: [{
                         title: "認知升級篇 | 投資加密貨幣，懂這些就夠了！",
                         category: "advanced",
