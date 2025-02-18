@@ -448,6 +448,8 @@
         </div>
         <div class="gradient-overlay1"></div>
         <div class="gradient-overlay"></div>
+        <div class="gradient-overlay2"></div>
+        <div class="gradient-overlay3"></div>
 
         <div class="courses-section">
             <div class="hero-content ">

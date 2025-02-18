@@ -97,6 +97,28 @@ body {
   background: white;
 }
 
+.gradient-overlay2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%; 
+  height: 100%;
+  background: white;
+}
+
+.gradient-overlay3 {
+  position: absolute;
+  top: 0;
+  right: 20%; /* 調整原本的 left 值，避免重疊太多 */
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
 .gradient-overlay {
   position: absolute;
   top: 0;
