@@ -7,7 +7,7 @@
 
     .navbar .container {
         padding: 0%;
-        margin-left: 60px !important;
+        /* margin-left: 60px; */
     }
 
     /* LOGO 調整 */

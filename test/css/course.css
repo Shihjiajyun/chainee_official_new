@@ -301,13 +301,34 @@
   color: #007bff;
 }
 
+.content h5 {
+  color: rgb(56, 107, 185);
+  font-size: 32px;
+  font-weight: 900;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 在 h5 標題前加上黃色三角形 */
+.content h5::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 16px solid #ffc107; /* 黃色三角形 */
+  margin-right: 10px;
+  transform: rotate(90deg);
+}
+
 .content img {
   max-width: 100%;
   /* 圖片寬度不超過容器寬度 */
   height: auto;
   /* 確保圖片比例不變 */
-  margin: 0 auto;
-  /* 居中圖片 */
+  margin-bottom: 10px;
   display: block;
   /* 圖片在容器中獨立一行 */
 }
@@ -507,7 +528,6 @@
 
 /* 評價頭部樣式 */
 .review-header {
-  display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 10px;
@@ -785,7 +805,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  /* text-align: center; */
 }
 
 .price-card .course-image {
@@ -794,16 +814,16 @@
   /* max-width: 300px; */
   /* 限制最大寬度 */
   border-radius: 10px;
+  height: 100%;
   /* 圓角設計 */
 }
 
 .price {
   display: flex;
-  justify-content: center;
   align-items: baseline;
   gap: 10px;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .current-price {
@@ -815,7 +835,8 @@
   text-decoration: line-through;
   color: #888;
   /* 灰色刪除價格 */
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .benefits {
@@ -847,4 +868,185 @@
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* 外部容器 */
+.discount-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+/* 紅色標籤 */
+.discount-label {
+  background-color: #f16767;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 4px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* 主要文字 */
+.discount-text {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 分隔線 */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+/* 主要容器 */
+.payment-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 每個資訊項目 */
+.payment-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ICON 樣式 */
+.payment-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* 讓標題與描述在同一行 */
+.info-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 標題樣式 */
+.info-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* 主要文字 */
+.info-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 課程套裝卡片 */
+.bundle-card {
+  /* background: #f8f9ff; */
+  border: 2px solid #e2e6f2;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* 課程名稱 */
+.bundle-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 課程列表 */
+.bundle-items {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 單個課程 */
+.course-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.course-item:last-child {
+  border-bottom: none;
+}
+
+/* 課程圖片 */
+.bundle-card .course-image {
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* 課程資訊 */
+.course-info {
+  flex: 1;
+}
+
+/* 課程名稱 */
+.course-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* 課程價格 */
+.course-price {
+  font-size: 12px;
+  color: #777;
+}
+
+/* 價格 & 購物車 */
+.bundle-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* 折扣價格 */
+.discount-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+/* 原價 */
+.original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+/* 購物車按鈕 */
+.add-to-cart {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart:hover {
+  background: #c62828;
 }
