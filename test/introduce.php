@@ -203,19 +203,14 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-3 flex-wrap">
-                    <a href="#" class="btn btn-outline-light">瀏覽加密貨幣課程</a>
-                    <a href="#" class="btn btn-outline-light">加密貨幣職涯發展</a>
+                    <!-- <a href="#" class="btn btn-outline-light">瀏覽加密貨幣課程</a>
+                    <a href="#" class="btn btn-outline-light">加密貨幣職涯發展</a> -->
                     <a href="#" class="btn btn-light text-dark">建立帳戶</a>
                 </div>
             </div>
         </div>
 
-        <!-- 簡單三步驟 -->
-        <div id="stepsContainer"></div>
-
-        <!-- 可以獲得的三個東西 -->
-        <div id="benefitsContainer" style="min-height: 230px;"></div>
-
+        
         <!-- 課程篩選 -->
         <div class="container my-5">
             <h2 class="text-center fw-bold">課程篩選</h2>
@@ -232,6 +227,13 @@
             <!-- 課程清單 -->
             <div class="row" id="courseContainer"></div>
         </div>
+
+        <!-- 可以獲得的三個東西 -->
+        <div id="benefitsContainer" style="min-height: 230px;"></div>
+
+        <!-- 簡單三步驟 -->
+        <div id="stepsContainer"></div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
