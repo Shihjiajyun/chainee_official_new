@@ -115,7 +115,7 @@
 }
 
 #price .buy-button {
-  background-color: #0066ff;
+  background-color: #144a99;
   color: white;
   width: 100%;
   padding: 12px;
@@ -933,17 +933,18 @@ hr {
 
 /* 標題樣式 */
 .info-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  color: #666;
+  color: #999999;
   white-space: nowrap;
 }
 
 /* 主要文字 */
 .info-text {
-  font-size: 14px;
-  color: #333;
+  font-size: 16px;
+  color: #252b40;
   line-height: 1.5;
+  font-weight: 400;
 }
 
 /* 課程套裝卡片 */
@@ -1049,4 +1050,75 @@ hr {
 
 .add-to-cart:hover {
   background: #c62828;
+}
+
+#price {
+  position: sticky;
+  top: 10px; /* 保持在視窗頂部 */
+  max-height: 550px; /* 設定最大高度 */
+  overflow-y: auto; /* 允許內部滾動 */
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+@media (max-width: 991px) {
+  #price {
+      position: relative; /* 取消 sticky 效果 */
+      max-height: none; /* 移除最大高度限制 */
+      overflow-y: visible; /* 讓內容正常顯示，不滾動 */
+  }
+}
+
+/* 自訂滾動條樣式 */
+#price::-webkit-scrollbar {
+  width: 8px; /* 設定滾動條寬度 */
+}
+
+#price::-webkit-scrollbar-thumb {
+  background: #144a99; /* 設定滾動條顏色 */
+  border-radius: 4px;
+}
+
+#price::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 設定滾動軌道顏色 */
+  border-radius: 4px;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #144a99;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* 滑鼠懸停效果 */
+#scrollToTop:hover {
+  background-color: #0f3671;
+}
+
+/* 按鈕出現動畫 */
+#scrollToTop.show {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#scrollToTop.hide {
+  opacity: 0;
+  transform: scale(0.8);
 }

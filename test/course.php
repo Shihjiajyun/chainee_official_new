@@ -43,25 +43,14 @@
     .people-icon1 {
         background-color: #2572e4;
     }
-
-    /* 標題樣式 */
-    .info-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-    }
-
-    /* 內文樣式 */
-    .info-text {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.5;
-    }
 </style>
 
 <body>
     <!-- 導覽列 -->
     <?php include 'navbar.php' ?>
+
+    <!-- 回到頂部按鈕 -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
 
     <div class="course-container">
         <!-- 背景模糊 -->
@@ -102,7 +91,7 @@
 
     <div class="container py-4" id="introduce">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 order-2 order-lg-1">
 
                 <!-- 標籤導航 -->
                 <!-- 固定導覽列 -->
@@ -147,8 +136,8 @@
                                             <i class="far fa-calendar"></i>
                                         </div>
                                         <div>
-                                            <div class="text-muted">開課時間</div>
-                                            <div>2021/10/20 16:00</div>
+                                            <div class="info-title">開課時間</div>
+                                            <div class="info-text">2021/10/20 16:00</div>
                                         </div>
                                     </div>
                                     <div class="course-info-item">
@@ -156,8 +145,8 @@
                                             <i class="far fa-file-alt"></i>
                                         </div>
                                         <div>
-                                            <div class="text-muted">預計單元</div>
-                                            <div>44 個</div>
+                                            <div class="info-title">預計單元</div>
+                                            <div class="info-text">44 個</div>
                                         </div>
                                     </div>
                                     <div class="course-info-item">
@@ -165,8 +154,8 @@
                                             <i class="far fa-user"></i>
                                         </div>
                                         <div>
-                                            <div class="text-muted">課程學員</div>
-                                            <div>18526 人</div>
+                                            <div class="info-title">課程學員</div>
+                                            <div class="info-text">18526 人</div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,8 +165,8 @@
                                             <i class="far fa-clock"></i>
                                         </div>
                                         <div>
-                                            <div class="text-muted">預計時長</div>
-                                            <div>11 小時 14 分</div>
+                                            <div class="info-title">預計時長</div>
+                                            <div class="info-text">11 小時 14 分</div>
                                         </div>
                                     </div>
                                     <div class="course-info-item">
@@ -185,57 +174,8 @@
                                             <i class="far fa-eye"></i>
                                         </div>
                                         <div>
-                                            <div class="text-muted">觀看期限</div>
-                                            <div>無限制</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="col-md-6">
-                                    <div class="course-info-item1">
-                                        <div class="course-info-icon1">
-                                            <i class="fas fa-clock"></i>
-                                        </div>
-                                        <div>
-                                            <div class="info-title">課程時長</div>
-                                            <div class="info-text">8hr</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="course-info-item1">
-                                        <div class="course-info-icon1">
-                                            <i class="fas fa-calendar-alt"></i>
-                                        </div>
-                                        <div>
-                                            <div class="info-title">課程內容</div>
-                                            <div class="info-text">三大章節、30 個單元<br>觀看次數無限制</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="course-info-item1">
-                                        <div class="course-info-icon1 people-icon">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                        <div>
-                                            <div class="info-title">適合對象</div>
-                                            <div class="info-text">加密貨幣投資新手</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="course-info-item1">
-                                        <div class="course-info-icon1 arrow-icon">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </div>
-                                        <div>
-                                            <div class="info-title">你將學到</div>
-                                            <div class="info-text">
-                                                - 從零基礎到獲利操作 <br>
-                                                - 系統化財富翻身的關鍵
-                                            </div>
+                                            <div class="info-title">觀看期限</div>
+                                            <div class="info-text">無限制</div>
                                         </div>
                                     </div>
                                 </div>
@@ -543,7 +483,7 @@
             </div>
 
             <!-- 右側價格卡片 -->
-            <div class="col-lg-4" id="price">
+            <div class="col-lg-4 order-1 order-lg-2" id="price">
                 <div class="price-card">
                     <!-- 課程圖片 -->
                     <div class="text-center mb-4">
@@ -571,7 +511,7 @@
                         <div class="payment-info-item">
                             <img src="./img/time_card.jpg" alt="觀看期限" class="payment-icon">
                             <div class="info-content">
-                                <span class="info-title">觀看期限</span>
+                                <span class="info-title payment-title">觀看期限</span>
                                 <span class="info-text">觀看次數無限制</span>
                             </div>
                         </div>
@@ -579,7 +519,7 @@
                         <div class="payment-info-item">
                             <img src="./img/card.jpg" alt="信用卡分期" class="payment-icon">
                             <div class="info-content">
-                                <span class="info-title">信用卡分期</span>
+                                <span class="info-title payment-title">信用卡分期</span>
                                 <span class="info-text">分期（三期、六期）零利率方案 僅限：玉山、台新銀行信用卡</span>
                             </div>
                         </div>
@@ -658,6 +598,49 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const titles = document.querySelectorAll(".payment-title");
+            let maxWidth = 0;
+
+            // 找出最大的標題寬度
+            titles.forEach(title => {
+                let titleWidth = title.offsetWidth;
+                if (titleWidth > maxWidth) {
+                    maxWidth = titleWidth;
+                }
+            });
+
+            // 設定所有標題為相同寬度
+            titles.forEach(title => {
+                title.style.width = maxWidth + "px";
+            });
+        });
+    </script>
+
+    <!-- 回到頂部邏輯 -->
+    <script>
+        const scrollBtn = document.getElementById("scrollToTop");
+
+        // 監聽滾動事件，控制按鈕顯示
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add("show");
+                scrollBtn.classList.remove("hide");
+            } else {
+                scrollBtn.classList.add("hide");
+                setTimeout(() => scrollBtn.classList.remove("show"), 300);
+            }
+        });
+
+        // 平滑滾動回頂部
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
 <footer>
