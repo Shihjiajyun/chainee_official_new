@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        
+
         <!-- 課程篩選 -->
         <div class="container my-5">
             <h2 class="text-center fw-bold">課程篩選</h2>
@@ -259,48 +259,41 @@
 
             const courses = {
                 beginner: [{
-                        title: "比特幣基礎與投資",
+                        title: "腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略",
                         category: "beginner",
-                        image: "./img/lesson3.jpg",
-                        provider: "加密學院",
-                        type: "基礎課程"
+                        image: "https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg",
+                        provider: "鏈習生加密學院",
+                        type: "幣圈初心者"
                     },
                     {
-                        title: "區塊鏈入門",
+                        title: "聰明理財Ｘ精準投資 ｜ 揮別窮忙的 5 分鐘高效加密貨幣投資攻略",
                         category: "beginner",
-                        image: "./img/lesson4.jpg",
-                        provider: "區塊鏈學習中心",
-                        type: "基礎課程"
+                        image: "https://chainee.io/wp-content/uploads/2024/09/%E4%B8%BB%E8%A6%96%E8%A6%BA-New.jpg",
+                        provider: "鏈習生加密學院",
+                        type: "幣圈初心者"
                     }
                 ],
                 intermediate: [{
-                        title: "NFT 入門指南",
+                        title: "呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略",
                         category: "intermediate",
-                        image: "./img/lesson3.jpg",
-                        provider: "NFT 學院",
-                        type: "進階課程"
-                    },
-                    {
-                        title: "智能合約開發",
-                        category: "intermediate",
-                        image: "./img/lesson4.jpg",
-                        provider: "開發者學院",
-                        type: "技術培訓"
+                        image: "https://chainee.io/wp-content/uploads/2025/01/20250124.jpg",
+                        provider: "鏈習生加密學院",
+                        type: "幣圈見習家"
                     }
                 ],
                 advanced: [{
-                        title: "DeFi 金融應用",
+                        title: "認知升級篇 | 投資加密貨幣，懂這些就夠了！",
                         category: "advanced",
-                        image: "./img/lesson5.jpg",
-                        provider: "投資大師班",
-                        type: "高級課程"
+                        image: "https://chainee.io/wp-content/uploads/2025/02/%E5%85%8D%E8%B2%BB%E8%AC%9B%E5%BA%A7_1_0.jpg",
+                        provider: "鏈習生加密學院",
+                        type: "幣圈實戰冒險者"
                     },
                     {
-                        title: "區塊鏈安全與風險管理",
+                        title: "投資獲利篇 | 投資加密貨幣，懂這些就夠了！",
                         category: "advanced",
-                        image: "./img/lesson5.jpg",
-                        provider: "安全技術學院",
-                        type: "專業證書"
+                        image: "https://chainee.io/wp-content/uploads/2025/02/%E5%85%8D%E8%B2%BB%E8%AC%9B%E5%BA%A7_3_0.jpg",
+                        provider: "鏈習生加密學院",
+                        type: "幣圈實戰冒險者"
                     }
                 ]
             };
