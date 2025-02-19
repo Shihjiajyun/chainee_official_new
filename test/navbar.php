@@ -168,11 +168,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="margin-left: 20px;">
                 <li class="nav-item"><a class="nav-link active" href="index.php">首頁</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">公開講座</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">線上課程</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php#about_us">關於我們</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://chainee.io/courses/public-course">公開講座</a></li>
+                <li class="nav-item"><a class="nav-link" href="introduce.php?category=beginner">線上課程</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button">
+                    <a class="nav-link dropdown-toggle" href="knowledge.php" id="knowledgeDropdown" role="button">
                         幣圈知識庫
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">
@@ -183,13 +183,13 @@
                         <li><a class="dropdown-item" href="./columnists.php">專欄作家</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">線上小幫手</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">新手成長地圖</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">鏈金術基地</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://line.me/ti/g2/wR_XpQ6lQlD1KSWOo2wjz8GT7YIbMtuRD1rR_w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">線上小幫手</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://chainee.io/learning/login.php">新手成長地圖</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://chainee.io/memes_courses/index.php">鏈金術基地</a></li>
             </ul>
 
             <!-- 登入/註冊按鈕 -->
-            <a href="#" class="btn login-btn"><i class="fas fa-user"></i> 登入/註冊</a>
+            <a href="login.php" class="btn login-btn"><i class="fas fa-user"></i> 登入/註冊</a>
         </div>
     </div>
 </nav>

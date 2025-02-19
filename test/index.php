@@ -653,9 +653,9 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-price">$ 免費文章</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="article.php?id=1" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -667,10 +667,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-10-at-09.52.25@2x-qzs3qe2zu94bfxir54lk4jup2ocfqmi8k9km4uqdnc.png" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">文章</div>
                                     </div>
-                                    <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
+                                    <h3 class="course-title">總鎖倉價值 TVL 是什麼？為何不該和 PoS 質押價值合併計算？</h3>
                                     <div class="course-rating">
                                         <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
@@ -679,9 +679,9 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-price">$ 免費文章</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="article.php?id=2" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -800,9 +800,9 @@
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
                                             <span class="course-price">$ 免費文章</span>
-                                            <button class="course-action" aria-label="Add to cart">
+                                            <a href="article.php?id=1" class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -814,10 +814,10 @@
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
+                                            <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-10-at-09.52.25@2x-qzs3qe2zu94bfxir54lk4jup2ocfqmi8k9km4uqdnc.png" alt="JavaScript course" class="course-img">
                                             <div class="course-tag">文章</div>
                                         </div>
-                                        <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
+                                        <h3 class="course-title">總鎖倉價值 TVL 是什麼？為何不該和 PoS 質押價值合併計算？</h3>
                                         <div class="course-rating">
                                             <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                         </div>
@@ -826,9 +826,9 @@
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
                                             <span class="course-price">$ 免費文章</span>
-                                            <button class="course-action" aria-label="Add to cart">
+                                            <a href="article.php?id=2" class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -915,9 +915,9 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-price">$ 免費文章</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="article.php?id=1" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -929,10 +929,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-10-at-09.52.25@2x-qzs3qe2zu94bfxir54lk4jup2ocfqmi8k9km4uqdnc.png" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">文章</div>
                                     </div>
-                                    <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
+                                    <h3 class="course-title">總鎖倉價值 TVL 是什麼？為何不該和 PoS 質押價值合併計算？</h3>
                                     <div class="course-rating">
                                         <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
@@ -941,9 +941,9 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-price">$ 免費文章</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="article.php?id=2" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -955,10 +955,10 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-13-at-00.05.26@2x-r1fdewlut9nthd2309cn7oijeb8kubv4ywwuma1v2c.png" alt="JavaScript course" class="course-img">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
                                         <div class="course-tag">文章</div>
                                     </div>
-                                    <h3 class="course-title">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</h3>
+                                    <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                     <div class="course-rating">
                                         <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
                                     </div>
@@ -967,9 +967,9 @@
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
                                         <span class="course-price">$ 免費文章</span>
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <a href="article.php?id=1" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -985,7 +985,7 @@
     </section>
 
     <!-- 關於我們、熱門文章 -->
-    <div style=" background-color: rgba(231, 233, 235, 0.5);">
+    <div style=" background-color: rgba(231, 233, 235, 0.5);" id="about_us">
         <section class="instructors-section pt-5" id="course" style="margin-left: auto; margin-right: auto;">
             <div class="container my-5">
                 <div class="row">
@@ -1005,10 +1005,10 @@
                     <div class="col-md-6">
                         <h3>熱門文章</h3>
                         <div class="popular-articles">
-                            <a href="#" class="article-card">
-                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-13-at-00.05.26@2x-r1fdewlut9nthd2309cn7oijeb8kubv4ywwuma1v2c.png" alt="比特幣 ETF" class="article-image">
+                            <a href="article.php?id=2" class="article-card">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-10-at-09.52.25@2x-qzs3qe2zu94bfxir54lk4jup2ocfqmi8k9km4uqdnc.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p>
+                                    <p class="article-title">總鎖倉價值 TVL 是什麼？為何不該和 PoS 質押價值合併計算？</p>
                                     <!-- <p class="article-description">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p> -->
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
@@ -1017,29 +1017,30 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="article-card">
-                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-10-at-18.04.09@2x-r1anphvs5scaatbcnxmlfvaaktqk0mxnc5araij7a0.png" alt="比特幣 ETF" class="article-image">
+                            <a href="article.php?id=2" class="article-card">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">合約網格是什麼？合約網格教學：做多、中性、做空策略、參數設定、風險、常見問題一次看</p>
+                                    <p class="article-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</p>
+                                    <!-- <p class="article-description">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p> -->
+                                    <div class="article-meta">
+                                        <i class="fas fa-user"></i> 由 Jacob Jones
+                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
+                                    </div>
+                                </div>
+                            </a>
 
-                                    <div class="article-meta">
-                                        <i class="fas fa-user"></i> 由 Jacob Jones
-                                        <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="article-card">
-                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/0212-%E7%9B%A4%E5%8B%A2%E5%88%86%E6%9E%90-r1eb4z382jdls6kv5n3d0ealpqvuzrko6se9xl4gig.png" alt="比特幣 ETF" class="article-image">
+                            <a href="article.php?id=2" class="article-card">
+                                <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-10-at-09.52.25@2x-qzs3qe2zu94bfxir54lk4jup2ocfqmi8k9km4uqdnc.png" alt="比特幣 ETF" class="article-image">
                                 <div class="article-content">
-                                    <p class="article-title">幣圈盤勢分析 2025/02/12</p>
-                                    <!-- <p class="article-description">了解 ETF 如何影響比特幣市場，機構投資者的進場影響...</p> -->
+                                    <p class="article-title">總鎖倉價值 TVL 是什麼？為何不該和 PoS 質押價值合併計算？</p>
+                                    <!-- <p class="article-description">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</p> -->
                                     <div class="article-meta">
                                         <i class="fas fa-user"></i> 由 Jacob Jones
                                         <i class="far fa-calendar-alt" style="margin-left: 10px;"></i> 2024-02-14
                                     </div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="knowledge.php">
                                 <div class="read-more">
                                     <span>查看更多</span> <i class="fas fa-arrow-right"></i>
                                 </div>
