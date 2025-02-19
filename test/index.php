@@ -454,7 +454,7 @@
         <div class="courses-section">
             <div class="hero-content ">
                 <h1>為自己學習最迷人</h1>
-                <p>鏈習生 線上學習平台，找到適合你的學習方式，迎接新改變！</p>
+                <p>鏈習生 線上學習平台，<br>找到適合你的學習方式，迎接新改變！</p>
 
                 <div class="search-bar">
                     <input type="text" placeholder="今天想學點什麼？">
@@ -540,18 +540,18 @@
                                 <div class="course-inner">
                                     <div class="course-image">
                                         <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <div class="course-tag">課程</div>
                                     </div>
                                     <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
-                                    <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
+                                    <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                        <div class="course-duration" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                            <span>總時長：10 小時</span>
                                         </div>
-                                        <span>(15)</span>
+                                        <div class="course-students" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                            <span>上課人數：150 人</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="course-footer">
@@ -559,7 +559,7 @@
                                     <div class="course-price-wrapper">
                                         <span class="course-original-price"><del>NT$14,500</del></span>
                                         <span class="course-price">NT$10,399</span>
-                                        <a href="course.php" class="course-action" aria-label="Add to cart">
+                                        <a href="course.php?course_id=1" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </a>
                                     </div>
@@ -573,28 +573,61 @@
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <img src="https://chainee.io/wp-content/uploads/2025/02/%E5%85%8D%E8%B2%BB%E8%AC%9B%E5%BA%A7_1_0.jpg" alt="HTML course" class="course-img">
+                                        <div class="course-tag">課程</div>
                                     </div>
-                                    <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
-                                    <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                    <h3 class="course-title">認知升級篇 | 投資加密貨幣，懂這些就夠了！</h3>
+                                    <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                        <div class="course-duration" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                            <span>總時長：2 小時</span>
                                         </div>
-                                        <span>(30)</span>
+                                        <div class="course-students" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                            <span>上課人數：150 人</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
+                                        <!-- <span class="course-original-price"><del>NT$14,500</del></span> -->
+                                        <span class="course-price">NT$799</span>
+                                        <a href="course.php?course_id=2" class="course-action" aria-label="Add to cart">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                        <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$10,399</span>
-                                        <a href="course.php" class="course-action" aria-label="Add to cart">
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-content">
+                                <div class="course-inner">
+                                    <div class="course-image">
+                                        <img src="https://chainee.io/wp-content/uploads/2025/02/%E5%85%8D%E8%B2%BB%E8%AC%9B%E5%BA%A7_2_0.jpg" alt="HTML course" class="course-img">
+                                        <div class="course-tag">課程</div>
+                                    </div>
+                                    <h3 class="course-title">操作實務篇 | 投資加密貨幣，懂這些就夠了！</h3>
+                                    <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                        <div class="course-duration" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                            <span>總時長：2 小時</span>
+                                        </div>
+                                        <div class="course-students" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                            <span>上課人數：150 人</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-divider"></div>
+                                    <div class="course-price-wrapper">
+                                        <!-- <span class="course-original-price"><del>NT$14,500</del></span> -->
+                                        <span class="course-price">NT$2,999</span>
+                                        <a href="course.php?course_id=3" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </a>
                                     </div>
@@ -609,7 +642,7 @@
                                 <div class="course-inner">
                                     <div class="course-image">
                                         <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <div class="course-tag">文章</div>
                                     </div>
                                     <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                     <div class="course-rating">
@@ -635,7 +668,7 @@
                                 <div class="course-inner">
                                     <div class="course-image">
                                         <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <div class="course-tag">文章</div>
                                     </div>
                                     <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                     <div class="course-rating">
@@ -654,6 +687,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- 分頁點 -->
@@ -679,36 +713,36 @@
                 </div>
             </div>
             <div class="container mb-5">
-                <div class="swiper mySwiper1">
+                <div class="swiper mySwiper2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="course-card">
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
-                                            <div class="course-tag">初心者</div>
+                                            <img src="https://chainee.io/wp-content/uploads/2024/09/%E4%B8%BB%E8%A6%96%E8%A6%BA-New.jpg" alt="HTML course" class="course-img">
+                                            <div class="course-tag">課程</div>
                                         </div>
-                                        <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
-                                        <div class="course-rating">
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
+                                        <h3 class="course-title">聰明理財Ｘ精準投資 ｜ 揮別窮忙的 5 分鐘高效加密貨幣投資攻略</h3>
+                                        <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                            <div class="course-duration" style="display: flex; align-items: center;">
+                                                <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                                <span>總時長：3 小時</span>
                                             </div>
-                                            <span>(15)</span>
+                                            <div class="course-students" style="display: flex; align-items: center;">
+                                                <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                                <span>上課人數：150 人</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-                                            <span class="course-original-price"><del>NT$14,500</del></span>
-                                            <span class="course-price">NT$10,399</span>
-                                            <button class="course-action" aria-label="Add to cart">
+                                            <span class="course-original-price"><del>NT$9,800</del></span>
+                                            <span class="course-price">NT$7,299</span>
+                                            <a href="course.php?course_id=4" class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -720,31 +754,29 @@
                                 <div class="course-content">
                                     <div class="course-inner">
                                         <div class="course-image">
-                                            <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
-                                            <div class="course-tag">初心者</div>
+                                            <img src="https://chainee.io/wp-content/uploads/2025/02/%E5%85%8D%E8%B2%BB%E8%AC%9B%E5%BA%A7_3_0.jpg" alt="HTML course" class="course-img">
+                                            <div class="course-tag">課程</div>
                                         </div>
-                                        <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
-                                        <div class="course-rating">
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star star-icon"></i>
-                                                <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                        <h3 class="course-title">投資獲利篇 | 投資加密貨幣，懂這些就夠了！</h3>
+                                        <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                            <div class="course-duration" style="display: flex; align-items: center;">
+                                                <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                                <span>總時長：2.5 小時</span>
                                             </div>
-                                            <span>(30)</span>
+                                            <div class="course-students" style="display: flex; align-items: center;">
+                                                <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                                <span>上課人數：150 人</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="course-footer">
                                         <div class="course-divider"></div>
                                         <div class="course-price-wrapper">
-
-                                            <span class="course-original-price"><del>NT$14,500</del></span>
-                                            <span class="course-price">NT$10,399</span>
-
-                                            <button class="course-action" aria-label="Add to cart">
+                                            <!-- <span class="course-original-price"><del>NT$14,500</del></span> -->
+                                            <span class="course-price">NT$ 13,500</span>
+                                            <a href="course.php?course_id=5" class="course-action" aria-label="Add to cart">
                                                 <i class="fa-solid fa-arrow-right"></i>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -757,7 +789,7 @@
                                     <div class="course-inner">
                                         <div class="course-image">
                                             <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
-                                            <div class="course-tag">初心者</div>
+                                            <div class="course-tag">文章</div>
                                         </div>
                                         <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                         <div class="course-rating">
@@ -783,7 +815,7 @@
                                     <div class="course-inner">
                                         <div class="course-image">
                                             <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
-                                            <div class="course-tag">初心者</div>
+                                            <div class="course-tag">文章</div>
                                         </div>
                                         <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                         <div class="course-rating">
@@ -802,10 +834,11 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- 分頁點 -->
-                    <div class="swiper-pagination swiper-pagination-1"></div>
+                    <div class="swiper-pagination swiper-pagination-2"></div>
                 </div>
             </div>
         </section>
@@ -829,72 +862,36 @@
         </div>
 
         <div class="container mb-5">
-            <div class="swiper mySwiper1">
+            <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="course-card">
                             <div class="course-content">
                                 <div class="course-inner">
                                     <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/2024/03/%E4%BB%98%E8%B2%BB%E8%AA%B2%E6%A9%AB%E5%BC%8F.jpg" alt="HTML course" class="course-img">
-                                        <div class="course-tag">初心者</div>
-                                    </div>
-                                    <h3 class="course-title">腦哥 | 投資加密貨幣，懂這些就夠了！從新手到穩健獲利的全方位幣圈攻略</h3>
-                                    <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                        </div>
-                                        <span>(15)</span>
-                                    </div>
-                                </div>
-                                <div class="course-footer">
-                                    <div class="course-divider"></div>
-                                    <div class="course-price-wrapper">
-                                        <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$10,399</span>
-                                        <button class="course-action" aria-label="Add to cart">
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="course-card">
-                            <div class="course-content">
-                                <div class="course-inner">
-                                    <div class="course-image">
-                                        <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="CSS course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <img src="https://chainee.io/wp-content/uploads/2025/01/20250124.jpg" alt="HTML course" class="course-img">
+                                        <div class="course-tag">課程</div>
                                     </div>
                                     <h3 class="course-title">呢喃貓 | 股票操盤人轉戰幣圈 精選 10 招實戰獲利策略</h3>
-                                    <div class="course-rating">
-                                        <div class="rating-stars">
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star star-icon"></i>
-                                            <i class="fa-solid fa-star-half-alt star-icon"></i>
+                                    <div class="course-rating" style="display: flex; gap: 15px; color: #9b9b9b; align-items: center;">
+                                        <div class="course-duration" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>
+                                            <span>總時長：7.5 小時</span>
                                         </div>
-                                        <span>(30)</span>
+                                        <div class="course-students" style="display: flex; align-items: center;">
+                                            <i class="fa-solid fa-users" style="margin-right: 5px;"></i>
+                                            <span>上課人數：150 人</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-divider"></div>
                                     <div class="course-price-wrapper">
-
                                         <span class="course-original-price"><del>NT$14,500</del></span>
-                                        <span class="course-price">NT$10,399</span>
-
-                                        <button class="course-action" aria-label="Add to cart">
+                                        <span class="course-price">NT$10,799</span>
+                                        <a href="course.php?course_id=6" class="course-action" aria-label="Add to cart">
                                             <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -907,7 +904,7 @@
                                 <div class="course-inner">
                                     <div class="course-image">
                                         <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-01-14-at-18.11.37@2x-qzzo3tyvtm12nskj930g9okjboknaoffoozndi3uzc.png" alt="JavaScript course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <div class="course-tag">文章</div>
                                     </div>
                                     <h3 class="course-title">AMA 是什麼？鏈習生公開群 3 大 AMA 賦能大揭秘！</h3>
                                     <div class="course-rating">
@@ -933,7 +930,7 @@
                                 <div class="course-inner">
                                     <div class="course-image">
                                         <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2024-11-29-at-11.24.42@2x-qxr3vkgw1kzk19ed6jc7n8simtm763uwjrngqra3ym.jpg" alt="JavaScript course" class="course-img">
-                                        <div class="course-tag">初心者</div>
+                                        <div class="course-tag">文章</div>
                                     </div>
                                     <h3 class="course-title">比特幣投資 33 個質疑與擔憂，網友提問逐一回應</h3>
                                     <div class="course-rating">
@@ -952,10 +949,37 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-content">
+                                <div class="course-inner">
+                                    <div class="course-image">
+                                        <img src="https://chainee.io/wp-content/uploads/elementor/thumbs/CleanShot-2025-02-13-at-00.05.26@2x-r1fdewlut9nthd2309cn7oijeb8kubv4ywwuma1v2c.png" alt="JavaScript course" class="course-img">
+                                        <div class="course-tag">文章</div>
+                                    </div>
+                                    <h3 class="course-title">Pi 幣怎麼賣？完成 Pi 幣提領 KYC 等 9 道關卡，手把手圖文實際流程一次看</h3>
+                                    <div class="course-rating">
+                                        <span class="text-secondary"><i class="fa-solid fa-eye"></i> 1,235 人觀看</span>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-divider"></div>
+                                    <div class="course-price-wrapper">
+                                        <span class="course-price">$ 免費文章</span>
+                                        <button class="course-action" aria-label="Add to cart">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- 分頁點 -->
-                <div class="swiper-pagination swiper-pagination-1"></div>
+                <div class="swiper-pagination swiper-pagination-3"></div>
             </div>
         </div>
     </section>
