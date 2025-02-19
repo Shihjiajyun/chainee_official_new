@@ -20,6 +20,12 @@
             <i class="fas fa-shopping-cart"></i> 購物車
         </h2>
 
+        <p>
+        新會員專屬優惠：NEWUSER2024<br>
+        早鳥優惠：EARLY2024<br>
+        限時超級優惠：SUPER2024(已經過期)
+        </p>
+
         <div class="row">
             <!-- 左側購物車列表 -->
             <div class="col-md-8">
@@ -138,7 +144,7 @@
             'SUPER2024': {
                 name: '限時超級優惠',
                 discount: 1200,
-                expiryTime: new Date().getTime() + 1800000, // 30分鐘後過期
+                expiryTime: new Date().getTime() - 1800000, // 30分鐘後過期
                 isUsed: true
             }
         };
