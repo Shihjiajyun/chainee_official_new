@@ -553,8 +553,8 @@
                         <p class="course-provider">${course.provider}</p>
                         <span class="course-badge">${course.type}</span>
                         <div class="text-center mt-3">
-                           <a href="./course.php?course_id=${course.id}" 
-                           class="btn btn-success">前往購買</a>
+                            <a href="./course.php" 
+                               class="btn btn-success">前往購買</a>
                         </div>
                     </div>
                 </div>
@@ -588,6 +588,11 @@
         updatePage(initialCategory);
     });
     </script>
+</body>
+
+</html>
+});
+</script>
 </body>
 
 </html>

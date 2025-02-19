@@ -21,9 +21,9 @@
         </h2>
 
         <p>
-        新會員專屬優惠：NEWUSER2024<br>
-        早鳥優惠：EARLY2024<br>
-        限時超級優惠：SUPER2024(已經過期)
+            新會員專屬優惠：NEWUSER2024<br>
+            早鳥優惠：EARLY2024<br>
+            限時超級優惠：SUPER2024(已經過期)
         </p>
 
         <div class="row">
@@ -127,6 +127,68 @@
     <!-- 自定義 JS -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // 首先定義全局變量
+        let cartItems = new Map(); // 追踪購物車項目
+        let itemCounter = 0; // 用於生成唯一ID
+        let currentCoupons = new Map(); // 追踪目前使用的所有折扣碼
+        let countdownIntervals = new Map(); // 追踪所有倒數計時器
+
+        // 檢查商品是否在購物車中
+        function isItemInCart(title) {
+            let found = false;
+            cartItems.forEach(item => {
+                if (item.title.trim() === title.trim()) {
+                    found = true;
+                }
+            });
+            return found;
+        }
+
+        // 檢查 URL 參數中是否有要添加到購物車的商品
+        const urlParams = new URLSearchParams(window.location.search);
+        const addToCartParam = urlParams.get('add_to_cart');
+
+        if (addToCartParam) {
+            try {
+                const courseData = JSON.parse(addToCartParam);
+
+                // 檢查商品是否已在購物車中
+                if (!isItemInCart(courseData.title)) {
+                    // 生成新的商品 ID
+                    const itemId = `item_${++itemCounter}`;
+
+                    // 將商品添加到購物車數據中
+                    cartItems.set(itemId, {
+                        title: courseData.title,
+                        price: courseData.price,
+                        imgSrc: courseData.image
+                    });
+
+                    // 創建並添加購物車項目到頁面
+                    const cartItem = createCartItem(
+                        courseData.title,
+                        courseData.price,
+                        itemId,
+                        courseData.image
+                    );
+
+                    const cartContainer = document.querySelector('.cart-items-container');
+                    if (cartContainer) {
+                        cartContainer.insertAdjacentHTML('beforeend', cartItem);
+                        bindRemoveButton(itemId);
+                        updatePriceDetails();
+                        showCouponMessage('商品已成功加入購物車！', 'success');
+                    }
+                }
+
+                // 清除 URL 參數
+                window.history.replaceState({}, document.title, window.location.pathname);
+
+            } catch (error) {
+                console.error('解析購物車數據時出錯：', error);
+            }
+        }
+
         // 預設折扣碼列表
         const validCoupons = {
             'NEWUSER2024': {
@@ -149,9 +211,6 @@
             }
         };
 
-        let currentCoupons = new Map(); // 追踪目前使用的所有折扣碼
-        let countdownIntervals = new Map(); // 追踪所有倒數計時器
-
         // 折扣碼處理
         const couponInput = document.getElementById('couponInput');
         const applyCouponBtn = document.getElementById('applyCoupon');
@@ -172,10 +231,6 @@
 
             return `${hours}小時 ${minutes}分鐘 ${seconds}秒`;
         }
-
-        // 購物車項目管理
-        let cartItems = new Map(); // 追踪購物車項目
-        let itemCounter = 0; // 用於生成唯一ID
 
         // 更新購物車總價
         function updateCartTotal() {
@@ -424,18 +479,6 @@
                     showCouponMessage('商品已從購物車移除！', 'info');
                 });
             });
-        }
-
-        // 檢查商品是否在購物車中
-        function isItemInCart(title) {
-            let found = false;
-            cartItems.forEach(item => {
-                console.log('Comparing:', item.title, 'with:', title); // 用於調試
-                if (item.title.trim() === title.trim()) {
-                    found = true;
-                }
-            });
-            return found;
         }
 
         // 添加新的 CSS 樣式
